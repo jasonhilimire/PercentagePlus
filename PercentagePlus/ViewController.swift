@@ -10,7 +10,7 @@ import UIKit
 
 
 var calcPercent = 0
-var amountValue: Double = 10
+//var amountValue: Double = 10
 var incrementValue: Double = 0
 
 class ViewController: UIViewController {
@@ -18,14 +18,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
     @IBOutlet weak var numberEntry: UITextField!
+    
+
+    
     @IBAction func incrementBtnPressed(_ sender: UIButton) {
         
         incrementValue += 1
+        let shotsTaken = Double(numberEntry.text!)
         
-        if let totalPercentCalc = Double? (incrementValue / amountValue) {
+        if let totalPercentCalc = Double? (incrementValue / shotsTaken!) {
             let totalPercentConverted = totalPercentCalc * 100
             calcPercentageLbl.text = "\(totalPercentConverted)%"
-            enteredAmtLbl.text = "\(incrementValue) / \(amountValue)"
+            enteredAmtLbl.text = "\(incrementValue):\(String(describing: shotsTaken)))"
             print(incrementValue, totalPercentConverted)
             
             
@@ -38,27 +42,24 @@ class ViewController: UIViewController {
         
         calcPercentageLbl.text = "0%"
         enteredAmtLbl.text = "Enter Amount"
+        calcPercent = 0
+        incrementValue = 0
         
         
     }
 
-    func ConvertNumber(_ : Double) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .none
-        numberFormatter.formatterBehavior = .default
-        let incrementValueChanged = numberFormatter.string(from: NSNumber(value: incrementValue))
-        return incrementValueChanged!
-    }
-    
+
    
     
     
     
     override func viewDidLoad() {
+        
+       
+    
+
+
 
     }
 
-
-
 }
-
