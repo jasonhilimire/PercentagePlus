@@ -9,47 +9,61 @@
 import UIKit
 
 
-var calcPercent = 0
-//var amountValue: Double = 10
-var incrementValue: Double = 0
+var sliderValue: Double = 10.0
+var incrementValue: Double = 0.0
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
-    @IBOutlet weak var numberEntry: UITextField!
+    @IBOutlet weak var sliderLbl: UILabel!
+    @IBOutlet weak var incrementButton: UIButton!
+    @IBAction func slider(_ sender: UISlider) {
+
+        sliderValue = Double(sender.value)
+        sliderLbl.text = "\(Int(sliderValue))"
+        
+    }
+    @IBOutlet weak var sliderOutlet: UISlider!
+
     
 
     
     @IBAction func incrementBtnPressed(_ sender: UIButton) {
         
-        incrementValue += 1
-        let shotsTaken = Double(numberEntry.text!)
+        incrementValue += 1.0
+        incrementButton.isEnabled = true
+        sliderOutlet.isHidden = true
         
-        if let totalPercentCalc = Double? (incrementValue / shotsTaken!) {
-            let totalPercentConverted = totalPercentCalc * 100
-            calcPercentageLbl.text = "\(totalPercentConverted)%"
-            enteredAmtLbl.text = "\(incrementValue):\(String(describing: shotsTaken)))"
-            print(incrementValue, totalPercentConverted)
-            
+        if incrementValue > sliderValue {
+            incrementButton.isEnabled = false
+        } else {
+            if let totalPercentCalc = Double? (incrementValue / sliderValue) {
+                let totalPercentConverted: Double = totalPercentCalc * 100
+                self.calcPercentageLbl.text = "\(totalPercentConverted)%"
+                self.enteredAmtLbl.text = "\(Int(incrementValue)):\(Int(sliderValue))"
+                print(incrementValue, totalPercentConverted)
+            }
             
         }
         
         
-    }
+}
+
+    
+    
    
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         
         calcPercentageLbl.text = "0%"
         enteredAmtLbl.text = "Enter Amount"
-        calcPercent = 0
         incrementValue = 0
-        
-        
+        incrementButton.isEnabled = true
+        sliderOutlet.isHidden = false
+
     }
 
 
-   
     
     
     
