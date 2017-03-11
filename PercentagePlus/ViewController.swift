@@ -9,8 +9,15 @@
 import UIKit
 
 
-var sliderValue: Double = 0.0
-var incrementValue: Double = 0.0
+var sliderValue: Int = 0
+var incrementValue: Int = 0
+var upperRight: Int = 0
+var upperLeft: Int = 0
+var bottomLeft: Int = 0
+var bottomRight: Int = 0
+var totalPercentCalc = 0
+
+
 
 class ViewController: UIViewController {
 
@@ -23,10 +30,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var incrementButtonBL: UIButton!
     @IBOutlet weak var sliderOutlet: UISlider!
     @IBOutlet weak var incrementButtonBR: UIButton!
+    @IBOutlet weak var upperLeftLabel: UILabel!
 
     @IBAction func slider(_ sender: UISlider) {
         
-        sliderValue = Double(sender.value)
+        sliderValue = Int(sender.value)
         sliderLbl.text = "\(Int(sliderValue))"
         
     }
@@ -34,6 +42,9 @@ class ViewController: UIViewController {
     
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
        buttonPressed()
+        upperLeft += 1
+        upperLeftLabel.text = "\(upperLeft)"
+
         
 }
 
@@ -55,29 +66,30 @@ class ViewController: UIViewController {
         calcPercentageLbl.text = "0%"
         enteredAmtLbl.text = "Enter Amount"
         incrementValue = 0
-        incrementButtonUL.isEnabled = true
-        incrementButtonBL.isEnabled = true
-        incrementButtonBR.isEnabled = true
-        incrementButtonUR.isEnabled = true
+        enableButtons()
         sliderOutlet.isHidden = false
+        upperLeft = 0
+        upperLeftLabel.text = "0"
 
     }
+    
+   
 
 
     func buttonPressed() {
-        incrementValue += 1.0
+        incrementValue += 1
         enableButtons()
         sliderOutlet.isHidden = true
 
         if incrementValue > sliderValue {
         disableButtons()
         } else {
-            if let totalPercentCalc = Double? (incrementValue / sliderValue) {
-                let totalPercentConverted: Double = totalPercentCalc * 100
-                self.calcPercentageLbl.text = "\(Double(totalPercentConverted))%"
-                self.enteredAmtLbl.text = "\(Int(incrementValue)):\(Int(sliderValue))"
-                print(incrementValue, totalPercentConverted)
-            }
+            totalPercentCalc = ((incrementValue * 100) / sliderValue)
+            self.calcPercentageLbl.text = "\(Int(totalPercentCalc))%"
+            self.enteredAmtLbl.text = "\(Int(incrementValue)):\(Int(sliderValue))"
+            print(incrementValue, totalPercentCalc)
+            
+            
             
         }
     }
