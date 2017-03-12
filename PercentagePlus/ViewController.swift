@@ -78,7 +78,7 @@ class ViewController: UIViewController {
 
     func buttonPressed() {
         incrementValue += 1
-        enableButtons()
+//        enableButtons()
         sliderOutlet.isHidden = true
 
         if incrementValue > sliderValue {

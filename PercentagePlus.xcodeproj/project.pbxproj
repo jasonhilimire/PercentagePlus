@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB1E1E1E746F75001E979F /* SplashVC.swift */; };
 		A3C5067B1E42F10200E6B32D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5067A1E42F10200E6B32D /* AppDelegate.swift */; };
 		A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5067C1E42F10200E6B32D /* ViewController.swift */; };
 		A3C506801E42F10200E6B32D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C5067E1E42F10200E6B32D /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3BB1E1E1E746F75001E979F /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		A3C506771E42F10200E6B32D /* PercentagePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PercentagePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5067A1E42F10200E6B32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C5067C1E42F10200E6B32D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3BB1E1B1E746F4C001E979F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A3BB1E1C1E746F51001E979F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
+				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A3BB1E1D1E746F57001E979F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		A3C5066E1E42F10200E6B32D = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +79,10 @@
 		A3C506791E42F10200E6B32D /* PercentagePlus */ = {
 			isa = PBXGroup;
 			children = (
+				A3BB1E1D1E746F57001E979F /* Controller */,
+				A3BB1E1C1E746F51001E979F /* View */,
+				A3BB1E1B1E746F4C001E979F /* Model */,
 				A3C5067A1E42F10200E6B32D /* AppDelegate.swift */,
-				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
 				A3C5067E1E42F10200E6B32D /* Main.storyboard */,
 				A3C506811E42F10200E6B32D /* Assets.xcassets */,
 				A3C506831E42F10200E6B32D /* LaunchScreen.storyboard */,
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
+				A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */,
 				A3C5067B1E42F10200E6B32D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +330,7 @@
 				A3C5068B1E42F10200E6B32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
