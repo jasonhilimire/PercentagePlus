@@ -75,8 +75,15 @@ class ViewController: UIViewController {
         incrementValue = 0
         enableButtons()
         sliderOutlet.isHidden = false
+        // reset all labels & values
         upperLeft = 0
         upperLeftLabel.text = "0"
+        upperRight = 0
+        upperRightLabel.text = "0"
+        lowerLeft = 0
+        lowerLeftLabel.text = "0"
+        lowerRight = 0
+        lowerRightLabel.text = "0"
     }
    
 
