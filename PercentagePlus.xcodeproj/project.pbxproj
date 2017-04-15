@@ -13,6 +13,7 @@
 		A3C506801E42F10200E6B32D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C5067E1E42F10200E6B32D /* Main.storyboard */; };
 		A3C506821E42F10200E6B32D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C506811E42F10200E6B32D /* Assets.xcassets */; };
 		A3C506851E42F10200E6B32D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C506831E42F10200E6B32D /* LaunchScreen.storyboard */; };
+		A3E505B51EA26DA8005C8E12 /* shooter500.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A3C506811E42F10200E6B32D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3C506841E42F10200E6B32D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3C506861E42F10200E6B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shooter500.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A3C5067A1E42F10200E6B32D /* AppDelegate.swift */,
 				A3C5067E1E42F10200E6B32D /* Main.storyboard */,
 				A3C506811E42F10200E6B32D /* Assets.xcassets */,
+				A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */,
 				A3C506831E42F10200E6B32D /* LaunchScreen.storyboard */,
 				A3C506861E42F10200E6B32D /* Info.plist */,
 			);
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E505B51EA26DA8005C8E12 /* shooter500.jpeg in Resources */,
 				A3C506851E42F10200E6B32D /* LaunchScreen.storyboard in Resources */,
 				A3C506821E42F10200E6B32D /* Assets.xcassets in Resources */,
 				A3C506801E42F10200E6B32D /* Main.storyboard in Resources */,
