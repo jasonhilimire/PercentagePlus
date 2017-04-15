@@ -33,9 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var upperLeftLabel: UILabel!
 
     @IBAction func slider(_ sender: UISlider) {
-        
         sliderValue = Int(sender.value)
-        sliderLbl.text = "\(Int(sliderValue))"
+        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         
     }
 
@@ -44,8 +43,6 @@ class ViewController: UIViewController {
        buttonPressed()
         upperLeft += 1
         upperLeftLabel.text = "\(upperLeft)"
-
-        
 }
 
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
@@ -65,7 +62,7 @@ class ViewController: UIViewController {
 
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         calcPercentageLbl.text = "0%"
-        enteredAmtLbl.text = "Enter Amount"
+        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         incrementValue = 0
         enableButtons()
         sliderOutlet.isHidden = false
@@ -85,7 +82,7 @@ class ViewController: UIViewController {
         } else {
             totalPercentCalc = ((incrementValue * 100) / sliderValue)
             self.calcPercentageLbl.text = "\(Int(totalPercentCalc))%"
-            self.enteredAmtLbl.text = "\(Int(incrementValue)):\(Int(sliderValue))"
+            self.enteredAmtLbl.text = "Total Shots Made: \(Int(incrementValue))"
             print(incrementValue, totalPercentCalc)
             
             
@@ -109,8 +106,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         enableButtons()
-        sliderValue = 10
-        sliderLbl.text = "\(Int(sliderValue))"
+        calcPercentageLbl.text = "0%"
+        sliderValue = 15
+        enteredAmtLbl.text = "Use Slider to Enter Count"
+        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
 
     }
 
