@@ -61,8 +61,9 @@ class ViewController: UIViewController {
          buttonPressed()
     }
     
-    @IBAction func resetButtonPressed(_ sender: UIButton) {
-        
+    
+
+    @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         calcPercentageLbl.text = "0%"
         enteredAmtLbl.text = "Enter Amount"
         incrementValue = 0
@@ -70,10 +71,7 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
         upperLeft = 0
         upperLeftLabel.text = "0"
-
     }
-    
-
    
 
 
