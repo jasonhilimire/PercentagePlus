@@ -13,8 +13,8 @@ var sliderValue: Int = 0
 var incrementValue: Int = 0
 var upperRight: Int = 0
 var upperLeft: Int = 0
-var bottomLeft: Int = 0
-var bottomRight: Int = 0
+var lowerLeft: Int = 0
+var lowerRight: Int = 0
 var totalPercentCalc = 0
 
 
@@ -31,6 +31,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderOutlet: UISlider!
     @IBOutlet weak var incrementButtonBR: UIButton!
     @IBOutlet weak var upperLeftLabel: UILabel!
+    @IBOutlet weak var upperRightLabel: UILabel!
+    @IBOutlet weak var lowerLeftLabel: UILabel!
+    @IBOutlet weak var lowerRightLabel: UILabel!
 
     @IBAction func slider(_ sender: UISlider) {
         sliderValue = Int(sender.value)
@@ -46,16 +49,22 @@ class ViewController: UIViewController {
 }
 
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
-         buttonPressed()
+        buttonPressed()
+        upperRight += 1
+        upperRightLabel.text = "\(upperRight)"
     }
     
     
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
-         buttonPressed()
+        buttonPressed()
+        lowerLeft += 1
+        lowerLeftLabel.text = "\(lowerLeft)"
     }
    
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
-         buttonPressed()
+        buttonPressed()
+        lowerRight += 1
+        lowerRightLabel.text = "\(lowerRight)"
     }
     
     
