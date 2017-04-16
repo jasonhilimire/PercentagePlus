@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 var sliderValue: Int = 0
 var incrementValue: Int = 0
 var upperRight: Int = 0
@@ -20,8 +19,6 @@ var summedShots = 0
 var summedPercentCalc = 0
 var summedShootingCycle = 1
 var summedShotsMade = 0
-
-
 
 
 class ViewController: UIViewController {
@@ -45,15 +42,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalShotsMade: UILabel!
     
     
-    
-    
     @IBAction func slider(_ sender: UISlider) {
         sliderValue = Int(sender.value)
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-        
     }
 
-    
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
         upperLeft += 1
@@ -79,13 +72,10 @@ class ViewController: UIViewController {
         lowerRightLabel.text = "\(lowerRight)"
     }
     
-    
-
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         partialScreenReset()
     }
    
-
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         summedShootingCycle += 1
         summedShots += sliderValue
@@ -99,31 +89,24 @@ class ViewController: UIViewController {
     
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
         fullScreenReset()
-        
     }
 
     func totalShootingPercentage( ) {
         summedPercentCalc = ((summedShotsMade * 100) / summedShots)
         totalShootingPerc.text = "Today's Shooting Percentage: \(summedPercentCalc)%"
-        
-        
     }
     
     func buttonPressed() {
         incrementValue += 1
-//        enableButtons()
         sliderOutlet.isHidden = true
 
         if incrementValue > sliderValue {
-        disableButtons()
+            disableButtons()
         } else {
             totalPercentCalc = ((incrementValue * 100) / sliderValue)
             self.calcPercentageLbl.text = "\(Int(totalPercentCalc))%"
             self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
-            print(incrementValue, totalPercentCalc)
-            
-            
-            
+//            print(incrementValue, totalPercentCalc)
         }
     }
     
@@ -174,8 +157,5 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         fullScreenReset()
-  
-
     }
-
 }
