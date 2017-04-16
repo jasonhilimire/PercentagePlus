@@ -16,6 +16,8 @@ var upperLeft: Int = 0
 var lowerLeft: Int = 0
 var lowerRight: Int = 0
 var totalPercentCalc = 0
+var summedShots = 0
+var summedPercentCalc = 0
 
 
 
@@ -35,6 +37,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerLeftLabel: UILabel!
     @IBOutlet weak var lowerRightLabel: UILabel!
 
+    @IBOutlet weak var totalShootingPerc: UILabel!
+    @IBOutlet weak var totalShotsTaken: UILabel!
+    
+    
+    
+    
     @IBAction func slider(_ sender: UISlider) {
         sliderValue = Int(sender.value)
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
@@ -87,6 +95,11 @@ class ViewController: UIViewController {
     }
    
 
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
+    }
 
     func buttonPressed() {
         incrementValue += 1
