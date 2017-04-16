@@ -42,6 +42,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var totalShootingPerc: UILabel!
     @IBOutlet weak var totalShotsTaken: UILabel!
+    @IBOutlet weak var totalShotsMade: UILabel!
     
     
     
@@ -88,11 +89,12 @@ class ViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         summedShootingCycle += 1
         summedShots += sliderValue
+        summedShotsMade += incrementValue
         totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
         sliderOutlet.isHidden = false
-        summedShotsMade += incrementValue
         totalShootingPercentage()
         partialScreenReset()
+        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
     }
     
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
@@ -163,7 +165,11 @@ class ViewController: UIViewController {
         partialScreenReset()
         totalShotsTaken.text = "Today's Shots Taken: 0"
         totalShootingPerc.text = "Today's Shooting Percentage: 0%"
+        totalShotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
+        summedShots = 0
+        summedShotsMade = 0
+        summedPercentCalc = 0
     }
     
     override func viewDidLoad() {

@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Slider to Enter Shot Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
-                                <rect key="frame" x="20" y="455" width="160" height="88"/>
+                                <rect key="frame" x="20" y="469" width="156" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -201,7 +201,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bw6-Pq-cCE"/>
-                                    <barButtonItem title="Reset" id="GdM-au-vwu">
+                                    <barButtonItem title="Reset Current Cycle" id="GdM-au-vwu">
                                         <connections>
                                             <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="eTN-Dq-J4E"/>
                                         </connections>
@@ -214,6 +214,13 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Shots Made: 100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-rz-Zwh">
+                                <rect key="frame" x="20" y="534" width="156" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -229,6 +236,7 @@
                         <outlet property="sliderLbl" destination="MSp-dj-IKW" id="ulA-ec-rGz"/>
                         <outlet property="sliderOutlet" destination="1Ly-lE-7Zx" id="iXD-lF-pdg"/>
                         <outlet property="totalShootingPerc" destination="jhk-MP-92x" id="Xab-2t-K00"/>
+                        <outlet property="totalShotsMade" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="totalShotsTaken" destination="Tqk-Xa-Lhf" id="Zjg-Tq-XbA"/>
                         <outlet property="upperLeftLabel" destination="gYH-dm-i82" id="2dV-90-auB"/>
                         <outlet property="upperRightLabel" destination="veJ-ub-n8d" id="SCM-TV-r27"/>
