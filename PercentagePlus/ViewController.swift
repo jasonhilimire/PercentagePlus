@@ -18,6 +18,9 @@ var lowerRight: Int = 0
 var totalPercentCalc = 0
 var summedShots = 0
 var summedPercentCalc = 0
+var summedShootingCycle = 1
+var summedShotsMade = 0
+
 
 
 
@@ -51,7 +54,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
-       buttonPressed()
+        buttonPressed()
         upperLeft += 1
         upperLeftLabel.text = "\(upperLeft)"
 }
@@ -78,29 +81,32 @@ class ViewController: UIViewController {
     
 
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
-        calcPercentageLbl.text = "0%"
-        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
-        incrementValue = 0
-        enableButtons()
-        sliderOutlet.isHidden = false
-        // reset all labels & values
-        upperLeft = 0
-        upperLeftLabel.text = "0"
-        upperRight = 0
-        upperRightLabel.text = "0"
-        lowerLeft = 0
-        lowerLeftLabel.text = "0"
-        lowerRight = 0
-        lowerRightLabel.text = "0"
+        partialScreenReset()
     }
    
 
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        summedShootingCycle += 1
+        summedShots += sliderValue
+        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
+        sliderOutlet.isHidden = false
+        summedShotsMade += incrementValue
+        totalShootingPercentage()
+        partialScreenReset()
     }
     
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
+        fullScreenReset()
+        
     }
 
+    func totalShootingPercentage( ) {
+        summedPercentCalc = ((summedShotsMade * 100) / summedShots)
+        totalShootingPerc.text = "Today's Shooting Percentage: \(summedPercentCalc)%"
+        
+        
+    }
+    
     func buttonPressed() {
         incrementValue += 1
 //        enableButtons()
@@ -111,7 +117,7 @@ class ViewController: UIViewController {
         } else {
             totalPercentCalc = ((incrementValue * 100) / sliderValue)
             self.calcPercentageLbl.text = "\(Int(totalPercentCalc))%"
-            self.enteredAmtLbl.text = "Total Shots Made: \(Int(incrementValue))"
+            self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
             print(incrementValue, totalPercentCalc)
             
             
@@ -133,12 +139,36 @@ class ViewController: UIViewController {
         incrementButtonUR.isEnabled = false
     }
     
-    override func viewDidLoad() {
+    func partialScreenReset() {
         enableButtons()
         calcPercentageLbl.text = "0%"
         sliderValue = 15
         enteredAmtLbl.text = "Use Slider to Enter Count"
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
+        sliderOutlet.isHidden = false
+        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
+        incrementValue = 0
+        upperLeft = 0
+        upperLeftLabel.text = "0"
+        upperRight = 0
+        upperRightLabel.text = "0"
+        lowerLeft = 0
+        lowerLeftLabel.text = "0"
+        lowerRight = 0
+        lowerRightLabel.text = "0"
+        
+    }
+    
+    func fullScreenReset() {
+        partialScreenReset()
+        totalShotsTaken.text = "Today's Shots Taken: 0"
+        totalShootingPerc.text = "Today's Shooting Percentage: 0%"
+        sliderOutlet.isHidden = false
+    }
+    
+    override func viewDidLoad() {
+        fullScreenReset()
+  
 
     }
 
