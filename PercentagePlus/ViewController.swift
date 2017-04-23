@@ -41,6 +41,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalShotsTaken: UILabel!
     @IBOutlet weak var totalShotsMade: UILabel!
     
+    @IBOutlet weak var ulShotsMadeLabel: UILabel!
+    @IBOutlet weak var urShotsMadeLabel: UILabel!
+    @IBOutlet weak var llShotsMadeLabel: UILabel!
+    @IBOutlet weak var lrShotsMadeLabel: UILabel!
+    
+    
+    
+    
     
     @IBAction func slider(_ sender: UISlider) {
         sliderValue = Int(sender.value)

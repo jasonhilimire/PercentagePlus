@@ -259,15 +259,19 @@
                         <outlet property="incrementButtonBR" destination="bFd-TT-Diw" id="2HH-i2-gNS"/>
                         <outlet property="incrementButtonUL" destination="3tb-Tg-d9G" id="BMa-yY-yfe"/>
                         <outlet property="incrementButtonUR" destination="PzP-dD-Gvh" id="EDj-4c-B8z"/>
+                        <outlet property="llShotsMadeLabel" destination="bgj-85-ifX" id="wvh-Fs-Q1V"/>
                         <outlet property="lowerLeftLabel" destination="IBn-oU-PeC" id="cyo-JQ-yst"/>
                         <outlet property="lowerRightLabel" destination="eC7-QZ-LCw" id="y4p-tJ-UPx"/>
+                        <outlet property="lrShotsMadeLabel" destination="F39-H7-MEq" id="YUA-dk-Q4G"/>
                         <outlet property="sliderLbl" destination="MSp-dj-IKW" id="ulA-ec-rGz"/>
                         <outlet property="sliderOutlet" destination="1Ly-lE-7Zx" id="iXD-lF-pdg"/>
                         <outlet property="totalShootingPerc" destination="jhk-MP-92x" id="Xab-2t-K00"/>
                         <outlet property="totalShotsMade" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="totalShotsTaken" destination="Tqk-Xa-Lhf" id="Zjg-Tq-XbA"/>
+                        <outlet property="ulShotsMadeLabel" destination="5Rv-Nq-uL7" id="VQI-M0-cgX"/>
                         <outlet property="upperLeftLabel" destination="gYH-dm-i82" id="2dV-90-auB"/>
                         <outlet property="upperRightLabel" destination="veJ-ub-n8d" id="SCM-TV-r27"/>
+                        <outlet property="urShotsMadeLabel" destination="6D5-Ac-x3T" id="bcY-dv-RSO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
