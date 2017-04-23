@@ -49,41 +49,46 @@ class ViewController: UIViewController {
     
     
     
-    
+    // Slider Value
     @IBAction func slider(_ sender: UISlider) {
         sliderValue = Int(sender.value)
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
     }
 
+    //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
         upperLeft += 1
         upperLeftLabel.text = "\(upperLeft)"
 }
 
+    // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
         upperRight += 1
         upperRightLabel.text = "\(upperRight)"
     }
     
-    
+    // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
         lowerLeft += 1
         lowerLeftLabel.text = "\(lowerLeft)"
     }
    
+    // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
         lowerRight += 1
         lowerRightLabel.text = "\(lowerRight)"
     }
     
+    
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         partialScreenReset()
     }
    
+    // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         summedShootingCycle += 1
         summedShots += sliderValue
@@ -95,6 +100,8 @@ class ViewController: UIViewController {
         totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
     }
     
+    
+    // full delete of all Values
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
         fullScreenReset()
     }
@@ -104,6 +111,8 @@ class ViewController: UIViewController {
         totalShootingPerc.text = "Today's Shooting Percentage: \(summedPercentCalc)%"
     }
     
+    
+    // incremets values in buttons and updates percent calculations
     func buttonPressed() {
         incrementValue += 1
         sliderOutlet.isHidden = true
@@ -132,6 +141,7 @@ class ViewController: UIViewController {
         incrementButtonUR.isEnabled = false
     }
     
+    // only resets the 4 corners and current data values - doesn not reset saved data values
     func partialScreenReset() {
         enableButtons()
         calcPercentageLbl.text = "0%"
@@ -152,6 +162,7 @@ class ViewController: UIViewController {
         
     }
     
+    // full reset of all data values
     func fullScreenReset() {
         partialScreenReset()
         totalShotsTaken.text = "Today's Shots Taken: 0"
