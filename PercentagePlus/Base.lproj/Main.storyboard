@@ -36,7 +36,6 @@
                                 </state>
                                 <connections>
                                     <action selector="imageBtn:" destination="i68-Vn-4NQ" eventType="touchUpInside" id="oqP-6t-6xi"/>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="sHx-p5-vYk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,12 +62,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hockey-goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-EH-cgl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Hockey-goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-EH-cgl">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
                                 <rect key="frame" x="229" y="243" width="100" height="100"/>
@@ -121,21 +119,6 @@
                                     <action selector="incrementButtonPressedBR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQl-tO-SYu"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zAS-ej-U2W">
-                                <rect key="frame" x="0.0" y="724" width="703" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="trash" id="yB6-Mg-9rz"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="g6e-fk-nw7"/>
-                                    <barButtonItem title="Reset" id="hWh-H6-BB3">
-                                        <connections>
-                                            <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="7sU-Zx-jtp"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eNi-wR-zxc"/>
-                                    <barButtonItem systemItem="save" id="4Or-jb-9iI"/>
-                                </items>
-                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Shots: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSp-dj-IKW">
                                 <rect key="frame" x="387" y="642" width="250" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,9 +175,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEV-h8-IFc">
-                                <rect key="frame" x="0.0" y="724" width="703" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEV-h8-IFc">
+                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="zJB-9o-Llk">
                                         <connections>
@@ -252,6 +234,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cBi-EH-cgl" secondAttribute="trailing" id="3Mg-ie-fqF"/>
+                            <constraint firstItem="cBi-EH-cgl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ED-dv-awB"/>
+                            <constraint firstItem="yEV-h8-IFc" firstAttribute="top" secondItem="cBi-EH-cgl" secondAttribute="bottom" id="S2M-3K-iei"/>
+                            <constraint firstItem="cBi-EH-cgl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pMS-rb-DOS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="calcPercentageLbl" destination="wMw-RI-ndM" id="8Ca-da-JNv"/>
