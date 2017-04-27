@@ -100,22 +100,27 @@ class ViewController: UIViewController {
         totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
         sliderOutlet.isHidden = false
         totalShootingPercentage()
-        partialScreenReset()
+        
         totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
         
+        calculateTotals()
+        
+        partialScreenReset()
+    }
+    
+    func calculateTotals() {
         ulTotal += upperLeft
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
         
         urTotal += upperRight
-        urShotsMadeLabel.text = "Total Shots Made Upper Left: \(urTotal)"
+        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
         
-        llTotal += upperRight
-        llShotsMadeLabel.text = "Total Shots Made Upper Left: \(llTotal)"
+        llTotal += lowerLeft
+        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
         
         lrTotal += lowerRight
-        lrShotsMadeLabel.text = "Total Shots Made Upper Left: \(lrTotal)"
+        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
     }
-    
     
     // full delete of all Values
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
@@ -193,13 +198,13 @@ class ViewController: UIViewController {
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
         
         urTotal = 0
-        urShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+        urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
         
         llTotal = 0
-        llShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+        llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
         
         lrTotal = 0
-        lrShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+        lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
     }
     
     override func viewDidLoad() {
