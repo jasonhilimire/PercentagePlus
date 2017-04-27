@@ -19,6 +19,10 @@ var summedShots = 0
 var summedPercentCalc = 0
 var summedShootingCycle = 1
 var summedShotsMade = 0
+var ulTotal = 0
+var urTotal = 0
+var llTotal = 0
+var lrTotal = 0
 
 
 class ViewController: UIViewController {
@@ -98,6 +102,18 @@ class ViewController: UIViewController {
         totalShootingPercentage()
         partialScreenReset()
         totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+        
+        ulTotal += upperLeft
+        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
+        
+        urTotal += upperRight
+        urShotsMadeLabel.text = "Total Shots Made Upper Left: \(urTotal)"
+        
+        llTotal += upperRight
+        llShotsMadeLabel.text = "Total Shots Made Upper Left: \(llTotal)"
+        
+        lrTotal += lowerRight
+        lrShotsMadeLabel.text = "Total Shots Made Upper Left: \(lrTotal)"
     }
     
     
@@ -172,6 +188,18 @@ class ViewController: UIViewController {
         summedShots = 0
         summedShotsMade = 0
         summedPercentCalc = 0
+        
+        ulTotal = 0
+        ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+        
+        urTotal = 0
+        urShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+        
+        llTotal = 0
+        llShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+        
+        lrTotal = 0
+        lrShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
     }
     
     override func viewDidLoad() {
