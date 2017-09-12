@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         
         calculateTotals()
         
-        partialScreenReset()
+        saveButtonScreenReset()
     }
     
     func calculateTotals() {
@@ -162,6 +162,17 @@ class ViewController: UIViewController {
         incrementButtonUR.isEnabled = false
     }
     
+    func resetCornerLabels() {
+        upperLeft = 0
+        upperLeftLabel.text = "0"
+        upperRight = 0
+        upperRightLabel.text = "0"
+        lowerLeft = 0
+        lowerLeftLabel.text = "0"
+        lowerRight = 0
+        lowerRightLabel.text = "0"
+    }
+    
     // only resets the 4 corners and current data values - doesn not reset saved data values
     func partialScreenReset() {
         enableButtons()
@@ -172,14 +183,18 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         incrementValue = 0
-        upperLeft = 0
-        upperLeftLabel.text = "0"
-        upperRight = 0
-        upperRightLabel.text = "0"
-        lowerLeft = 0
-        lowerLeftLabel.text = "0"
-        lowerRight = 0
-        lowerRightLabel.text = "0"
+        resetCornerLabels()
+        
+    }
+    
+    func saveButtonScreenReset() {
+        enableButtons()
+        calcPercentageLbl.text = "0%"
+        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
+        sliderOutlet.isHidden = false
+        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
+        incrementValue = 0
+        resetCornerLabels()
         
     }
     
