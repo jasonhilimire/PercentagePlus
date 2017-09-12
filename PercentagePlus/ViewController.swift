@@ -187,6 +187,7 @@ class ViewController: UIViewController {
         
     }
     
+    // save button reset- keeps the slider value intact to continue
     func saveButtonScreenReset() {
         enableButtons()
         calcPercentageLbl.text = "0%"
@@ -222,6 +223,7 @@ class ViewController: UIViewController {
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
     }
     
+    // clear screen-reset when app is launched each time
     override func viewDidLoad() {
         fullScreenReset()
     }
