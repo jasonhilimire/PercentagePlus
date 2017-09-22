@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         
         calculateTotals()
         
-        saveButtonScreenReset()
+        partialScreenReset()
     }
     
     func calculateTotals() {
@@ -133,7 +133,7 @@ class ViewController: UIViewController {
     }
     
     
-    // incremets values in buttons and updates percent calculations
+    // increments values in buttons and updates percent calculations
     func buttonPressed() {
         incrementValue += 1
         sliderOutlet.isHidden = true
@@ -173,11 +173,11 @@ class ViewController: UIViewController {
         lowerRightLabel.text = "0"
     }
     
-    // only resets the 4 corners and current data values - doesn not reset saved data values
+    // only resets the 4 corners and current data values- does not reset saved data values or slider
     func partialScreenReset() {
         enableButtons()
         calcPercentageLbl.text = "0%"
-        sliderValue = 15
+//        sliderValue = 15
         enteredAmtLbl.text = "Use Slider to Enter Count"
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         sliderOutlet.isHidden = false
@@ -187,17 +187,17 @@ class ViewController: UIViewController {
         
     }
     
-    // save button reset- keeps the slider value intact to continue
-    func saveButtonScreenReset() {
-        enableButtons()
-        calcPercentageLbl.text = "0%"
-        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-        sliderOutlet.isHidden = false
-        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
-        incrementValue = 0
-        resetCornerLabels()
-        
-    }
+//    // save button reset- keeps the slider value intact to continue
+//    func saveButtonScreenReset() {
+//        enableButtons()
+//        calcPercentageLbl.text = "0%"
+//        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
+//        sliderOutlet.isHidden = false
+//        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
+//        incrementValue = 0
+//        resetCornerLabels()
+//
+//    }
     
     // full reset of all data values
     func fullScreenReset() {
@@ -206,6 +206,8 @@ class ViewController: UIViewController {
         totalShootingPerc.text = "Today's Shooting Percentage: 0%"
         totalShotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
+        sliderLbl.text = "Number of Shots: 15"
+        sliderValue = 15
         summedShots = 0
         summedShotsMade = 0
         summedPercentCalc = 0
@@ -226,5 +228,7 @@ class ViewController: UIViewController {
     // clear screen-reset when app is launched each time
     override func viewDidLoad() {
         fullScreenReset()
+        sliderLbl.text = "Number of Shots: 15"
+        sliderValue = 15
     }
 }
