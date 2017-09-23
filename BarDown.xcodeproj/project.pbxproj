@@ -24,7 +24,7 @@
 		A3B2D11D1EB9799000DE0AB1 /* ice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ice.jpg; sourceTree = "<group>"; };
 		A3B2D11F1EB97D0800DE0AB1 /* JerseyLetters.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JerseyLetters.ttf; sourceTree = "<group>"; };
 		A3BB1E1E1E746F75001E979F /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
-		A3C506771E42F10200E6B32D /* PercentagePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PercentagePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3C506771E42F10200E6B32D /* BarDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5067A1E42F10200E6B32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C5067C1E42F10200E6B32D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3C5067F1E42F10200E6B32D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		A3C506781E42F10200E6B32D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A3C506771E42F10200E6B32D /* PercentagePlus.app */,
+				A3C506771E42F10200E6B32D /* BarDown.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A3C506761E42F10200E6B32D /* PercentagePlus */ = {
+		A3C506761E42F10200E6B32D /* BarDown */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3C506891E42F10200E6B32D /* Build configuration list for PBXNativeTarget "PercentagePlus" */;
+			buildConfigurationList = A3C506891E42F10200E6B32D /* Build configuration list for PBXNativeTarget "BarDown" */;
 			buildPhases = (
 				A3C506731E42F10200E6B32D /* Sources */,
 				A3C506741E42F10200E6B32D /* Frameworks */,
@@ -121,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = PercentagePlus;
+			name = BarDown;
 			productName = PercentagePlus;
-			productReference = A3C506771E42F10200E6B32D /* PercentagePlus.app */;
+			productReference = A3C506771E42F10200E6B32D /* BarDown.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A3C506721E42F10200E6B32D /* Build configuration list for PBXProject "PercentagePlus" */;
+			buildConfigurationList = A3C506721E42F10200E6B32D /* Build configuration list for PBXProject "BarDown" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A3C506761E42F10200E6B32D /* PercentagePlus */,
+				A3C506761E42F10200E6B32D /* BarDown */,
 			);
 		};
 /* End PBXProject section */
@@ -358,7 +358,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A3C506721E42F10200E6B32D /* Build configuration list for PBXProject "PercentagePlus" */ = {
+		A3C506721E42F10200E6B32D /* Build configuration list for PBXProject "BarDown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3C506871E42F10200E6B32D /* Debug */,
@@ -367,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3C506891E42F10200E6B32D /* Build configuration list for PBXNativeTarget "PercentagePlus" */ = {
+		A3C506891E42F10200E6B32D /* Build configuration list for PBXNativeTarget "BarDown" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3C5068A1E42F10200E6B32D /* Debug */,

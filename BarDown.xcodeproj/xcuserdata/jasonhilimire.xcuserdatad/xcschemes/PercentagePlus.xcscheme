@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A3C506761E42F10200E6B32D"
-               BuildableName = "PercentagePlus.app"
-               BlueprintName = "PercentagePlus"
-               ReferencedContainer = "container:PercentagePlus.xcodeproj">
+               BuildableName = "BarDown.app"
+               BlueprintName = "BarDown"
+               ReferencedContainer = "container:BarDown.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3C506761E42F10200E6B32D"
-            BuildableName = "PercentagePlus.app"
-            BlueprintName = "PercentagePlus"
-            ReferencedContainer = "container:PercentagePlus.xcodeproj">
+            BuildableName = "BarDown.app"
+            BlueprintName = "BarDown"
+            ReferencedContainer = "container:BarDown.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3C506761E42F10200E6B32D"
-            BuildableName = "PercentagePlus.app"
-            BlueprintName = "PercentagePlus"
-            ReferencedContainer = "container:PercentagePlus.xcodeproj">
+            BuildableName = "BarDown.app"
+            BlueprintName = "BarDown"
+            ReferencedContainer = "container:BarDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3C506761E42F10200E6B32D"
-            BuildableName = "PercentagePlus.app"
-            BlueprintName = "PercentagePlus"
-            ReferencedContainer = "container:PercentagePlus.xcodeproj">
+            BuildableName = "BarDown.app"
+            BlueprintName = "BarDown"
+            ReferencedContainer = "container:BarDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
