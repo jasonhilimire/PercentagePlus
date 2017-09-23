@@ -199,7 +199,7 @@ class ViewController: UIViewController {
 //
 //    }
     
-    // full reset of all data values
+    // full reset of all data values excluding slider
     func fullScreenReset() {
         partialScreenReset()
         totalShotsTaken.text = "Today's Shots Taken: 0"
@@ -225,7 +225,7 @@ class ViewController: UIViewController {
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
     }
     
-    // clear screen-reset when app is launched each time
+    // clear screen-reset when app is launched each time and set slider to default value of 15
     override func viewDidLoad() {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
