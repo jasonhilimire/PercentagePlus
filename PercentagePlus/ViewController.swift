@@ -105,6 +105,27 @@ class ViewController: UIViewController {
         
         calculateTotals()
         
+        
+        // first go at adding UIActionAlert Controller & it works!!
+        
+        if incrementValue == 0 {
+            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post!, this is just a warmup right?", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+            present(ac, animated: true)
+        } else if incrementValue  >= 4 && incrementValue  <= 9 {
+            let ac = UIAlertController(title: title, message: "Nice Shooting Tex!, A few of those will get by the tendy for sure", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+            present(ac, animated: true)
+        } else if incrementValue  >= 10 {
+            let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+            present(ac, animated: true)
+        }
+        
         partialScreenReset()
     }
     
@@ -174,7 +195,7 @@ class ViewController: UIViewController {
     }
     
     // only resets the 4 corners and current data values- does not reset saved data values or slider
-    func partialScreenReset() {
+    func partialScreenReset(action: UIAlertAction! = nil) {
         enableButtons()
         calcPercentageLbl.text = "0%"
 //        sliderValue = 15
