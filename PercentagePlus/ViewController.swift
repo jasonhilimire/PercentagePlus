@@ -116,7 +116,7 @@ class ViewController: UIViewController {
             present(ac, animated: true)
         
         case 1..<5:
-            let ac = UIAlertController(title: title, message: "Heating U0", preferredStyle: .alert)
+            let ac = UIAlertController(title: title, message: "Heating Up, Let's Keep going for more!", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
             present(ac, animated: true)
        
