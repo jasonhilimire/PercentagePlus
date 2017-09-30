@@ -106,28 +106,39 @@ class ViewController: UIViewController {
         calculateTotals()
         
         
-        // first go at adding UIActionAlert Controller & it works!!
+        // first go at adding UIActionAlert Controller & it works!! using a switch case successfully
+
         
-        if incrementValue == 0 {
-            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post!, this is just a warmup right?", preferredStyle: .alert)
+        switch incrementValue {
+        case 0:
+            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
             present(ac, animated: true)
-        } else if incrementValue  >= 4 && incrementValue  <= 9 {
-            let ac = UIAlertController(title: title, message: "Nice Shooting Tex!, A few of those will get by the tendy for sure", preferredStyle: .alert)
+        
+        case 1..<5:
+            let ac = UIAlertController(title: title, message: "Heating U0", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
             present(ac, animated: true)
-        } else if incrementValue  >= 10 {
+       
+        case 5..<10:
+            let ac = UIAlertController(title: title, message: "Nice Shooting Bud! A few of those will get by the tendy for sure", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+            present(ac, animated: true)
+        
+        case 10..<100:
             let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
             present(ac, animated: true)
-        } else {
+
+        default:
             let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-            present(ac, animated: true)
+             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+             present(ac, animated: true)
         }
         
         partialScreenReset()
     }
+    
     
     func calculateTotals() {
         ulTotal += upperLeft
