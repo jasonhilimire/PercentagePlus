@@ -78,9 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hockey-goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-EH-cgl">
-                                <rect key="frame" x="3" y="-70" width="730" height="553"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hockey-goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-EH-cgl">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
                                 <rect key="frame" x="232" y="60" width="100" height="100"/>
@@ -283,12 +282,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cBi-EH-cgl" secondAttribute="bottom" id="6O8-hn-LaG"/>
                             <constraint firstAttribute="trailing" secondItem="1Ly-lE-7Zx" secondAttribute="trailing" constant="20" id="7yw-7b-avt"/>
                             <constraint firstAttribute="trailing" secondItem="yEV-h8-IFc" secondAttribute="trailing" id="ObJ-yT-YYM"/>
                             <constraint firstItem="yEV-h8-IFc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="P1d-Mb-Uuc"/>
                             <constraint firstItem="1Ly-lE-7Zx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="YOM-Hq-3wW"/>
+                            <constraint firstItem="cBi-EH-cgl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yqx-rm-eF2"/>
+                            <constraint firstItem="cBi-EH-cgl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zoo-Zd-oR7"/>
                             <constraint firstItem="yEV-h8-IFc" firstAttribute="top" secondItem="1Ly-lE-7Zx" secondAttribute="bottom" constant="20" id="oTV-iz-9jB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yEV-h8-IFc" secondAttribute="bottom" id="tPT-cy-AVG"/>
+                            <constraint firstAttribute="trailing" secondItem="cBi-EH-cgl" secondAttribute="trailing" id="w2w-Oq-aQG"/>
                         </constraints>
                     </view>
                     <connections>
