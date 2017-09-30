@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARDOWN!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6a-fA-hsl">
-                                <rect key="frame" x="0.0" y="40" width="1024" height="58.5"/>
+                                <rect key="frame" x="0.0" y="40" width="1024" height="62"/>
                                 <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="50"/>
                                 <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
