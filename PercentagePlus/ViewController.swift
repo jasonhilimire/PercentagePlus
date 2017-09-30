@@ -107,8 +107,6 @@ class ViewController: UIViewController {
         
         
         // first go at adding UIActionAlert Controller & it works!! using a switch case successfully
-
-        
         switch incrementValue {
         case 0:
             let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
@@ -219,17 +217,6 @@ class ViewController: UIViewController {
         
     }
     
-//    // save button reset- keeps the slider value intact to continue
-//    func saveButtonScreenReset() {
-//        enableButtons()
-//        calcPercentageLbl.text = "0%"
-//        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-//        sliderOutlet.isHidden = false
-//        enteredAmtLbl.text = "Use Slider to Enter Shot Count"
-//        incrementValue = 0
-//        resetCornerLabels()
-//
-//    }
     
     // full reset of all data values excluding slider
     func fullScreenReset() {
