@@ -81,13 +81,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hockey-goal.png" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-EH-cgl">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
-                                <rect key="frame" x="232" y="60" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
+                                <rect key="frame" x="156" y="100" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Dpm-me-B6V"/>
-                                    <constraint firstAttribute="width" constant="100" id="vxk-4l-a53"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,26 +94,28 @@
                                     <action selector="incrementBtnPressedUL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3U-I3-tVh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
-                                <rect key="frame" x="436" y="60" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
+                                <rect key="frame" x="467" y="100" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93440347909999999" green="0.40369927880000001" blue="0.40875646469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="GNT-oh-5NE"/>
-                                    <constraint firstAttribute="height" constant="100" id="yY6-IB-CyC"/>
-                                </constraints>
                                 <connections>
                                     <action selector="incrementButtonPressedUR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8L-sD-g6D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
-                                <rect key="frame" x="225" y="169" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
+                                <rect key="frame" x="156" y="198" width="73" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.33616787195205688" green="0.083100028336048126" blue="0.46183145046234131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="PfP-js-h8y"/>
-                                    <constraint firstAttribute="height" constant="100" id="i5Q-LM-RRk"/>
-                                </constraints>
                                 <connections>
                                     <action selector="incrementButtonPressedBL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SA-NI-6bh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
+                                <rect key="frame" x="462" y="198" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="incrementButtonPressedBR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQl-tO-SYu"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx">
@@ -128,27 +127,16 @@
                                     <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="vvE-6P-GuZ"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
-                                <rect key="frame" x="436" y="169" width="75" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="s1W-5O-wpU"/>
-                                    <constraint firstAttribute="height" constant="100" id="tuK-ez-TM0"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="incrementButtonPressedBR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQl-tO-SYu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Number of Shots: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSp-dj-IKW">
-                                <rect key="frame" x="159.5" y="194" width="250" height="21"/>
+                                <rect key="frame" x="229" y="266" width="209" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="NcZ-aZ-53H"/>
                                     <constraint firstAttribute="height" constant="21" id="hS8-bk-Wqj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYH-dm-i82">
-                                <rect key="frame" x="250" y="82" width="65" height="56"/>
+                                <rect key="frame" x="161" y="109" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="3gu-fH-J0J"/>
                                     <constraint firstAttribute="height" constant="56" id="mfb-Z6-z0V"/>
@@ -157,7 +145,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veJ-ub-n8d" userLabel="Upper Right Label">
-                                <rect key="frame" x="454" y="82" width="65" height="56"/>
+                                <rect key="frame" x="472" y="109" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="97w-3w-LRm"/>
                                     <constraint firstAttribute="height" constant="56" id="WK4-sR-7qd"/>
@@ -165,8 +153,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-QZ-LCw" userLabel="Lower Right Label">
-                                <rect key="frame" x="429" y="188" width="65" height="56"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-QZ-LCw" userLabel="Lower Right Label">
+                                <rect key="frame" x="467" y="207" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="BIQ-3v-yKI"/>
                                     <constraint firstAttribute="width" constant="65" id="Sfn-cK-1k3"/>
@@ -174,21 +162,21 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Todays Shoot Percent : 100%" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhk-MP-92x">
-                                <rect key="frame" x="563" y="101" width="150" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Todays Shooting Percentage : 100%" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhk-MP-92x">
+                                <rect key="frame" x="543" y="171" width="104" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="0wM-o8-bSH"/>
                                     <constraint firstAttribute="width" constant="150" id="pCH-ye-vQ6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Shots: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqk-Xa-Lhf">
-                                <rect key="frame" x="563" y="167" width="150" height="68"/>
+                                <rect key="frame" x="552" y="251" width="95" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="1Dm-Zr-n5W"/>
                                     <constraint firstAttribute="width" constant="150" id="TcV-Pn-UJS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEV-h8-IFc">
                                 <rect key="frame" x="0.0" y="331" width="667" height="44"/>
@@ -216,7 +204,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Shots Made: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-rz-Zwh">
-                                <rect key="frame" x="38" y="5" width="103" height="50"/>
+                                <rect key="frame" x="20" y="14" width="103" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="FIy-d7-pVl"/>
                                     <constraint firstAttribute="height" constant="50" id="gjJ-mW-zlk"/>
@@ -224,7 +212,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Shots Made Upper Left: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rv-Nq-uL7">
-                                <rect key="frame" x="38" y="71" width="103" height="50"/>
+                                <rect key="frame" x="20" y="80" width="103" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="YRS-Fh-y1Q"/>
                                     <constraint firstAttribute="height" constant="50" id="ZXa-C4-CUm"/>
@@ -232,7 +220,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Shots Made Upper Right: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D5-Ac-x3T">
-                                <rect key="frame" x="38" y="120" width="103" height="50"/>
+                                <rect key="frame" x="20" y="129" width="103" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MFm-Cn-MkH"/>
                                     <constraint firstAttribute="width" constant="156" id="Nzf-Pf-N1I"/>
@@ -240,7 +228,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Shots Made Lower Left: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgj-85-ifX">
-                                <rect key="frame" x="38" y="178" width="103" height="50"/>
+                                <rect key="frame" x="20" y="187" width="103" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="9cg-DO-8bl"/>
                                     <constraint firstAttribute="height" constant="50" id="UOp-Dv-PmL"/>
@@ -248,7 +236,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Shots Made Lower Right: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F39-H7-MEq">
-                                <rect key="frame" x="38" y="228" width="103" height="50"/>
+                                <rect key="frame" x="20" y="237" width="103" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="SAn-au-2bX"/>
                                     <constraint firstAttribute="height" constant="50" id="dOe-9H-edN"/>
@@ -256,14 +244,15 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMw-RI-ndM">
-                                <rect key="frame" x="312.66666666666674" y="73" width="111.33333333333331" height="85"/>
+                                <rect key="frame" x="278" y="167" width="111.33333333333331" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="IPL-u7-iGT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="shadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-oU-PeC" userLabel="Lower Left Label">
-                                <rect key="frame" x="243" y="188" width="65" height="56"/>
+                                <rect key="frame" x="161" y="207" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="22f-Cl-cX7"/>
                                     <constraint firstAttribute="height" constant="56" id="kXl-Bo-OLY"/>
@@ -271,13 +260,10 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Use Slider to Enter Shot Count" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
-                                <rect key="frame" x="232" y="242" width="156" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="156" id="y7m-HD-7in"/>
-                                    <constraint firstAttribute="height" constant="55" id="yh3-tM-Ejf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Slider to Enter Shot Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
+                                <rect key="frame" x="215" y="301" width="236" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
