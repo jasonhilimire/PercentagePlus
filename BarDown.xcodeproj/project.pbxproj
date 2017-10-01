@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice-hockey-background.jpg"; sourceTree = "<group>"; };
 		A3A998351F7F5255003A20BD /* iphone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iphone.storyboard; sourceTree = "<group>"; };
 		A3B2D11D1EB9799000DE0AB1 /* ice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ice.jpg; sourceTree = "<group>"; };
 		A3B2D11F1EB97D0800DE0AB1 /* JerseyLetters.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JerseyLetters.ttf; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 				A3A998351F7F5255003A20BD /* iphone.storyboard */,
 				A3C506811E42F10200E6B32D /* Assets.xcassets */,
 				A3B2D11D1EB9799000DE0AB1 /* ice.jpg */,
+				A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */,
 				A3E505B81EA281FC005C8E12 /* Hockey-goal.png */,
 				A3E505B61EA27B53005C8E12 /* shot.mp3 */,
 				A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */,
