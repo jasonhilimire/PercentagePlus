@@ -64,6 +64,10 @@ class ViewController: UIViewController {
         buttonPressed()
         upperLeft += 1
         upperLeftLabel.text = "\(upperLeft)"
+        
+        if upperLeft >= sliderValue {
+            disableButtons()
+        }
 }
 
     // Upper Right Corner button pressed
@@ -71,6 +75,10 @@ class ViewController: UIViewController {
         buttonPressed()
         upperRight += 1
         upperRightLabel.text = "\(upperRight)"
+        
+        if upperRight >= sliderValue {
+            disableButtons()
+        }
     }
     
     // lower left corner button pressed
@@ -78,6 +86,10 @@ class ViewController: UIViewController {
         buttonPressed()
         lowerLeft += 1
         lowerLeftLabel.text = "\(lowerLeft)"
+        
+        if lowerLeft >= sliderValue {
+            disableButtons()
+        }
     }
    
     // lower right corner button pressed
@@ -85,6 +97,10 @@ class ViewController: UIViewController {
         buttonPressed()
         lowerRight += 1
         lowerRightLabel.text = "\(lowerRight)"
+        
+        if lowerRight >= sliderValue {
+            disableButtons()
+        }
     }
     
     
@@ -107,32 +123,32 @@ class ViewController: UIViewController {
         
         
         // first go at adding UIActionAlert Controller & it works!! using a switch case successfully
-        switch incrementValue {
-        case 0:
-            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-            present(ac, animated: true)
-        
-        case 1..<5:
-            let ac = UIAlertController(title: title, message: "Heating Up, Let's Keep going for more!", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-            present(ac, animated: true)
-       
-        case 5..<10:
-            let ac = UIAlertController(title: title, message: "Nice Shooting Bud! A few of those will get by the tendy for sure", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-            present(ac, animated: true)
-        
-        case 10..<100:
-            let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-            present(ac, animated: true)
-
-        default:
-            let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
-             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-             present(ac, animated: true)
-        }
+//        switch incrementValue {
+//        case 0:
+//            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        case 1..<5:
+//            let ac = UIAlertController(title: title, message: "Heating Up, Let's Keep going for more!", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        case 5..<10:
+//            let ac = UIAlertController(title: title, message: "Nice Shooting Bud! A few of those will get by the tendy for sure", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        case 10..<100:
+//            let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        default:
+//            let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
+//             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//             present(ac, animated: true)
+//        }
         
         partialScreenReset()
     }
