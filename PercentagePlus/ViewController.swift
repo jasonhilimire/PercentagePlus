@@ -241,8 +241,8 @@ class ViewController: UIViewController {
         totalShootingPerc.text = "Today's Shooting Percentage: 0%"
         totalShotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
-        sliderLbl.text = "Number of Shots: 15"
-        sliderValue = 15
+//        sliderValue = 15
+        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         summedShots = 0
         summedShotsMade = 0
         summedPercentCalc = 0
