@@ -249,15 +249,15 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="2l9-lx-hPQ"/>
-                                    <barButtonItem title="Save" id="41g-t3-3kH">
+                                    <barButtonItem title="View Saved Cycles" id="6fh-8d-OsF">
                                         <connections>
-                                            <action selector="saveButtonPressed:" destination="BYZ-38-t0r" id="eFf-4f-lKb"/>
+                                            <segue destination="Ij5-2k-aYn" kind="showDetail" id="sP4-iw-BNN"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xVj-PT-aqa"/>
-                                    <barButtonItem systemItem="action" id="6fh-8d-OsF">
+                                    <barButtonItem title="Save" id="41g-t3-3kH">
                                         <connections>
-                                            <segue destination="Ij5-2k-aYn" kind="showDetail" id="sP4-iw-BNN"/>
+                                            <action selector="saveButtonPressed:" destination="BYZ-38-t0r" id="eFf-4f-lKb"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -362,7 +362,7 @@
             </objects>
             <point key="canvasLocation" x="-740" y="-346"/>
         </scene>
-        <!--Shot Cycle Count-->
+        <!--Shot Cycles-->
         <scene sceneID="aiS-cW-41J">
             <objects>
                 <tableViewController id="N6k-wC-xPy" customClass="ShotCycleTableViewController" customModule="BarDown" customModuleProvider="target" sceneMemberID="viewController">
@@ -397,10 +397,10 @@
                             <outlet property="delegate" destination="N6k-wC-xPy" id="Y15-oa-jGg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shot Cycle Count" id="YeM-Pa-l7y">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="gfj-yh-VP5">
+                    <navigationItem key="navigationItem" title="Shot Cycles" id="YEL-nj-v8K">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="f1c-vF-Ybc">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" id="8XV-Dr-Elb"/>
+                                <segue destination="BYZ-38-t0r" kind="showDetail" id="ZdP-uB-0SS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -412,6 +412,7 @@
         <!--Navigation Controller-->
         <scene sceneID="136-8C-i9k">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXq-sf-bbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ij5-2k-aYn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q7l-Fi-RVW">
@@ -423,7 +424,6 @@
                         <segue destination="N6k-wC-xPy" kind="relationship" relationship="rootViewController" id="Rnz-9X-EVs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RXq-sf-bbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="-804"/>
         </scene>
@@ -432,6 +432,7 @@
         <image name="ice-hockey-background.jpg" width="1920" height="1006"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8XV-Dr-Elb"/>
+        <segue reference="sP4-iw-BNN"/>
+        <segue reference="ZdP-uB-0SS"/>
     </inferredMetricsTieBreakers>
 </document>
