@@ -25,7 +25,7 @@ var llTotal = 0
 var lrTotal = 0
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
