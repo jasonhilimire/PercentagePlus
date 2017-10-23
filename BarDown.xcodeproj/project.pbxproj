@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32FE54C1F9D9BB700054F92 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A32FE54A1F9D9BB600054F92 /* CoreDataModel.xcdatamodeld */; };
 		A37C22D71F9D89CB00819D2D /* ShotCycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37C22D61F9D89CB00819D2D /* ShotCycleTableViewCell.swift */; };
 		A37C22D91F9D8BF200819D2D /* ShotCycleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37C22D81F9D8BF200819D2D /* ShotCycleTableViewController.swift */; };
 		A3A998361F7F5255003A20BD /* iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A998351F7F5255003A20BD /* iphone.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A32FE54B1F9D9BB700054F92 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A37C22D61F9D89CB00819D2D /* ShotCycleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleTableViewCell.swift; sourceTree = "<group>"; };
 		A37C22D81F9D8BF200819D2D /* ShotCycleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleTableViewController.swift; sourceTree = "<group>"; };
 		A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice-hockey-background.jpg"; sourceTree = "<group>"; };
@@ -53,11 +55,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A32FE54D1F9D9BE800054F92 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A3C5067E1E42F10200E6B32D /* Main.storyboard */,
+				A3A998351F7F5255003A20BD /* iphone.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A32FE54E1F9D9C0C00054F92 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A3B2D11F1EB97D0800DE0AB1 /* JerseyLetters.ttf */,
+				A3B2D11D1EB9799000DE0AB1 /* ice.jpg */,
+				A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */,
+				A3E505B81EA281FC005C8E12 /* Hockey-goal.png */,
+				A3E505B61EA27B53005C8E12 /* shot.mp3 */,
+				A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		A3BB1E1B1E746F4C001E979F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A37C22D81F9D8BF200819D2D /* ShotCycleTableViewController.swift */,
-				A37C22D61F9D89CB00819D2D /* ShotCycleTableViewCell.swift */,
+				A32FE54A1F9D9BB600054F92 /* CoreDataModel.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -65,7 +88,7 @@
 		A3BB1E1C1E746F51001E979F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
+				A37C22D61F9D89CB00819D2D /* ShotCycleTableViewCell.swift */,
 				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
 			);
 			name = View;
@@ -74,6 +97,8 @@
 		A3BB1E1D1E746F57001E979F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A37C22D81F9D8BF200819D2D /* ShotCycleTableViewController.swift */,
+				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -101,16 +126,10 @@
 				A3BB1E1C1E746F51001E979F /* View */,
 				A3BB1E1B1E746F4C001E979F /* Model */,
 				A3C5067A1E42F10200E6B32D /* AppDelegate.swift */,
-				A3C5067E1E42F10200E6B32D /* Main.storyboard */,
-				A3A998351F7F5255003A20BD /* iphone.storyboard */,
+				A32FE54D1F9D9BE800054F92 /* Storyboards */,
 				A3C506811E42F10200E6B32D /* Assets.xcassets */,
-				A3B2D11D1EB9799000DE0AB1 /* ice.jpg */,
-				A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */,
-				A3E505B81EA281FC005C8E12 /* Hockey-goal.png */,
-				A3E505B61EA27B53005C8E12 /* shot.mp3 */,
-				A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */,
+				A32FE54E1F9D9C0C00054F92 /* Assets */,
 				A3C506861E42F10200E6B32D /* Info.plist */,
-				A3B2D11F1EB97D0800DE0AB1 /* JerseyLetters.ttf */,
 			);
 			path = PercentagePlus;
 			sourceTree = "<group>";
@@ -197,6 +216,7 @@
 			files = (
 				A37C22D71F9D89CB00819D2D /* ShotCycleTableViewCell.swift in Sources */,
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
+				A32FE54C1F9D9BB700054F92 /* CoreDataModel.xcdatamodeld in Sources */,
 				A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */,
 				A3C5067B1E42F10200E6B32D /* AppDelegate.swift in Sources */,
 				A37C22D91F9D8BF200819D2D /* ShotCycleTableViewController.swift in Sources */,
@@ -384,6 +404,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A32FE54A1F9D9BB600054F92 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A32FE54B1F9D9BB700054F92 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = A32FE54B1F9D9BB700054F92 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A3C5066F1E42F10200E6B32D /* Project object */;
 }

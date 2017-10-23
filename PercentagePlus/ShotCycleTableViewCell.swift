@@ -14,6 +14,9 @@ class ShotCycleTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var totalShotsLabel: UILabel!
+    @IBOutlet weak var totalMadeLabel: UILabel!
+    @IBOutlet weak var shootingPercLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
