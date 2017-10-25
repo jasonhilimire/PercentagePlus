@@ -447,6 +447,7 @@
                                     <outlet property="dateLabel" destination="0J3-Ah-jry" id="3OC-6I-z53"/>
                                     <outlet property="shootingPercLabel" destination="VkZ-Rd-Od7" id="yTH-VH-hBa"/>
                                     <outlet property="totalMadeLabel" destination="Sdu-pv-EuA" id="fmt-UU-WAf"/>
+                                    <outlet property="totalShootingPercLabel" destination="ywl-dY-cbd" id="nAd-SS-Hrj"/>
                                     <outlet property="totalShotsLabel" destination="X0J-mQ-Owk" id="VnT-mS-7l8"/>
                                 </connections>
                             </tableViewCell>
@@ -474,7 +475,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ij5-2k-aYn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q7l-Fi-RVW">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="35"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
