@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// MARK: - Properties
 var sliderValue: Int = 0
 var incrementValue: Int = 0
 var upperRight: Int = 0
@@ -24,9 +24,19 @@ var urTotal = 0
 var llTotal = 0
 var lrTotal = 0
 
+var dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .medium
+    return formatter
+}()
+// may need more than this?  shotcycle date will be the main array, but what about the other values? lets just get this one tied up to start
+var shotCycles: [NSDate] = []
+
 
 class ViewController: UIViewController, UITableViewDelegate {
 
+// MARK: - IBActions
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
     @IBOutlet weak var sliderLbl: UILabel!

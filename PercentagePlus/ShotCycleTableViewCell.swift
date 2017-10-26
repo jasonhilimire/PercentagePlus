@@ -11,8 +11,6 @@ import UIKit
 class ShotCycleTableViewCell: UITableViewCell {
 
     //MARK: Properties
-
-
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var totalShotsLabel: UILabel!
     @IBOutlet weak var totalMadeLabel: UILabel!
