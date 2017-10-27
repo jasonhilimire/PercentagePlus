@@ -23,6 +23,10 @@
 		A3E7FB3F1F81575B00F13D15 /* ice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3B2D11D1EB9799000DE0AB1 /* ice.jpg */; };
 		A3E7FB401F81575E00F13D15 /* ice-hockey-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */; };
 		A3F428CC1FA2EEF4002589B3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F428CB1FA2EEF4002589B3 /* CoreDataStack.swift */; };
+		A3F428D11FA2F60E002589B3 /* Shooter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F428CD1FA2F60E002589B3 /* Shooter+CoreDataClass.swift */; };
+		A3F428D21FA2F60E002589B3 /* Shooter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F428CE1FA2F60E002589B3 /* Shooter+CoreDataProperties.swift */; };
+		A3F428D31FA2F60E002589B3 /* ShotCycle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F428CF1FA2F60E002589B3 /* ShotCycle+CoreDataClass.swift */; };
+		A3F428D41FA2F60E002589B3 /* ShotCycle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F428D01FA2F60E002589B3 /* ShotCycle+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		A3E505B61EA27B53005C8E12 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
 		A3E505B81EA281FC005C8E12 /* Hockey-goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hockey-goal.png"; sourceTree = "<group>"; };
 		A3F428CB1FA2EEF4002589B3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		A3F428CD1FA2F60E002589B3 /* Shooter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shooter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A3F428CE1FA2F60E002589B3 /* Shooter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shooter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A3F428CF1FA2F60E002589B3 /* ShotCycle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShotCycle+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A3F428D01FA2F60E002589B3 /* ShotCycle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShotCycle+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		A3BB1E1B1E746F4C001E979F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3F428D51FA2F624002589B3 /* CoreData Classes */,
 				A32FE54A1F9D9BB600054F92 /* CoreDataModel.xcdatamodeld */,
 			);
 			name = Model;
@@ -135,6 +144,17 @@
 				A3C506861E42F10200E6B32D /* Info.plist */,
 			);
 			path = PercentagePlus;
+			sourceTree = "<group>";
+		};
+		A3F428D51FA2F624002589B3 /* CoreData Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A3F428CD1FA2F60E002589B3 /* Shooter+CoreDataClass.swift */,
+				A3F428CE1FA2F60E002589B3 /* Shooter+CoreDataProperties.swift */,
+				A3F428CF1FA2F60E002589B3 /* ShotCycle+CoreDataClass.swift */,
+				A3F428D01FA2F60E002589B3 /* ShotCycle+CoreDataProperties.swift */,
+			);
+			path = "CoreData Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,11 +238,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3F428CC1FA2EEF4002589B3 /* CoreDataStack.swift in Sources */,
+				A3F428D21FA2F60E002589B3 /* Shooter+CoreDataProperties.swift in Sources */,
 				A37C22D71F9D89CB00819D2D /* ShotCycleTableViewCell.swift in Sources */,
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
+				A3F428D31FA2F60E002589B3 /* ShotCycle+CoreDataClass.swift in Sources */,
 				A32FE54C1F9D9BB700054F92 /* CoreDataModel.xcdatamodeld in Sources */,
 				A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */,
+				A3F428D41FA2F60E002589B3 /* ShotCycle+CoreDataProperties.swift in Sources */,
 				A3C5067B1E42F10200E6B32D /* AppDelegate.swift in Sources */,
+				A3F428D11FA2F60E002589B3 /* Shooter+CoreDataClass.swift in Sources */,
 				A37C22D91F9D8BF200819D2D /* ShotCycleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
