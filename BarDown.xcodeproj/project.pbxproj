@@ -22,6 +22,7 @@
 		A3E505B91EA281FC005C8E12 /* Hockey-goal.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E505B81EA281FC005C8E12 /* Hockey-goal.png */; };
 		A3E7FB3F1F81575B00F13D15 /* ice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3B2D11D1EB9799000DE0AB1 /* ice.jpg */; };
 		A3E7FB401F81575E00F13D15 /* ice-hockey-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */; };
+		A3F428CC1FA2EEF4002589B3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F428CB1FA2EEF4002589B3 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shooter500.jpeg; sourceTree = "<group>"; };
 		A3E505B61EA27B53005C8E12 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
 		A3E505B81EA281FC005C8E12 /* Hockey-goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hockey-goal.png"; sourceTree = "<group>"; };
+		A3F428CB1FA2EEF4002589B3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A37C22D61F9D89CB00819D2D /* ShotCycleTableViewCell.swift */,
+				A3F428CB1FA2EEF4002589B3 /* CoreDataStack.swift */,
 				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
 			);
 			name = View;
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F428CC1FA2EEF4002589B3 /* CoreDataStack.swift in Sources */,
 				A37C22D71F9D89CB00819D2D /* ShotCycleTableViewCell.swift in Sources */,
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
 				A32FE54C1F9D9BB700054F92 /* CoreDataModel.xcdatamodeld in Sources */,
