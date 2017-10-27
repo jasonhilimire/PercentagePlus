@@ -28,8 +28,7 @@ var lrTotal = 0
 
 
 
-// may need more than this?  shotcycle date will be the main array, but what about the other values? lets just get this one tied up to start
-var shotCycles: [NSDate] = []
+
 
 
 class ViewController: UIViewController, UITableViewDelegate {
@@ -43,6 +42,10 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     // holds the managed object context for core data
     var managedContext: NSManagedObjectContext!
+    
+    var currentShooter: Shooter?
+    
+   
 
 // MARK: - IBActions
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -283,5 +286,24 @@ class ViewController: UIViewController, UITableViewDelegate {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
+        
+        let shooterName = "Shooter 1"
+        let shooterFetch: NSFetchRequest<Shooter> = Shooter.fetchRequest()
+        shooterFetch.predicate = NSPredicate(format: "%K == %@", #keyPath(Shooter.name), shooterName)
+        
+        do {
+            let results = try managedContext.fetch(shooterFetch)
+            if results.count > 0 {
+                // Shooter 1 found // user shooter 1
+                currentShooter = results.first
+            } else {
+                //Fide not found , create fido
+                currentShooter = Shooter(context: managedContext)
+                currentShooter?.name = shooterName
+                try managedContext.save()
+            }
+        } catch let error as NSError {
+            print("Fetch error: \(error) description \(error.userInfo)")
+        }
     }
 }
