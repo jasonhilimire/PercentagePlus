@@ -26,19 +26,23 @@ var urTotal = 0
 var llTotal = 0
 var lrTotal = 0
 
-var dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
-var managedContext = NSManagedObjectContext!
+
 // may need more than this?  shotcycle date will be the main array, but what about the other values? lets just get this one tied up to start
 var shotCycles: [NSDate] = []
 
 
 class ViewController: UIViewController, UITableViewDelegate {
+    
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+    
+    // holds the managed object context for core data
+    var managedContext: NSManagedObjectContext!
 
 // MARK: - IBActions
     @IBOutlet weak var calcPercentageLbl: UILabel!
