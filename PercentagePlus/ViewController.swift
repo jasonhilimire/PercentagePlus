@@ -142,6 +142,19 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         calculateTotals()
         
+        let cycle = ShotCycle(context: managedContext)
+        cycle.date = NSDate()
+        
+        currentShooter?.addToShotCycles(cycle)
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Save error: \(error), description: \(error.userInfo)")
+        }
+        //Reload Table view
+//        tableView.reloadData()
+        
         
         // first go at adding UIActionAlert Controller & it works!! using a switch case successfully
 //        switch incrementValue {
@@ -287,23 +300,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
         
-        let shooterName = "Shooter 1"
-        let shooterFetch: NSFetchRequest<Shooter> = Shooter.fetchRequest()
-        shooterFetch.predicate = NSPredicate(format: "%K == %@", #keyPath(Shooter.name), shooterName)
-        
-        do {
-            let results = try managedContext.fetch(shooterFetch)
-            if results.count > 0 {
-                // Shooter 1 found // user shooter 1
-                currentShooter = results.first
-            } else {
-                //Fide not found , create fido
-                currentShooter = Shooter(context: managedContext)
-                currentShooter?.name = shooterName
-                try managedContext.save()
-            }
-        } catch let error as NSError {
-            print("Fetch error: \(error) description \(error.userInfo)")
-        }
+
     }
 }

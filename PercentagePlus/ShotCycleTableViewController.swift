@@ -7,13 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 
 
 class ShotCycleTableViewController: UITableViewController {
+    
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+    
+    // holds the managed object context for core data
+    var managedContext: NSManagedObjectContext!
+    
+    var currentShooter: Shooter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let shooterName = "Shooter 1"
+        let shooterFetch: NSFetchRequest<Shooter> = Shooter.fetchRequest()
+        shooterFetch.predicate = NSPredicate(format: "%K == %@", #keyPath(Shooter.name), shooterName)
+        
+        do {
+            let results = try managedContext.fetch(shooterFetch)
+            if results.count > 0 {
+                // Shooter 1 found // user shooter 1
+                currentShooter = results.first
+            } else {
+                //Shooter not found , create Shooter
+                currentShooter = Shooter(context: managedContext)
+                currentShooter?.name = shooterName
+                try managedContext.save()
+            }
+        } catch let error as NSError {
+            print("Fetch error: \(error) description \(error.userInfo)")
+        }
 
     }
 
@@ -25,13 +56,15 @@ class ShotCycleTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        guard let shotCycles = currentShooter?.shotCycles else {
+            return 1
+        }
+        return shotCycles.count
     }
 
 
@@ -42,8 +75,13 @@ class ShotCycleTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ShotCycleTableViewCell else {
             fatalError("The dequed cell is not an instance of ShotCycleTableViewCell.")
         }
+        
+        guard let cycle = currentShooter?.shotCycles?[indexPath.row] as? ShotCycle,
+            let cycleDate = cycle.date as? Date else {
+                return cell
+        }
 
-        cell.dateLabel.text = "date/time"
+        cell.dateLabel.text = dateFormatter.string(from: cycleDate)
 
         return cell
     }
