@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 // MARK: - Properties
 var sliderValue: Int = 0
 var incrementValue: Int = 0
@@ -30,6 +32,8 @@ var dateFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
+
+var managedContext = NSManagedObjectContext!
 // may need more than this?  shotcycle date will be the main array, but what about the other values? lets just get this one tied up to start
 var shotCycles: [NSDate] = []
 
