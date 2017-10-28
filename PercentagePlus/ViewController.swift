@@ -33,17 +33,17 @@ var lrTotal = 0
 
 class ViewController: UIViewController, UITableViewDelegate {
     
-    var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        return formatter
-    }()
-    
-    // holds the managed object context for core data
-    var managedContext: NSManagedObjectContext!
-    
-    var currentShooter: Shooter?
+//    var dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .short
+//        formatter.timeStyle = .medium
+//        return formatter
+//    }()
+//
+//    // holds the managed object context for core data
+//    var managedContext: NSManagedObjectContext!
+//
+//    var currentShooter: Shooter?
     
    
 
@@ -142,16 +142,16 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         calculateTotals()
         
-        let cycle = ShotCycle(context: managedContext)
-        cycle.date = NSDate()
-        
-        currentShooter?.addToShotCycles(cycle)
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Save error: \(error), description: \(error.userInfo)")
-        }
+//        let cycle = ShotCycle(context: managedContext)
+//        cycle.date = NSDate()
+//        
+//        currentShooter?.addToShotCycles(cycle)
+//        
+//        do {
+//            try managedContext.save()
+//        } catch let error as NSError {
+//            print("Save error: \(error), description: \(error.userInfo)")
+//        }
         //Reload Table view
 //        tableView.reloadData()
         
