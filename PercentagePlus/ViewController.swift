@@ -25,7 +25,9 @@ var llTotal = 0
 var lrTotal = 0
 
 
+
 class ViewController: UIViewController {
+    
 
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
@@ -49,9 +51,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var urShotsMadeLabel: UILabel!
     @IBOutlet weak var llShotsMadeLabel: UILabel!
     @IBOutlet weak var lrShotsMadeLabel: UILabel!
-    
-    
-    
+
     
     // Slider Value
     @IBAction func slider(_ sender: UISlider) {
@@ -154,6 +154,9 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func showSavedCyclesBtn(_ sender: Any) {
+        saveShotCycle()
+    }
     
     func calculateTotals() {
         ulTotal += upperLeft
@@ -201,8 +204,8 @@ class ViewController: UIViewController {
         } else {
             totalPercentCalc = ((incrementValue * 100) / sliderValue)
             self.calcPercentageLbl.text = "\(Int(totalPercentCalc))%"
+            
             self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
-//            print(incrementValue, totalPercentCalc)
         }
     }
     
@@ -235,7 +238,6 @@ class ViewController: UIViewController {
     func partialScreenReset(action: UIAlertAction! = nil) {
         enableButtons()
         calcPercentageLbl.text = "0%"
-//        sliderValue = 15
         enteredAmtLbl.text = "Use Slider to Enter Count"
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         sliderOutlet.isHidden = false
@@ -253,7 +255,6 @@ class ViewController: UIViewController {
         totalShootingPerc.text = "Today's Shooting Percentage: 0%"
         totalShotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
-//        sliderValue = 15
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         summedShots = 0
         summedShotsMade = 0
@@ -274,8 +275,11 @@ class ViewController: UIViewController {
     
     // clear screen-reset when app is launched each time and set slider to default value of 15
     override func viewDidLoad() {
+        
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
+        
     }
+    
 }

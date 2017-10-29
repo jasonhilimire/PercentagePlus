@@ -12,6 +12,11 @@ var shotCycles = [ShotCycle]()
 
 class ShotCycleTableViewController: UITableViewController {
     
+    @IBAction func backBtn(_ sender: Any) {
+        
+      // nothing here for now
+    }
+    
     // MARK: - Properties
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()

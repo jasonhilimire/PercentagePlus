@@ -257,6 +257,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ota-PY-f5P"/>
                                     <barButtonItem title="Show Saved Cycles" id="bai-D7-acz">
                                         <connections>
+                                            <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="ZBj-1X-Nb2"/>
                                             <segue destination="omW-Tb-Qw3" kind="showDetail" id="bKZ-pX-H0b"/>
                                         </connections>
                                     </barButtonItem>
@@ -440,6 +441,7 @@
                     <navigationItem key="navigationItem" title="Shot Cycles" id="rQK-zU-Ojb">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Hho-3O-8rp">
                             <connections>
+                                <action selector="backBtn:" destination="Gk6-hK-d6G" id="Mtc-tI-2aQ"/>
                                 <segue destination="BYZ-38-t0r" kind="showDetail" id="SG8-Yj-bpP"/>
                             </connections>
                         </barButtonItem>
