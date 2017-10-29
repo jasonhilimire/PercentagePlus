@@ -110,16 +110,18 @@ class ViewController: UIViewController {
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        summedShootingCycle += 1
-        summedShots += sliderValue
-        summedShotsMade += incrementValue
-        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
-        sliderOutlet.isHidden = false
-        totalShootingPercentage()
-        
-        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+        saveShotCycle()
         
         calculateTotals()
+        let date = NSDate()
+        
+        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, summedPercentCalc: summedPercentCalc, summedShotsMade: summedShotsMade)
+        
+        print("\(String(describing: currentShotCycle))")
+        
+        shotCycles.append(currentShotCycle!)
+        
+        partialScreenReset()
         
         
         // first go at adding UIActionAlert Controller & it works!! using a switch case successfully
@@ -150,7 +152,6 @@ class ViewController: UIViewController {
 //             present(ac, animated: true)
 //        }
         
-        partialScreenReset()
     }
     
     
@@ -176,6 +177,17 @@ class ViewController: UIViewController {
     func totalShootingPercentage( ) {
         summedPercentCalc = ((summedShotsMade * 100) / summedShots)
         totalShootingPerc.text = "Today's Shooting Percentage: \(summedPercentCalc)%"
+    }
+    
+    func saveShotCycle() {
+        summedShootingCycle += 1
+        summedShots += sliderValue
+        summedShotsMade += incrementValue
+        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
+        sliderOutlet.isHidden = false
+        totalShootingPercentage()
+        
+        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
     }
     
     

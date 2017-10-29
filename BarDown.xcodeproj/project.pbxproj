@@ -14,6 +14,9 @@
 		A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5067C1E42F10200E6B32D /* ViewController.swift */; };
 		A3C506801E42F10200E6B32D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C5067E1E42F10200E6B32D /* Main.storyboard */; };
 		A3C506821E42F10200E6B32D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3C506811E42F10200E6B32D /* Assets.xcassets */; };
+		A3C53CD71FA55AB1007A0830 /* ShotCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */; };
+		A3C53CDD1FA56623007A0830 /* ShotCycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */; };
+		A3C53CDF1FA567C7007A0830 /* ShotCycleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */; };
 		A3E505B51EA26DA8005C8E12 /* shooter500.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */; };
 		A3E505B71EA27B53005C8E12 /* shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A3E505B61EA27B53005C8E12 /* shot.mp3 */; };
 		A3E505B91EA281FC005C8E12 /* Hockey-goal.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E505B81EA281FC005C8E12 /* Hockey-goal.png */; };
@@ -33,6 +36,9 @@
 		A3C5067F1E42F10200E6B32D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3C506811E42F10200E6B32D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3C506861E42F10200E6B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycle.swift; sourceTree = "<group>"; };
+		A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleTableViewCell.swift; sourceTree = "<group>"; };
+		A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleTableViewController.swift; sourceTree = "<group>"; };
 		A3E505B41EA26DA8005C8E12 /* shooter500.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shooter500.jpeg; sourceTree = "<group>"; };
 		A3E505B61EA27B53005C8E12 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
 		A3E505B81EA281FC005C8E12 /* Hockey-goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hockey-goal.png"; sourceTree = "<group>"; };
@@ -52,6 +58,8 @@
 		A3BB1E1B1E746F4C001E979F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */,
+				A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -59,7 +67,6 @@
 		A3BB1E1C1E746F51001E979F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
 				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
 			);
 			name = View;
@@ -68,6 +75,8 @@
 		A3BB1E1D1E746F57001E979F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
+				A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,9 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C53CDF1FA567C7007A0830 /* ShotCycleTableViewController.swift in Sources */,
+				A3C53CD71FA55AB1007A0830 /* ShotCycle.swift in Sources */,
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
 				A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */,
 				A3C5067B1E42F10200E6B32D /* AppDelegate.swift in Sources */,
+				A3C53CDD1FA56623007A0830 /* ShotCycleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
