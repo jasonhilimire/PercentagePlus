@@ -406,14 +406,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Shots Made : 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnj-KH-7WW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cycle Shots Made : 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnj-KH-7WW">
                                             <rect key="frame" x="276" y="53" width="204" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Curr Shots Perc: 99%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCx-gS-l5p">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cycle Shots Perc: 99%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCx-gS-l5p">
                                             <rect key="frame" x="544" y="53" width="184" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -423,7 +423,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cycleShotsMadeLabel" destination="Cnj-KH-7WW" id="Icv-d8-g83"/>
+                                    <outlet property="cycleShotsPercLabel" destination="aCx-gS-l5p" id="LLa-V3-z7M"/>
                                     <outlet property="dateLabel" destination="vL9-gO-12I" id="PP0-9l-b4F"/>
+                                    <outlet property="totalShotsMadeLabel" destination="kUb-pb-rAH" id="3Ox-38-ZEn"/>
+                                    <outlet property="totalShotsPercLabel" destination="VZz-qc-d53" id="bbS-ud-xuU"/>
+                                    <outlet property="totalShotsTakenLabel" destination="aM9-78-2WO" id="SNF-OJ-DRX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
