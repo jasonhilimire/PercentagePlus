@@ -10,18 +10,21 @@ import Foundation
 
 
 struct ShotCycle {
+    var date = NSDate()
     var totalPercentCalc: Int
     var summedShots: Int
     var summedPercentCalc: Int
     var summedShotsMade: Int
-    var date = NSDate()
+    var currentShotsMade: Int
+    
 
-    init?(date: NSDate, totalPercentCalc: Int, summedShots: Int, summedPercentCalc: Int, summedShotsMade: Int) {
+    init?(date: NSDate, totalPercentCalc: Int, summedShots: Int, summedPercentCalc: Int, summedShotsMade: Int, currentShotsMade: Int) {
         self.date = date
         self.totalPercentCalc = totalPercentCalc
         self.summedShots = summedShots
         self.summedPercentCalc = summedPercentCalc
         self.summedShotsMade = summedShotsMade
+        self.currentShotsMade = currentShotsMade
     }
     
     func printDescription() {

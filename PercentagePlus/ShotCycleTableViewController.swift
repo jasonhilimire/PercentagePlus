@@ -61,9 +61,13 @@ class ShotCycleTableViewController: UITableViewController {
         let shotCycle = shotCycles[indexPath.row]
         let shotCycleDate = shotCycle.date as? Date
         cell.dateLabel.text = dateFormatter.string(from: shotCycleDate!)
-//
-//        cell.totalShotsLabel.text = "\(shotCycle.summedShots)"
-//
+
+        cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.summedShotsMade)"
+        cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
+        cell.cycleShotsMadeLabel.text =  "Cycle Shots Made : \(shotCycle.currentShotsMade)"
+        cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.summedPercentCalc)%"
+        cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.totalPercentCalc)%"
+
         
         
         

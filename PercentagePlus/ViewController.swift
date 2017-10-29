@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         calculateTotals()
         let date = NSDate()
         
-        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, summedPercentCalc: summedPercentCalc, summedShotsMade: summedShotsMade)
+        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, summedPercentCalc: summedPercentCalc, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
         
         print("\(String(describing: currentShotCycle))")
         
