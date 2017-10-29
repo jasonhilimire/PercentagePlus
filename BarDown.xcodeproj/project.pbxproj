@@ -67,6 +67,7 @@
 		A3BB1E1C1E746F51001E979F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
 				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
 			);
 			name = View;
@@ -75,7 +76,6 @@
 		A3BB1E1D1E746F57001E979F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
 				A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */,
 			);
 			name = Controller;
