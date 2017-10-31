@@ -279,7 +279,19 @@ class ViewController: UIViewController {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
+        print("viewDidLoad")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
         
+        // summed values here are printing properly when this is called
+        print("viewWillDisappear, summedShots = \(summedShots), summedPercentCalc = \(summedPercentCalc), summedShotsMade = \(summedShotsMade)" )
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // values here are being reset?  think maybe this has to do with the fullscreen reset function?
+        print("viewWillAppear, summedShots = \(summedShots), summedPercentCalc = \(summedPercentCalc), summedShotsMade = \(summedShotsMade)")
     }
     
 }
