@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PercentagePlus.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>D6B804447EED284A3E28F127B210CBB41243977D</string>
+				<key>dateExpires</key>
+				<string>9/23/18</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>55QD8ZCA9C.com.peanutapps.BarDown</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>55QD8ZCA9C</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>55QD8ZCA9C.com.peanutapps.BarDown</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>BarDown.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>318c7fd5-198c-495e-8578-65ed83be9191</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: com.peanutapps.BarDown</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>55QD8ZCA9C</string>
+				<key>name</key>
+				<string>Jason Hilimire</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
