@@ -17,7 +17,7 @@ var lowerRight: Int = 0
 var totalPercentCalc = 0
 var summedShots = 0
 var currentShotCyclePercent = 0
-var summedShootingCycle = 1
+var shootingCycle = 1
 var summedShotsMade = 0
 var ulTotal = 0
 var urTotal = 0
@@ -182,7 +182,7 @@ class ViewController: UIViewController {
     }
     
     func saveShotCycle() {
-        summedShootingCycle += 1
+        shootingCycle += 1
         summedShots += sliderValue
         summedShotsMade += incrementValue
         totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
