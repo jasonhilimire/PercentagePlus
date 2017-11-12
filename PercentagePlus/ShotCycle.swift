@@ -13,22 +13,22 @@ struct ShotCycle {
     var date = NSDate()
     var totalPercentCalc: Int
     var summedShots: Int
-    var summedPercentCalc: Int
+    var currentShotCyclePercent: Int
     var summedShotsMade: Int
     var currentShotsMade: Int
     
 
-    init?(date: NSDate, totalPercentCalc: Int, summedShots: Int, summedPercentCalc: Int, summedShotsMade: Int, currentShotsMade: Int) {
+    init?(date: NSDate, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int) {
         self.date = date
         self.totalPercentCalc = totalPercentCalc
         self.summedShots = summedShots
-        self.summedPercentCalc = summedPercentCalc
+        self.currentShotCyclePercent = currentShotCyclePercent
         self.summedShotsMade = summedShotsMade
         self.currentShotsMade = currentShotsMade
     }
     
     func printDescription() {
-        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(summedPercentCalc), TotalPercentCalc = \(totalPercentCalc) ")
+        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
     }
     
 }

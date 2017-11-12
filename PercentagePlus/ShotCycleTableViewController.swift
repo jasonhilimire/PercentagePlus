@@ -70,7 +70,7 @@ class ShotCycleTableViewController: UITableViewController {
         cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.summedShotsMade)"
         cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
         cell.cycleShotsMadeLabel.text =  "Cycle Shots Made : \(shotCycle.currentShotsMade)"
-        cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.summedPercentCalc)%"
+        cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.currentShotCyclePercent)%"
         cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.totalPercentCalc)%"
 
         

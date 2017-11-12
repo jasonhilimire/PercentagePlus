@@ -16,7 +16,7 @@ var lowerLeft: Int = 0
 var lowerRight: Int = 0
 var totalPercentCalc = 0
 var summedShots = 0
-var summedPercentCalc = 0
+var currentShotCyclePercent = 0
 var summedShootingCycle = 1
 var summedShotsMade = 0
 var ulTotal = 0
@@ -114,8 +114,7 @@ class ViewController: UIViewController {
         
         calculateTotals()
         let date = NSDate()
-        
-        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, summedPercentCalc: summedPercentCalc, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
+        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
         
         print("\(String(describing: currentShotCycle))")
         
@@ -178,8 +177,8 @@ class ViewController: UIViewController {
     }
 
     func totalShootingPercentage( ) {
-        summedPercentCalc = ((summedShotsMade * 100) / summedShots)
-        totalShootingPerc.text = "Today's Shooting Percentage: \(summedPercentCalc)%"
+        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
+        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
     }
     
     func saveShotCycle() {
@@ -189,7 +188,6 @@ class ViewController: UIViewController {
         totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
         sliderOutlet.isHidden = false
         totalShootingPercentage()
-        
         totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
     }
     
@@ -202,8 +200,8 @@ class ViewController: UIViewController {
         if incrementValue > sliderValue {
             disableButtons()
         } else {
-            totalPercentCalc = ((incrementValue * 100) / sliderValue)
-            self.calcPercentageLbl.text = "\(Int(totalPercentCalc))%"
+            currentShotCyclePercent = ((incrementValue * 100) / sliderValue)
+            self.calcPercentageLbl.text = "\(Int(currentShotCyclePercent))%"
             
             self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
         }
@@ -244,6 +242,7 @@ class ViewController: UIViewController {
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         incrementValue = 0
         resetCornerLabels()
+        currentShotCyclePercent = 0
         
     }
     
@@ -258,7 +257,7 @@ class ViewController: UIViewController {
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         summedShots = 0
         summedShotsMade = 0
-        summedPercentCalc = 0
+        currentShotCyclePercent = 0
         
         ulTotal = 0
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
@@ -285,13 +284,13 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         
         // summed values here are printing properly when this is called
-        print("viewWillDisappear, summedShots = \(summedShots), summedPercentCalc = \(summedPercentCalc), summedShotsMade = \(summedShotsMade)" )
+        print("viewWillDisappear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)" )
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         // values here are being reset?  think maybe this has to do with the fullscreen reset function?
-        print("viewWillAppear, summedShots = \(summedShots), summedPercentCalc = \(summedPercentCalc), summedShotsMade = \(summedShotsMade)")
+        print("viewWillAppear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
     
 }
