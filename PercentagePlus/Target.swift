@@ -9,8 +9,9 @@
 import Foundation
 
 struct Target {
-    var targetHitCount: Int
     let targetName: String
+    var targetHitCurrentCount: Int
+    var targetHitTotalCount: Int
     
     init?(targetName: String, targetHitCount: Int) {
         self.targetName = targetName
