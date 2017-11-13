@@ -10,10 +10,19 @@ import UIKit
 
 var sliderValue: Int = 0
 var incrementValue: Int = 0
-var upperRight: Int = 0
-var upperLeft: Int = 0
-var lowerLeft: Int = 0
-var lowerRight: Int = 0
+// Target Set up
+var upperRight = Target(targetName: "Upper Right", targetHitCount: 0)
+var upperRightHitCount = upperRight!.targetHitCount
+
+var upperLeft = Target(targetName: "Upper Left" , targetHitCount: 0)
+var upperLeftHitCount = upperLeft!.targetHitCount
+
+var lowerLeft = Target(targetName: "Lower Left", targetHitCount: 0)
+var lowerLeftHitCount = lowerLeft!.targetHitCount
+
+var lowerRight = Target(targetName: "Lower Right", targetHitCount: 0)
+var lowerRightHitCount = lowerRight!.targetHitCount
+
 var totalPercentCalc = 0
 var summedShots = 0
 var currentShotCyclePercent = 0
@@ -28,7 +37,6 @@ var lrTotal = 0
 
 class ViewController: UIViewController {
     
-
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
     @IBOutlet weak var sliderLbl: UILabel!
@@ -62,10 +70,10 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        upperLeft += 1
-        upperLeftLabel.text = "\(upperLeft)"
+        upperLeftHitCount += 1
+        upperLeftLabel.text = "\(upperLeftHitCount)"
         
-        if upperLeft >= sliderValue {
+        if upperLeftHitCount >= sliderValue {
             disableButtons()
         }
 }
@@ -73,10 +81,10 @@ class ViewController: UIViewController {
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
-        upperRight += 1
-        upperRightLabel.text = "\(upperRight)"
+        upperRightHitCount += 1
+        upperRightLabel.text = "\(upperRightHitCount)"
         
-        if upperRight >= sliderValue {
+        if upperRightHitCount >= sliderValue {
             disableButtons()
         }
     }
@@ -84,10 +92,10 @@ class ViewController: UIViewController {
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
-        lowerLeft += 1
-        lowerLeftLabel.text = "\(lowerLeft)"
+        lowerLeftHitCount += 1
+        lowerLeftLabel.text = "\(lowerLeftHitCount)"
         
-        if lowerLeft >= sliderValue {
+        if lowerLeftHitCount >= sliderValue {
             disableButtons()
         }
     }
@@ -95,10 +103,10 @@ class ViewController: UIViewController {
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        lowerRight += 1
-        lowerRightLabel.text = "\(lowerRight)"
+        lowerRightHitCount += 1
+        lowerRightLabel.text = "\(lowerRightHitCount)"
         
-        if lowerRight >= sliderValue {
+        if lowerRightHitCount >= sliderValue {
             disableButtons()
         }
     }
@@ -123,33 +131,7 @@ class ViewController: UIViewController {
         partialScreenReset()
         
         
-        // first go at adding UIActionAlert Controller & it works!! using a switch case successfully
-//        switch incrementValue {
-//        case 0:
-//            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        case 1..<5:
-//            let ac = UIAlertController(title: title, message: "Heating Up, Let's Keep going for more!", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        case 5..<10:
-//            let ac = UIAlertController(title: title, message: "Nice Shooting Bud! A few of those will get by the tendy for sure", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        case 10..<100:
-//            let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        default:
-//            let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
-//             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//             present(ac, animated: true)
-//        }
+
         
     }
     
@@ -158,16 +140,16 @@ class ViewController: UIViewController {
     }
     
     func calculateTotals() {
-        ulTotal += upperLeft
+        ulTotal += upperLeftHitCount
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
         
-        urTotal += upperRight
+        urTotal += upperRightHitCount
         urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
         
-        llTotal += lowerLeft
+        llTotal += lowerLeftHitCount
         llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
         
-        lrTotal += lowerRight
+        lrTotal += lowerRightHitCount
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
     }
     
@@ -222,13 +204,13 @@ class ViewController: UIViewController {
     }
     
     func resetCornerLabels() {
-        upperLeft = 0
+        upperLeftHitCount = 0
         upperLeftLabel.text = "0"
-        upperRight = 0
+        upperRightHitCount = 0
         upperRightLabel.text = "0"
-        lowerLeft = 0
+        lowerLeft ?.targetHitCount= 0
         lowerLeftLabel.text = "0"
-        lowerRight = 0
+        lowerRightHitCount = 0
         lowerRightLabel.text = "0"
     }
     
@@ -294,3 +276,33 @@ class ViewController: UIViewController {
     }
     
 }
+
+
+
+// first go at adding UIActionAlert Controller & it works!! using a switch case successfully this goes in save()
+//        switch incrementValue {
+//        case 0:
+//            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        case 1..<5:
+//            let ac = UIAlertController(title: title, message: "Heating Up, Let's Keep going for more!", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        case 5..<10:
+//            let ac = UIAlertController(title: title, message: "Nice Shooting Bud! A few of those will get by the tendy for sure", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        case 10..<100:
+//            let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//            present(ac, animated: true)
+//
+//        default:
+//            let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
+//             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
+//             present(ac, animated: true)
+//        }

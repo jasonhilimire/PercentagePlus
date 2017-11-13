@@ -19,20 +19,15 @@ class SplashVC: UIViewController {
     @IBOutlet weak var image: UIButton!
     
     @IBAction func imageBtn(_ sender: UIButton) {
-        
-
         audioPlayer.play()
-
     }
     
     override func viewDidLoad() {
         image.center = CGPoint(x: image.center.x + 800, y: image.center.y)
         
         UIView.animate(withDuration: 1.0, delay: 0, options: [ .curveLinear] , animations:  {
-            
             self.image.center = CGPoint(x: self.image.center.x - 800, y: self.image.center.y)
         })
-        
         do
         {
             let audioPath = Bundle.main.path(forResource: "shot", ofType: ".mp3")
@@ -42,14 +37,7 @@ class SplashVC: UIViewController {
         {
             //ERROR
         }
-        
     }
-    
-
-   
-    
-    
-    
 }
 
 
