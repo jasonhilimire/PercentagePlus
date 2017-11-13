@@ -9,11 +9,16 @@
 import Foundation
 
 struct Target {
-    var targetHitCount: Int
     let targetName: String
+    var targetHitCurrentCount: Int
+    var targetHitTotalCount: Int
     
-    init?(targetName: String, targetHitCount: Int) {
+    
+    init?(targetName: String, targetHitCurrentCount: Int, targetHitTotalCount: Int) {
         self.targetName = targetName
-        self.targetHitCount = targetHitCount
-    }  
+        self.targetHitCurrentCount = targetHitCurrentCount
+        self.targetHitTotalCount = targetHitTotalCount
+    }
+    
+
 }

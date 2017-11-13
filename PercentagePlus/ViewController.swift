@@ -10,28 +10,34 @@ import UIKit
 
 var sliderValue: Int = 0
 var incrementValue: Int = 0
+
 // Target Set up
-var upperRight = Target(targetName: "Upper Right", targetHitCount: 0)
-var upperRightHitCount = upperRight!.targetHitCount
+var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
+var upperRightHitCount = upperRight!.targetHitCurrentCount
+var urTotal = upperRight!.targetHitTotalCount
 
-var upperLeft = Target(targetName: "Upper Left" , targetHitCount: 0)
-var upperLeftHitCount = upperLeft!.targetHitCount
+var upperLeft = Target(targetName: "Upper Left" , targetHitCurrentCount: 0, targetHitTotalCount: 0)
+var upperLeftHitCount = upperLeft!.targetHitCurrentCount
+var ulTotal = upperLeft!.targetHitTotalCount
 
-var lowerLeft = Target(targetName: "Lower Left", targetHitCount: 0)
-var lowerLeftHitCount = lowerLeft!.targetHitCount
+var lowerLeft = Target(targetName: "Lower Left", targetHitCurrentCount: 0, targetHitTotalCount: 0)
+var lowerLeftHitCount = lowerLeft!.targetHitCurrentCount
+var lrTotal = lowerLeft!.targetHitTotalCount
 
-var lowerRight = Target(targetName: "Lower Right", targetHitCount: 0)
-var lowerRightHitCount = lowerRight!.targetHitCount
+var lowerRight = Target(targetName: "Lower Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
+var lowerRightHitCount = lowerRight!.targetHitCurrentCount
+var llTotal = lowerRight!.targetHitTotalCount
 
-var totalPercentCalc = 0
-var summedShots = 0
-var currentShotCyclePercent = 0
+
+
+var newShotCycle = ShotCycle(date: NSDate(), totalPercentCalc: 0, summedShots: 0, currentShotCyclePercent: 0, summedShotsMade: 0, currentShotsMade: 0)
+var totalPercentCalc = newShotCycle!.totalPercentCalc
+var summedShots = newShotCycle!.summedShots
+var currentShotCyclePercent = newShotCycle!.currentShotCyclePercent
+var summedShotsMade = newShotCycle!.currentShotsMade
 var shootingCycle = 1
-var summedShotsMade = 0
-var ulTotal = 0
-var urTotal = 0
-var llTotal = 0
-var lrTotal = 0
+
+
 
 
 
@@ -129,10 +135,7 @@ class ViewController: UIViewController {
         shotCycles.append(currentShotCycle!)
         
         partialScreenReset()
-        
-        
-
-        
+   
     }
     
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
@@ -158,19 +161,20 @@ class ViewController: UIViewController {
         fullScreenReset()
     }
 
-    func totalShootingPercentage( ) {
+    func totalShootingPercentage() {
         totalPercentCalc = ((summedShotsMade * 100) / summedShots)
-        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
+        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
     }
     
     func saveShotCycle() {
         shootingCycle += 1
         summedShots += sliderValue
         summedShotsMade += incrementValue
-        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
+        totalShotsTaken.text = "Today's Shots Taken: \(String(describing: summedShots))"
         sliderOutlet.isHidden = false
         totalShootingPercentage()
-        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
+        totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
     }
     
     
@@ -184,7 +188,6 @@ class ViewController: UIViewController {
         } else {
             currentShotCyclePercent = ((incrementValue * 100) / sliderValue)
             self.calcPercentageLbl.text = "\(Int(currentShotCyclePercent))%"
-            
             self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
         }
     }
@@ -272,6 +275,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         // values here are being reset?  think maybe this has to do with the fullscreen reset function?
+        
+        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
         print("viewWillAppear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
     

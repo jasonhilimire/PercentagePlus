@@ -30,6 +30,8 @@ struct ShotCycle {
     func printDescription() {
         print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
     }
-    
+//    mutating func totalShootingPerc(){
+//        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
+//    }
 }
 
