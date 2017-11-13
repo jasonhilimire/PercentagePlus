@@ -208,7 +208,7 @@ class ViewController: UIViewController {
         upperLeftLabel.text = "0"
         upperRightHitCount = 0
         upperRightLabel.text = "0"
-        lowerLeft ?.targetHitCount= 0
+        lowerLeftHitCount = 0
         lowerLeftLabel.text = "0"
         lowerRightHitCount = 0
         lowerRightLabel.text = "0"
