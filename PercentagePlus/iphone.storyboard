@@ -442,7 +442,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Hho-3O-8rp">
                             <connections>
                                 <action selector="backBtn:" destination="Gk6-hK-d6G" id="Mtc-tI-2aQ"/>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" id="SG8-Yj-bpP"/>
+                                <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShotViewController" id="SG8-Yj-bpP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

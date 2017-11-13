@@ -36,6 +36,7 @@ var summedShots = newShotCycle!.summedShots
 var currentShotCyclePercent = newShotCycle!.currentShotCyclePercent
 var summedShotsMade = newShotCycle!.currentShotsMade
 var shootingCycle = 1
+var activeCycle = false
 
 
 
@@ -259,27 +260,34 @@ class ViewController: UIViewController {
     
     // clear screen-reset when app is launched each time and set slider to default value of 15
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        if activeCycle == false {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
         print("viewDidLoad")
+        } else {
+            //
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        activeCycle = true
         
         // summed values here are printing properly when this is called
         print("viewWillDisappear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)" )
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        activeCycle = true
         // values here are being reset?  think maybe this has to do with the fullscreen reset function?
         
         totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
+        totalShotsTaken.text = "Today's Shots Taken: **\(summedShots)**"
         print("viewWillAppear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
     
+
 }
 
 
