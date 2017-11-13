@@ -16,13 +16,4 @@ struct Target {
         self.targetName = targetName
         self.targetHitCount = targetHitCount
     }
-    
-    enum TargetArea {
-        case upperLeft
-        case upperRight
-        case bottomRight
-        case bottomLeft
-    }
-    
-    
 }
