@@ -160,6 +160,8 @@ class ViewController: UIViewController {
     // full delete of all Values
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
         fullScreenReset()
+        sliderLbl.text = "Number of Shots: 15"
+        sliderValue = 15
     }
 
     func totalShootingPercentage() {
@@ -258,6 +260,17 @@ class ViewController: UIViewController {
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
     }
     
+    func keepLabelsIntact() {
+        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
+        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
+        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
+        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
+        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
+        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
+        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+        
+    }
+    
     // clear screen-reset when app is launched each time and set slider to default value of 15
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -267,23 +280,22 @@ class ViewController: UIViewController {
         sliderValue = 15
         print("viewDidLoad")
         } else {
-            //
+            partialScreenReset()
+            keepLabelsIntact()
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         activeCycle = true
         
-        // summed values here are printing properly when this is called
-        print("viewWillDisappear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)" )
     }
     
     override func viewWillAppear(_ animated: Bool) {
         activeCycle = true
-        // values here are being reset?  think maybe this has to do with the fullscreen reset function?
+        // TODO: SET SCREEN LABELS if activeCycle = true do it in viewDidLoad first
         
-        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
-        totalShotsTaken.text = "Today's Shots Taken: **\(summedShots)**"
+//        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
+//        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
         print("viewWillAppear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
     
