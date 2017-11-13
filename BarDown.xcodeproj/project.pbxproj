@@ -62,7 +62,6 @@
 			children = (
 				A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */,
 				A38A76341FB919F000CFE6F2 /* Target.swift */,
-				A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -70,7 +69,7 @@
 		A3BB1E1C1E746F51001E979F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
+				A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */,
 				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
 			);
 			name = View;
@@ -79,6 +78,7 @@
 		A3BB1E1D1E746F57001E979F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A3C5067C1E42F10200E6B32D /* ViewController.swift */,
 				A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */,
 			);
 			name = Controller;

@@ -15,14 +15,5 @@ struct Target {
     init?(targetName: String, targetHitCount: Int) {
         self.targetName = targetName
         self.targetHitCount = targetHitCount
-    }
-    
-    enum TargetArea {
-        case upperLeft
-        case upperRight
-        case bottomRight
-        case bottomLeft
-    }
-    
-    
+    }  
 }
