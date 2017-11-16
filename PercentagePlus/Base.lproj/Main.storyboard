@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -96,15 +96,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
                                 <rect key="frame" x="229" y="243" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Dpm-me-B6V"/>
                                     <constraint firstAttribute="width" constant="100" id="vxk-4l-a53"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                <state key="normal">
+                                <state key="normal" image="uppperLeft_iPad.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
                                 </state>
@@ -112,24 +110,24 @@
                                     <action selector="incrementBtnPressedUL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3U-I3-tVh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
                                 <rect key="frame" x="727" y="243" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.93440347909999999" green="0.40369927880000001" blue="0.40875646469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GNT-oh-5NE"/>
                                     <constraint firstAttribute="height" constant="100" id="yY6-IB-CyC"/>
                                 </constraints>
+                                <state key="normal" image="upperRight_iPad.png"/>
                                 <connections>
                                     <action selector="incrementButtonPressedUR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8L-sD-g6D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
                                 <rect key="frame" x="222" y="523" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.33616787195205688" green="0.083100028336048126" blue="0.46183145046234131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="PfP-js-h8y"/>
                                     <constraint firstAttribute="height" constant="100" id="i5Q-LM-RRk"/>
                                 </constraints>
+                                <state key="normal" image="lowerLeft_iPad.png"/>
                                 <connections>
                                     <action selector="incrementButtonPressedBL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SA-NI-6bh"/>
                                 </connections>
@@ -152,13 +150,13 @@
                                     <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="vvE-6P-GuZ"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
                                 <rect key="frame" x="727" y="523" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="s1W-5O-wpU"/>
                                     <constraint firstAttribute="height" constant="100" id="tuK-ez-TM0"/>
                                 </constraints>
+                                <state key="normal" image="lowerRight_iPad.png"/>
                                 <connections>
                                     <action selector="incrementButtonPressedBR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQl-tO-SYu"/>
                                 </connections>
@@ -378,6 +376,10 @@
     <resources>
         <image name="Hockey-goal.png" width="730" height="553"/>
         <image name="ice.jpg" width="1286" height="904"/>
+        <image name="lowerLeft_iPad.png" width="100" height="100"/>
+        <image name="lowerRight_iPad.png" width="100" height="100"/>
         <image name="shooter500.jpeg" width="500" height="520"/>
+        <image name="upperRight_iPad.png" width="100" height="100"/>
+        <image name="uppperLeft_iPad.png" width="100" height="100"/>
     </resources>
 </document>
