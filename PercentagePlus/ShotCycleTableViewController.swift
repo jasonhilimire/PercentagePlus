@@ -43,15 +43,12 @@ class ShotCycleTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return shotCycles.count
-        
-
     }
     
     
@@ -73,9 +70,6 @@ class ShotCycleTableViewController: UITableViewController {
         cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
         cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.currentShotCyclePercent)%"
 
-        
-        
-        
         return cell
     }
     

@@ -82,47 +82,42 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ice-hockey-background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-EH-cgl">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
                                 <rect key="frame" x="20" y="20" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
-                                </state>
+                                <state key="normal" image="upperLeft_iPhone.png"/>
                                 <connections>
                                     <action selector="incrementBtnPressedUL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3U-I3-tVh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
                                 <rect key="frame" x="572" y="20" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.93440347909999999" green="0.40369927880000001" blue="0.40875646469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="3Q7-tk-MgC"/>
                                     <constraint firstAttribute="height" constant="75" id="6RW-pW-M13"/>
                                 </constraints>
+                                <state key="normal" image="upperRight_iPhone.png"/>
                                 <connections>
                                     <action selector="incrementButtonPressedUR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8L-sD-g6D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
                                 <rect key="frame" x="20" y="200" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.33616787195205688" green="0.083100028336048126" blue="0.46183145046234131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="4vy-vC-kOf"/>
                                     <constraint firstAttribute="width" constant="75" id="UfE-G2-0Fz"/>
                                 </constraints>
+                                <state key="normal" image="lowerLeft_iPhone.png"/>
                                 <connections>
                                     <action selector="incrementButtonPressedBL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SA-NI-6bh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
                                 <rect key="frame" x="572" y="200" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="7O8-gk-o3t"/>
                                     <constraint firstAttribute="width" constant="75" id="FLR-Ly-9aI"/>
                                 </constraints>
+                                <state key="normal" image="lowerRight_iPhone.png"/>
                                 <connections>
                                     <action selector="incrementButtonPressedBR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQl-tO-SYu"/>
                                 </connections>
@@ -136,7 +131,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYH-dm-i82">
-                                <rect key="frame" x="25" y="30" width="65" height="56"/>
+                                <rect key="frame" x="24" y="30" width="66" height="55"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -219,7 +214,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-oU-PeC" userLabel="Lower Left Label">
-                                <rect key="frame" x="25" y="213" width="65" height="48"/>
+                                <rect key="frame" x="24" y="213" width="66" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -361,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538.04347826086962" y="575.36231884057975"/>
+            <point key="canvasLocation" x="-538.38080959520244" y="575.20000000000005"/>
         </scene>
         <!--Shot Cycles-->
         <scene sceneID="2E9-8Q-Ew6">
@@ -472,8 +467,13 @@
     </scenes>
     <resources>
         <image name="ice-hockey-background.jpg" width="1920" height="1006"/>
+        <image name="lowerLeft_iPhone.png" width="75" height="75"/>
+        <image name="lowerRight_iPhone.png" width="75" height="75"/>
+        <image name="upperLeft_iPhone.png" width="75" height="75"/>
+        <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bKZ-pX-H0b"/>
         <segue reference="SG8-Yj-bpP"/>
     </inferredMetricsTieBreakers>
 </document>
