@@ -11,7 +11,7 @@ import UIKit
 var sliderValue: Int = 0
 var incrementValue: Int = 0
 
-// Target Set up
+//MARK:- Target Set up
 var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
 var upperRightHitCount = upperRight!.targetHitCurrentCount
 var urTotal = upperRight!.targetHitTotalCount
@@ -129,21 +129,22 @@ class ViewController: UIViewController {
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         saveShotCycle()
-        saveData()
         calculateTotals()
         let date = NSDate()
         let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
         
-        print("\(String(describing: currentShotCycle))")
+        
         
         shotCycles.append(currentShotCycle!)
-        
         partialScreenReset()
-   
+        print("\(String(describing: currentShotCycle))")
+        print("save button pressed")
+        print("ShotCycles Array Count: \(shotCycles.count)")
     }
     
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
         saveShotCycle()
+         print("show Saved button pressed")
         
     }
     
@@ -154,6 +155,7 @@ class ViewController: UIViewController {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
+        print("delete button pressed")
     }
 
     //MARK:- METHODS
@@ -178,7 +180,7 @@ class ViewController: UIViewController {
     }
     
     func saveShotCycle() {
-//        saveData()
+        saveData()
         shootingCycle += 1
         summedShots += sliderValue
         summedShotsMade += incrementValue
@@ -269,7 +271,8 @@ class ViewController: UIViewController {
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
     }
     
-    func keepLabelsIntact() {
+    func keepTSMLabelsIntact() {
+        // Keep the total shots made labels intact, for when returning from Shot Cycles View
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
         urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
         llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
@@ -296,26 +299,26 @@ class ViewController: UIViewController {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
-//        saveData()
         print("viewDidLoad View Controller & .plist created ")
         } else {
             partialScreenReset()
-            keepLabelsIntact()
+            keepTSMLabelsIntact()
+             print("viewDidLoad View Controller")
         }
+        saveData()
+        dataModel.loadShotCycle()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         activeCycle = true
+        print("viewWillDisappear View Controller")
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         activeCycle = true
-        // TODO: SET SCREEN LABELS if activeCycle = true do it in viewDidLoad first
-        
-//        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
-//        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
-        print("viewWillAppear, summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
+
+        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
     
 

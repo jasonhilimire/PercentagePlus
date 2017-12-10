@@ -43,4 +43,8 @@ class ShotCycleDataModel {
         }
     }
     
+    init () {
+        loadShotCycle()
+    }
+    
 }
