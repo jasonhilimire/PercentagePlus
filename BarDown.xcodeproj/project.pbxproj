@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */; };
 		A38A76351FB919F000CFE6F2 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A76341FB919F000CFE6F2 /* Target.swift */; };
 		A3A76C001FBD3E2E00629931 /* lowerLeft_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */; };
 		A3A76C011FBD3E2E00629931 /* upperLeft_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A3A76BF91FBD3E2B00629931 /* upperLeft_iPhone.png */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleDataModel.swift; sourceTree = "<group>"; };
 		A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice-hockey-background.jpg"; sourceTree = "<group>"; };
 		A38A76341FB919F000CFE6F2 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lowerLeft_iPad.png; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */,
 				A38A76341FB919F000CFE6F2 /* Target.swift */,
+				A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				A3C53CD71FA55AB1007A0830 /* ShotCycle.swift in Sources */,
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
 				A38A76351FB919F000CFE6F2 /* Target.swift in Sources */,
+				A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */,
 				A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */,
 				A3C5067B1E42F10200E6B32D /* AppDelegate.swift in Sources */,
 				A3C53CDD1FA56623007A0830 /* ShotCycleTableViewCell.swift in Sources */,

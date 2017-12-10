@@ -43,7 +43,9 @@ var activeCycle = false
 
 
 class ViewController: UIViewController {
+        let dataModel = ShotCycleDataModel()
     
+    //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
     @IBOutlet weak var sliderLbl: UILabel!
@@ -67,6 +69,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var llShotsMadeLabel: UILabel!
     @IBOutlet weak var lrShotsMadeLabel: UILabel!
 
+    //MARK:- BUTTONS
     
     // Slider Value
     @IBAction func slider(_ sender: UISlider) {
@@ -126,7 +129,7 @@ class ViewController: UIViewController {
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         saveShotCycle()
-        
+        saveData()
         calculateTotals()
         let date = NSDate()
         let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
@@ -141,7 +144,19 @@ class ViewController: UIViewController {
     
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
         saveShotCycle()
+        
     }
+    
+
+    
+    // full delete of all Values
+    @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
+        fullScreenReset()
+        sliderLbl.text = "Number of Shots: 15"
+        sliderValue = 15
+    }
+
+    //MARK:- METHODS
     
     func calculateTotals() {
         ulTotal += upperLeftHitCount
@@ -157,19 +172,13 @@ class ViewController: UIViewController {
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
     }
     
-    // full delete of all Values
-    @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
-        fullScreenReset()
-        sliderLbl.text = "Number of Shots: 15"
-        sliderValue = 15
-    }
-
     func totalShootingPercentage() {
         totalPercentCalc = ((summedShotsMade * 100) / summedShots)
         totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
     }
     
     func saveShotCycle() {
+//        saveData()
         shootingCycle += 1
         summedShots += sliderValue
         summedShotsMade += incrementValue
@@ -271,6 +280,15 @@ class ViewController: UIViewController {
         
     }
     
+    func saveData() {
+        dataModel.saveShotCycleArray()
+        print("ShotcyclesArray saved")
+//        print("Documents folder is \(dataModel.documentsDirectory())")
+//        print("Data file path is \(dataModel.dataFilePath())")
+    }
+    
+    //MARK:- VIEW
+    
     // clear screen-reset when app is launched each time and set slider to default value of 15
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -278,7 +296,8 @@ class ViewController: UIViewController {
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
-        print("viewDidLoad")
+//        saveData()
+        print("viewDidLoad View Controller & .plist created ")
         } else {
             partialScreenReset()
             keepLabelsIntact()

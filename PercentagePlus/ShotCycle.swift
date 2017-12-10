@@ -36,6 +36,5 @@ class ShotCycle: Codable {
 //        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
 //    }
     
-    
 }
 

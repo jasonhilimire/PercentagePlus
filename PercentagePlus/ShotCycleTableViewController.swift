@@ -12,14 +12,14 @@ import UIKit
 
 class ShotCycleTableViewController: UITableViewController {
 
+    let dataModel = ShotCycleDataModel()
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        saveShotCycleArray()
+
         print("Save button pressed: Array saved")
     }
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
-      saveShotCycleArray()
-        print("Back button pressed: Array saved")
+
     }
     
     // MARK: - Properties
@@ -33,8 +33,8 @@ class ShotCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadShotCycle()
-        print("View Did load & Loaded shot cycles")
+        loadData()
+        print("View Did load - ShotCycleTableView")
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,35 +75,10 @@ class ShotCycleTableViewController: UITableViewController {
         return cell
     }
     
-    func documentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
+    func loadData() {
+        dataModel.loadShotCycle()
+        print("ShotcyclesArray Loaded")
     }
     
-    func dataFilePath() -> URL {
-        return documentsDirectory().appendingPathComponent("PercentagePlus.plist")
-    }
-    
-    func saveShotCycleArray() {
-        let encoder = PropertyListEncoder()
-        do {
-            let data = try encoder.encode(shotCycles)
-            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
-        } catch {
-            print(" Error encoding shotCycles array")
-        }
-        
-    }
-    
-    func loadShotCycle() {
-        let path = dataFilePath()
-        if let data = try? Data(contentsOf: path) {
-            let decoder = PropertyListDecoder()
-            do {
-                shotCycles = try decoder.decode([ShotCycle].self, from: data)
-            } catch {
-                print("Error shotCycles item array!")
-            }
-        }
-    }
+
 }

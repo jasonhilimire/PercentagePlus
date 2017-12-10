@@ -16,6 +16,7 @@ class SplashVC: UIViewController {
     
      var audioPlayer = AVAudioPlayer()
     
+    
     @IBOutlet weak var image: UIButton!
     
     @IBAction func imageBtn(_ sender: UIButton) {
