@@ -10,7 +10,7 @@ import Foundation
 
 
 class ShotCycle: Codable {
-//    var date = NSDate()
+//    var date = NSDate()  NSDate doesnt confirm to Codable - perhaps change to a string
     var totalPercentCalc: Int
     var summedShots: Int
     var currentShotCyclePercent: Int
