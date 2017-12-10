@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -436,8 +436,13 @@
                     <navigationItem key="navigationItem" title="Shot Cycles" id="rQK-zU-Ojb">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Hho-3O-8rp">
                             <connections>
-                                <action selector="backBtn:" destination="Gk6-hK-d6G" id="Mtc-tI-2aQ"/>
+                                <action selector="backBtn:" destination="Gk6-hK-d6G" id="SZQ-V4-3bN"/>
                                 <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShotViewController" id="SG8-Yj-bpP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="mNj-x1-2WE">
+                            <connections>
+                                <action selector="save:" destination="Gk6-hK-d6G" id="hHa-13-bYe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -473,7 +478,6 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bKZ-pX-H0b"/>
         <segue reference="SG8-Yj-bpP"/>
     </inferredMetricsTieBreakers>
 </document>

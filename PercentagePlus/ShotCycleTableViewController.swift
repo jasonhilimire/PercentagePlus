@@ -12,15 +12,14 @@ import UIKit
 
 class ShotCycleTableViewController: UITableViewController {
 
-//    required init?(coder aDecoder: NSCoder) {
-//        shotCycles = [ShotCycle]()
-//
-//        super.init(coder: aDecoder)
-//    }
-//
-    @IBAction func backBtn(_ sender: Any) {
-        
-      // nothing here for now
+
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        saveShotCycleArray()
+        print("Save button pressed: Array saved")
+    }
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+      saveShotCycleArray()
+        print("Back button pressed: Array saved")
     }
     
     // MARK: - Properties
@@ -33,7 +32,9 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        loadShotCycle()
+        print("View Did load & Loaded shot cycles")
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,8 +63,8 @@ class ShotCycleTableViewController: UITableViewController {
         }
         
         let shotCycle = shotCycles[indexPath.row]
-        let shotCycleDate = shotCycle.date as? Date
-        cell.dateLabel.text = dateFormatter.string(from: shotCycleDate!)
+        let shotCycleDate = NSDate()
+        cell.dateLabel.text = dateFormatter.string(from: shotCycleDate as Date)
 
         cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.summedShotsMade)"
         cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
@@ -83,7 +84,7 @@ class ShotCycleTableViewController: UITableViewController {
         return documentsDirectory().appendingPathComponent("PercentagePlus.plist")
     }
     
-    func saveShotCycle() {
+    func saveShotCycleArray() {
         let encoder = PropertyListEncoder()
         do {
             let data = try encoder.encode(shotCycles)
@@ -91,7 +92,7 @@ class ShotCycleTableViewController: UITableViewController {
         } catch {
             print(" Error encoding shotCycles array")
         }
-
+        
     }
     
     func loadShotCycle() {

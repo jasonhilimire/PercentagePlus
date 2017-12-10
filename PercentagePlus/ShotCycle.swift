@@ -10,7 +10,7 @@ import Foundation
 
 
 class ShotCycle: Codable {
-    var date = NSDate()
+//    var date = NSDate()
     var totalPercentCalc: Int
     var summedShots: Int
     var currentShotCyclePercent: Int
@@ -19,7 +19,7 @@ class ShotCycle: Codable {
     
 
     init?(date: NSDate, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int) {
-        self.date = date
+//        self.date = date
         self.totalPercentCalc = totalPercentCalc
         self.summedShots = summedShots
         self.currentShotCyclePercent = currentShotCyclePercent
@@ -27,11 +27,15 @@ class ShotCycle: Codable {
         self.currentShotsMade = currentShotsMade
     }
     
+
+    
     func printDescription() {
         print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
     }
 //    mutating func totalShootingPerc(){
 //        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
 //    }
+    
+    
 }
 
