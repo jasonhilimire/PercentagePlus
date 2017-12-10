@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct ShotCycle {
+class ShotCycle: Codable {
     var date = NSDate()
     var totalPercentCalc: Int
     var summedShots: Int

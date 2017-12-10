@@ -8,10 +8,16 @@
 
 import UIKit
 
-var shotCycles = [ShotCycle]()
+ var shotCycles = [ShotCycle]()
 
 class ShotCycleTableViewController: UITableViewController {
-    
+
+//    required init?(coder aDecoder: NSCoder) {
+//        shotCycles = [ShotCycle]()
+//
+//        super.init(coder: aDecoder)
+//    }
+//
     @IBAction func backBtn(_ sender: Any) {
         
       // nothing here for now
@@ -68,53 +74,35 @@ class ShotCycleTableViewController: UITableViewController {
         return cell
     }
     
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
     
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("PercentagePlus.plist")
+    }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
+    func saveShotCycle() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(shotCycles)
+            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+        } catch {
+            print(" Error encoding shotCycles array")
+        }
 
+    }
+    
+    func loadShotCycle() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                shotCycles = try decoder.decode([ShotCycle].self, from: data)
+            } catch {
+                print("Error shotCycles item array!")
+            }
+        }
+    }
+}
