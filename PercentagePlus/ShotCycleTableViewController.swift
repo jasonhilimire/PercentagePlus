@@ -44,9 +44,12 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         loadData()
         print("View Did load - ShotCycleTableView")
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

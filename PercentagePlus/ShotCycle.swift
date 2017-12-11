@@ -27,6 +27,22 @@ class ShotCycle: Codable {
         self.currentShotsMade = currentShotsMade
     }
     
+    struct HistoryShotCycle {
+        var historySummedShots = shotCycles.reduce(0) { $0 + ($1.summedShots)}
+        var historySummedShotsMade = shotCycles.reduce(0) { $0 + ($1.summedShotsMade)}
+        var historyShotCyclePercent = (shotCycles.reduce(0) { $0 + ($1.currentShotCyclePercent)} / (shotCycles.count)) // do I need a plus 1?
+        
+        init?(historySummedShots: Int, historySummedShotsMade: Int, historyShotCyclePercent: Int ) {
+            self.historySummedShots = historySummedShots
+            self.historySummedShotsMade = historySummedShotsMade
+            self.historyShotCyclePercent = historyShotCyclePercent
+        }
+        
+    }
+
+    
+    
+    
     func dateFormatter() -> String{
         let currentDate = NSDate()
         
@@ -45,9 +61,6 @@ class ShotCycle: Codable {
     func printDescription() {
         print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
     }
-//    mutating func totalShootingPerc(){
-//        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
-//    }
     
 }
 
