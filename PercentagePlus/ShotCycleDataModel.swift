@@ -10,6 +10,7 @@ import Foundation
 
 class ShotCycleDataModel {
     var shotCycle = [ShotCycle]()
+
     
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -35,7 +36,8 @@ class ShotCycleDataModel {
         if let data = try? Data(contentsOf: path) {
             let decoder = PropertyListDecoder()
             do {
-                shotCycles = try decoder.decode([ShotCycle].self, from: data)
+                shotCycles = try decoder.decode([ShotCycle].self, from: data).reversed()
+
             } catch {
                 print("Error shotCycles item array!")
             }
@@ -49,8 +51,10 @@ class ShotCycleDataModel {
         } catch {
             print("Error no file to delete!")
         }
-
     }
+    
+
+
     
     init () {
         loadShotCycle()
