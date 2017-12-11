@@ -23,13 +23,7 @@ class ShotCycleTableViewController: UITableViewController {
 
     }
     
-    // MARK: - Properties
-    lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        return formatter
-    }()
+    // MARK: - VIEW
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +58,7 @@ class ShotCycleTableViewController: UITableViewController {
         }
         
         let shotCycle = shotCycles[indexPath.row]
-        let shotCycleDate = NSDate()
-        cell.dateLabel.text = dateFormatter.string(from: shotCycleDate as Date)
+        cell.dateLabel.text = "\(shotCycle.date)"
 
         cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.summedShotsMade)"
         cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"

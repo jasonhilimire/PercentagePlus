@@ -10,7 +10,7 @@ import Foundation
 
 
 class ShotCycle: Codable {
-//    var date = NSDate()  NSDate doesnt confirm to Codable - perhaps change to a string
+    var date: String
     var totalPercentCalc: Int
     var summedShots: Int
     var currentShotCyclePercent: Int
@@ -18,13 +18,26 @@ class ShotCycle: Codable {
     var currentShotsMade: Int
     
 
-    init?(date: NSDate, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int) {
-//        self.date = date
+    init?(date: String, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int) {
+        self.date = date
         self.totalPercentCalc = totalPercentCalc
         self.summedShots = summedShots
         self.currentShotCyclePercent = currentShotCyclePercent
         self.summedShotsMade = summedShotsMade
         self.currentShotsMade = currentShotsMade
+    }
+    
+    func dateFormatter() -> String{
+        let currentDate = NSDate()
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        let dateString = formatter.string(from: currentDate as Date)
+        print("\(dateString)")
+        return dateString
+        
     }
     
 

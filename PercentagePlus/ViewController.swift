@@ -30,7 +30,8 @@ var llTotal = lowerRight!.targetHitTotalCount
 
 
 //  move all this to its own model??
-var newShotCycle = ShotCycle(date: NSDate(), totalPercentCalc: 0, summedShots: 0, currentShotCyclePercent: 0, summedShotsMade: 0, currentShotsMade: 0)
+var currentDate = DateFormatter()
+var newShotCycle = ShotCycle(date: "", totalPercentCalc: 0, summedShots: 0, currentShotCyclePercent: 0, summedShotsMade: 0, currentShotsMade: 0)
 var totalPercentCalc = newShotCycle!.totalPercentCalc
 var summedShots = newShotCycle!.summedShots
 var currentShotCyclePercent = newShotCycle!.currentShotCyclePercent
@@ -131,12 +132,6 @@ class ViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         saveShotCycle()
         calculateTotals()
-//        // TODO: Fix this as its always using current date & time for all ShotCycle items.  Create A date formatter & display as a string so it conforms to Codable in the ShotCycle Model
-//        let date = NSDate()
-//        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
-        
-
-//        shotCycles.append(currentShotCycle!)
         partialScreenReset()
 
         print("save button pressed")
@@ -189,9 +184,10 @@ class ViewController: UIViewController {
         totalShootingPercentage()
         totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
         totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
-                // TODO: Fix this as its always using current date & time for all ShotCycle items.  Create A date formatter & display as a string so it conforms to Codable in the ShotCycle Model
-        let date = NSDate()
+
+        let date = dateFormatter()
         let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
+
         shotCycles.append(currentShotCycle!)
         saveData()
         
@@ -301,15 +297,13 @@ class ViewController: UIViewController {
         let currentDate = NSDate()
         
         let formatter = DateFormatter()
-        //formatter.locale = myLocale
         formatter.dateStyle = .short
-        formatter.timeStyle = .short
+        formatter.timeStyle = .medium
         
         let dateString = formatter.string(from: currentDate as Date)
         print("\(dateString)")
         return dateString
-
-        
+ 
     }
     
     //MARK:- VIEW
