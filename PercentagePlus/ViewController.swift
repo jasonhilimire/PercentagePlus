@@ -44,6 +44,7 @@ var activeCycle = false
 
 class ViewController: UIViewController {
         let dataModel = ShotCycleDataModel()
+
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -130,15 +131,14 @@ class ViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         saveShotCycle()
         calculateTotals()
-        // TODO: Fix this as its always using current date & time for all ShotCycle items.  Create A date formatter & display as a string so it conforms to Codable in the ShotCycle Model
-        let date = NSDate()
-        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
+//        // TODO: Fix this as its always using current date & time for all ShotCycle items.  Create A date formatter & display as a string so it conforms to Codable in the ShotCycle Model
+//        let date = NSDate()
+//        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
         
-        
-        
-        shotCycles.append(currentShotCycle!)
+
+//        shotCycles.append(currentShotCycle!)
         partialScreenReset()
-        print("\(String(describing: currentShotCycle))")
+
         print("save button pressed")
         print("ShotCycles Array Count: \(shotCycles.count)")
     }
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
     }
     
     func saveShotCycle() {
-        saveData()
+
         shootingCycle += 1
         summedShots += sliderValue
         summedShotsMade += incrementValue
@@ -189,6 +189,13 @@ class ViewController: UIViewController {
         totalShootingPercentage()
         totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
         totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
+                // TODO: Fix this as its always using current date & time for all ShotCycle items.  Create A date formatter & display as a string so it conforms to Codable in the ShotCycle Model
+        let date = NSDate()
+        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
+        shotCycles.append(currentShotCycle!)
+        saveData()
+        
+                print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
     
     
@@ -288,6 +295,21 @@ class ViewController: UIViewController {
         print("ShotcyclesArray saved")
 //        print("Documents folder is \(dataModel.documentsDirectory())")
 //        print("Data file path is \(dataModel.dataFilePath())")
+    }
+    
+    func dateFormatter() -> String{
+        let currentDate = NSDate()
+        
+        let formatter = DateFormatter()
+        //formatter.locale = myLocale
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        let dateString = formatter.string(from: currentDate as Date)
+        print("\(dateString)")
+        return dateString
+
+        
     }
     
     //MARK:- VIEW
