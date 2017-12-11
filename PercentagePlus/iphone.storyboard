@@ -252,7 +252,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ota-PY-f5P"/>
                                     <barButtonItem title="Show Saved Cycles" id="bai-D7-acz">
                                         <connections>
-                                            <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="ZBj-1X-Nb2"/>
+                                            <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="kVi-zP-adX"/>
                                             <segue destination="omW-Tb-Qw3" kind="showDetail" id="bKZ-pX-H0b"/>
                                         </connections>
                                     </barButtonItem>
@@ -440,9 +440,9 @@
                                 <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShotViewController" id="SG8-Yj-bpP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="mNj-x1-2WE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mNj-x1-2WE">
                             <connections>
-                                <action selector="save:" destination="Gk6-hK-d6G" id="hHa-13-bYe"/>
+                                <action selector="deleteAllArray:" destination="Gk6-hK-d6G" id="Cb9-yv-sMT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -478,6 +478,7 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bKZ-pX-H0b"/>
         <segue reference="SG8-Yj-bpP"/>
     </inferredMetricsTieBreakers>
 </document>

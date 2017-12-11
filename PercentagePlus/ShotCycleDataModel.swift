@@ -28,7 +28,6 @@ class ShotCycleDataModel {
         } catch {
             print(" Error encoding shotCycles array")
         }
-        
     }
     
     func loadShotCycle() {
@@ -41,6 +40,16 @@ class ShotCycleDataModel {
                 print("Error shotCycles item array!")
             }
         }
+    }
+    
+    func deleteDataFile() {
+        let path = dataFilePath()
+        do {
+            try FileManager.default.removeItem(at: path)
+        } catch {
+            print("Error no file to delete!")
+        }
+
     }
     
     init () {

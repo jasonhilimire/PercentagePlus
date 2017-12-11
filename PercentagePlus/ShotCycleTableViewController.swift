@@ -14,9 +14,26 @@ class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
 
-    @IBAction func save(_ sender: UIBarButtonItem) {
-
-        print("Save button pressed: Array saved")
+    @IBAction func deleteAllArray(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Default Style", message: "Warning: This will DELETE all your Shot Cycles data!, this cannot be undone", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            print("Cancel button pressed")
+        }
+        alertController.addAction(cancelAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { action in
+            self.dataModel.deleteDataFile()
+            shotCycles.removeAll()
+            print("Delete button pressed: Array deleted")
+            self.tableView.reloadData()
+        }
+        alertController.addAction(deleteAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+       
     }
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {

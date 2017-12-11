@@ -321,8 +321,8 @@ class ViewController: UIViewController {
             keepTSMLabelsIntact()
              print("viewDidLoad View Controller")
         }
-        saveData()
-        dataModel.loadShotCycle()
+//        saveData()
+//        dataModel.loadShotCycle()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
