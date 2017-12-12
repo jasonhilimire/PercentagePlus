@@ -46,7 +46,7 @@ var activeCycle = false
 
 
 class ViewController: UIViewController {
-//        let dataModel = ShotCycleDataModel()
+        let dataModel = ShotCycleDataModel()
     
 //    weak var delegate: UIViewControllerDelegate?
 
@@ -194,7 +194,7 @@ class ViewController: UIViewController {
 
         shotCycles.append(currentShotCycle!)
                 // when run sends the currentShotCycle back to the delegate
-        delegate?.uiViewControllerDelegate(self, didPressSave: currentShotCycle!)
+//        delegate?.uiViewControllerDelegate(self, didPressSave: currentShotCycle!)
         saveData()
         
                 print("Current Shot Cycle: \(String(describing: currentShotCycle))")
