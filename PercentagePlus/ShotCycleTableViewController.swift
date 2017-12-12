@@ -86,9 +86,25 @@ class ShotCycleTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // remove the item at its indexpath
+        shotCycles.remove(at: indexPath.row)
+        
+        
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+        saveData()
+        
+    }
+    
     func loadData() {
         dataModel.loadShotCycle()
         print("ShotcyclesArray Loaded")
+    }
+    
+    func saveData() {
+        dataModel.saveShotCycleArray()
+        print("ShotcyclesArray Saved")
     }
     
 
