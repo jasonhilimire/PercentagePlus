@@ -295,8 +295,8 @@ class ViewController: UIViewController {
     func saveData() {
         dataModel.saveShotCycleArray()
         print("ShotcyclesArray saved")
-//        print("Documents folder is \(dataModel.documentsDirectory())")
-//        print("Data file path is \(dataModel.dataFilePath())")
+        print("Documents folder is \(dataModel.documentsDirectory())")
+        print("Data file path is \(dataModel.dataFilePath())")
     }
     
     func dateFormatter() -> String{

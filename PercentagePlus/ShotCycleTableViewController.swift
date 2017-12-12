@@ -73,9 +73,16 @@ class ShotCycleTableViewController: UITableViewController {
         return cell
     }
     
+
+    
     func loadData() {
         dataModel.loadShotCycle()
         print("ShotcyclesArray Loaded")
+    }
+    
+    func saveData() {
+         dataModel.saveShotCycleArray()
+        print("ShotcyclesArray Saved")
     }
     
 
