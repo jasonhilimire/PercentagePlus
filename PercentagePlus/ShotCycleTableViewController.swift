@@ -15,24 +15,6 @@ class ShotCycleTableViewController: UITableViewController {
     let dataModel = ShotCycleDataModel()
 
     @IBAction func deleteAllArray(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Warning!", message: "This will DELETE all your Shot Cycles data!! This cannot be undone", preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            print("Cancel button pressed")
-        }
-        alertController.addAction(cancelAction)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            self.dataModel.deleteDataFile()
-            shotCycles.removeAll()
-            print("Delete button pressed: Array deleted")
-            self.tableView.reloadData()
-        }
-        alertController.addAction(deleteAction)
-        
-        self.present(alertController, animated: true) {
-            // ...
-        }
        
     }
     
@@ -44,6 +26,9 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.delegate = (self as! UINavigationControllerDelegate)
+//        let shotCycle = dataModel.shotCycle
+//        performSegue(withIdentifier: "ShowShotCycles", sender: shotCycle)
         
 
         loadData()
@@ -85,7 +70,6 @@ class ShotCycleTableViewController: UITableViewController {
         cell.cycleShotsMadeLabel.text =  "Cycle Shots Made : \(shotCycle.currentShotsMade)"
         cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
         cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.currentShotCyclePercent)%"
-
         return cell
     }
     

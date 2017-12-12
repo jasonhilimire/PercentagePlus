@@ -253,7 +253,7 @@
                                     <barButtonItem title="Show Saved Cycles" id="bai-D7-acz">
                                         <connections>
                                             <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="kVi-zP-adX"/>
-                                            <segue destination="omW-Tb-Qw3" kind="showDetail" id="bKZ-pX-H0b"/>
+                                            <segue destination="omW-Tb-Qw3" kind="showDetail" identifier="ShowShotCycles" id="bKZ-pX-H0b"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

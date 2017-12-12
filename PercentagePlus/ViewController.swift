@@ -40,11 +40,15 @@ var shootingCycle = 1
 var activeCycle = false
 
 
-
+//protocol UIViewControllerDelegate: class {
+//    func uiViewControllerDelegate(_ controller: UIViewController, didPressSave: ShotCycle)
+//}
 
 
 class ViewController: UIViewController {
-        let dataModel = ShotCycleDataModel()
+//        let dataModel = ShotCycleDataModel()
+    
+//    weak var delegate: UIViewControllerDelegate?
 
     
     //MARK:- SETUP
@@ -189,6 +193,8 @@ class ViewController: UIViewController {
         let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
 
         shotCycles.append(currentShotCycle!)
+                // when run sends the currentShotCycle back to the delegate
+        delegate?.uiViewControllerDelegate(self, didPressSave: currentShotCycle!)
         saveData()
         
                 print("Current Shot Cycle: \(String(describing: currentShotCycle))")

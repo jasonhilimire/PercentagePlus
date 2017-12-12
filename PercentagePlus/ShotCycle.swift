@@ -39,9 +39,6 @@ class ShotCycle: Codable {
         }
         
     }
-
-    
-    
     
     func dateFormatter() -> String{
         let currentDate = NSDate()
