@@ -8,7 +8,7 @@
 
 import UIKit
 
- var shotCycles = [ShotCycle]()
+//var shotCycles = [ShotCycle]()
 
 class ShotCycleTableViewController: UITableViewController {
 

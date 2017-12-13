@@ -8,40 +8,6 @@
 
 import UIKit
 
-var sliderValue: Int = 0
-var incrementValue: Int = 0
-
-//MARK:- Target Set up
-var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-var upperRightHitCount = upperRight!.targetHitCurrentCount
-var urTotal = upperRight!.targetHitTotalCount
-
-var upperLeft = Target(targetName: "Upper Left" , targetHitCurrentCount: 0, targetHitTotalCount: 0)
-var upperLeftHitCount = upperLeft!.targetHitCurrentCount
-var ulTotal = upperLeft!.targetHitTotalCount
-
-var lowerLeft = Target(targetName: "Lower Left", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-var lowerLeftHitCount = lowerLeft!.targetHitCurrentCount
-var lrTotal = lowerLeft!.targetHitTotalCount
-
-var lowerRight = Target(targetName: "Lower Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-var lowerRightHitCount = lowerRight!.targetHitCurrentCount
-var llTotal = lowerRight!.targetHitTotalCount
-
-
-//  move all this to its own model??
-var currentDate = DateFormatter()
-var newShotCycle = ShotCycle(date: "", totalPercentCalc: 0, summedShots: 0, currentShotCyclePercent: 0, summedShotsMade: 0, currentShotsMade: 0)
-var totalPercentCalc = newShotCycle!.totalPercentCalc
-var summedShots = newShotCycle!.summedShots
-var currentShotCyclePercent = newShotCycle!.currentShotCyclePercent
-var summedShotsMade = newShotCycle!.currentShotsMade
-var shootingCycle = 1
-var activeCycle = false
-
-
-
-
 
 class ViewController: UIViewController {
         let dataModel = ShotCycleDataModel()
@@ -289,8 +255,8 @@ class ViewController: UIViewController {
     func saveData() {
         dataModel.saveShotCycleArray()
         print("ShotcyclesArray saved")
-//        print("Documents folder is \(dataModel.documentsDirectory())")
-//        print("Data file path is \(dataModel.dataFilePath())")
+        print("Documents folder is \(dataModel.documentsDirectory())")
+        print("Data file path is \(dataModel.dataFilePath())")
     }
     
     func dateFormatter() -> String{
@@ -321,8 +287,7 @@ class ViewController: UIViewController {
             keepTSMLabelsIntact()
              print("viewDidLoad View Controller")
         }
-//        saveData()
-//        dataModel.loadShotCycle()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -342,30 +307,4 @@ class ViewController: UIViewController {
 
 
 
-// first go at adding UIActionAlert Controller & it works!! using a switch case successfully this goes in save()
-//        switch incrementValue {
-//        case 0:
-//            let ac = UIAlertController(title: title, message: "Hopefully you at least hit a post! this is just a warmup right?", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        case 1..<5:
-//            let ac = UIAlertController(title: title, message: "Heating Up, Let's Keep going for more!", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        case 5..<10:
-//            let ac = UIAlertController(title: title, message: "Nice Shooting Bud! A few of those will get by the tendy for sure", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        case 10..<100:
-//            let ac = UIAlertController(title: title, message: "Dangle, Snipe, Celly: On fire!! (You might wanna move farther away next round)", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//            present(ac, animated: true)
-//
-//        default:
-//            let ac = UIAlertController(title: title, message: "Keep at it, Can't score if you don't shoot!", preferredStyle: .alert)
-//             ac.addAction(UIAlertAction(title: "Shoot Again", style: .default, handler: partialScreenReset))
-//             present(ac, animated: true)
-//        }
+

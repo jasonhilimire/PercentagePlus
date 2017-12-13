@@ -9,7 +9,7 @@
 import Foundation
 
 class ShotCycleDataModel {
-    var shotCycle = [ShotCycle]()
+
 
     
     func documentsDirectory() -> URL {
@@ -36,8 +36,8 @@ class ShotCycleDataModel {
         if let data = try? Data(contentsOf: path) {
             let decoder = PropertyListDecoder()
             do {
-                shotCycles = try decoder.decode([ShotCycle].self, from: data).reversed()
-
+                shotCycles = try decoder.decode([ShotCycle].self, from: data)
+                sortData()
             } catch {
                 print("Error shotCycles item array!")
             }
@@ -54,6 +54,10 @@ class ShotCycleDataModel {
     }
     
 
+    func sortData() {
+        // sorts array by date so earliest date shows first when loading in ShotCycleViewController
+        shotCycles.sort(by: {$0.date < $1.date})
+    }
 
     
     init () {
