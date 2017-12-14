@@ -10,6 +10,8 @@
 		A3000BD81FE06FA300BF1CB8 /* Alert-Misc stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */; };
 		A33D5EA51FE23FF3000EE640 /* LifetimeShotCycles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */; };
 		A33D5EA91FE245BD000EE640 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33D5EA81FE245BD000EE640 /* Launch Screen.storyboard */; };
+		A33D5EAB1FE2C5AA000EE640 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D5EAA1FE2C5AA000EE640 /* Calculations.swift */; };
+		A33D5EAD1FE2C5FC000EE640 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D5EAC1FE2C5FC000EE640 /* ViewModel.swift */; };
 		A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */; };
 		A38A76351FB919F000CFE6F2 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A76341FB919F000CFE6F2 /* Target.swift */; };
 		A3A76C001FBD3E2E00629931 /* lowerLeft_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */; };
@@ -42,6 +44,8 @@
 		A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert-Misc stuff.swift"; sourceTree = "<group>"; };
 		A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifetimeShotCycles.swift; sourceTree = "<group>"; };
 		A33D5EA81FE245BD000EE640 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A33D5EAA1FE2C5AA000EE640 /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		A33D5EAC1FE2C5FC000EE640 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleDataModel.swift; sourceTree = "<group>"; };
 		A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice-hockey-background.jpg"; sourceTree = "<group>"; };
 		A38A76341FB919F000CFE6F2 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				A38A76341FB919F000CFE6F2 /* Target.swift */,
 				A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */,
 				A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */,
+				A33D5EAA1FE2C5AA000EE640 /* Calculations.swift */,
+				A33D5EAC1FE2C5FC000EE640 /* ViewModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -259,10 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3000BD81FE06FA300BF1CB8 /* Alert-Misc stuff.swift in Sources */,
+				A33D5EAD1FE2C5FC000EE640 /* ViewModel.swift in Sources */,
 				A3C53CDF1FA567C7007A0830 /* ShotCycleTableViewController.swift in Sources */,
 				A3C53CD71FA55AB1007A0830 /* ShotCycle.swift in Sources */,
 				A33D5EA51FE23FF3000EE640 /* LifetimeShotCycles.swift in Sources */,
 				A3C5067D1E42F10200E6B32D /* ViewController.swift in Sources */,
+				A33D5EAB1FE2C5AA000EE640 /* Calculations.swift in Sources */,
 				A38A76351FB919F000CFE6F2 /* Target.swift in Sources */,
 				A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */,
 				A3BB1E1F1E746F75001E979F /* SplashVC.swift in Sources */,
