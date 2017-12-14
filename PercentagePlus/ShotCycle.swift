@@ -59,6 +59,7 @@ class ShotCycle: Codable {
     }
     
 
+
     
     func printDescription() {
         print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")

@@ -13,6 +13,7 @@ import UIKit
 class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
+    let lifetime = LifetimeShotCycle()
 
     @IBOutlet weak var lifetimeShotsTaken: UILabel!
     @IBOutlet weak var lifetimeShotsMade: UILabel!
@@ -50,11 +51,11 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         loadData()
-        lifetimeShotsTaken.text = "Shots Taken: "
-        lifetimeShotsMade.text = "Shots Made: "
-        lifetimeShotPerc.text = "Shooting Percentage: "
+        
+        lifetimeShotsTaken.text = "Shots Taken: \(lifetime.lifeTimeShotsTaken())"
+        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
+        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
         print("View Did load - ShotCycleTableView")
     }
     

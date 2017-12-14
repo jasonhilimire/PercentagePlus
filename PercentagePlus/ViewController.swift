@@ -10,7 +10,9 @@ import UIKit
 
 
 class ViewController: UIViewController {
-        let dataModel = ShotCycleDataModel()
+    
+    let dataModel = ShotCycleDataModel()
+
 
     //MARK:- Target Set up
     var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)

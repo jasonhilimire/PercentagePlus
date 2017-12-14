@@ -9,7 +9,7 @@
 import Foundation
 
 class ShotCycleDataModel {
-
+    let lifetime = LifetimeShotCycle()
     
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -25,9 +25,7 @@ class ShotCycleDataModel {
         do {
             let data = try encoder.encode(shotCycles)
             try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
-            lifeTimeShootingPerc()
-            lifeTimeShotsMade()
-            lifeTimeShotsTaken()
+
         } catch {
             print(" Error encoding shotCycles array")
         }
@@ -64,21 +62,6 @@ class ShotCycleDataModel {
 
     init () {
         loadShotCycle()
-    }
-    
-    func lifeTimeShotsTaken() {
-        let lifetimeShotsTaken = shotCycles.reduce(0, {$0 + ($1.shotsTaken )})
-        print("lifetime Shots Taken: \(lifetimeShotsTaken)")
-    }
-    
-    func lifeTimeShotsMade() {
-        let lifetimeShotsMade = shotCycles.reduce(0, {$0 + ($1.currentShotsMade )})
-        print("lifetime Shots Made: \(lifetimeShotsMade)")
-    }
-    
-    func lifeTimeShootingPerc() {
-        let lifeTimeShootingPerc = (shotCycles.reduce(0, {$0 + ($1.currentShotCyclePercent )}) / shotCycles.count)
-        print("lifetime Shooting Percent: \(lifeTimeShootingPerc)")
     }
     
 }
