@@ -12,6 +12,22 @@ import UIKit
 class ViewController: UIViewController {
         let dataModel = ShotCycleDataModel()
 
+    //MARK:- Target Set up
+    var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
+    lazy var upperRightHitCount = upperRight!.targetHitCurrentCount
+    lazy var urTotal = upperRight!.targetHitTotalCount
+    
+    var upperLeft = Target(targetName: "Upper Left" , targetHitCurrentCount: 0, targetHitTotalCount: 0)
+    lazy var upperLeftHitCount = upperLeft!.targetHitCurrentCount
+    lazy var ulTotal = upperLeft!.targetHitTotalCount
+    
+    var lowerLeft = Target(targetName: "Lower Left", targetHitCurrentCount: 0, targetHitTotalCount: 0)
+    lazy var lowerLeftHitCount = lowerLeft!.targetHitCurrentCount
+    lazy var lrTotal = lowerLeft!.targetHitTotalCount
+    
+    var lowerRight = Target(targetName: "Lower Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
+    lazy var lowerRightHitCount = lowerRight!.targetHitCurrentCount
+    lazy var llTotal = lowerRight!.targetHitTotalCount
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -37,6 +53,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var llShotsMadeLabel: UILabel!
     @IBOutlet weak var lrShotsMadeLabel: UILabel!
 
+    
+    
     //MARK:- BUTTONS
     
     // Slider Value
@@ -152,7 +170,7 @@ class ViewController: UIViewController {
         totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
 
         let date = dateFormatter()
-        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue)
+        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
 
         shotCycles.append(currentShotCycle!)
         saveData()

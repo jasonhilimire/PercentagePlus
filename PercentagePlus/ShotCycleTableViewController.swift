@@ -14,6 +14,12 @@ class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
 
+    @IBOutlet weak var lifetimeShotsTaken: UILabel!
+    @IBOutlet weak var lifetimeShotsMade: UILabel!
+    @IBOutlet weak var lifetimeShotPerc: UILabel!
+    
+
+
     @IBAction func deleteAllArray(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Warning!", message: "This will DELETE all your Shot Cycles data!! This cannot be undone", preferredStyle: .alert)
         
@@ -46,6 +52,9 @@ class ShotCycleTableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadData()
+        lifetimeShotsTaken.text = "Shots Taken: "
+        lifetimeShotsMade.text = "Shots Made: "
+        lifetimeShotPerc.text = "Shooting Percentage: "
         print("View Did load - ShotCycleTableView")
     }
     

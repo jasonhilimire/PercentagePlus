@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Bold</string>
+        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue-Bold</string>
         </array>
@@ -373,9 +376,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="7wH-gT-F9G">
+                            <rect key="frame" x="0.0" y="0.0" width="667" height="72"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shooting Percentage: 99%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yU-HC-XdP">
+                                    <rect key="frame" x="466" y="38" width="193" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LifeTime Totals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ys-Ca-Cr2">
+                                    <rect key="frame" x="246.5" y="0.0" width="174" height="30"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots Taken: 99999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlj-6b-h2e">
+                                    <rect key="frame" x="8" y="38" width="146.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Shots Made: 99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-pX-Khf">
+                                    <rect key="frame" x="258.5" y="38" width="150" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="05B-Ax-tS0"/>
+                                        <constraint firstAttribute="height" constant="21" id="KV5-gc-NUI"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="7yU-HC-XdP" secondAttribute="trailing" constant="8" id="01t-8j-wwg"/>
+                                <constraint firstItem="7EO-pX-Khf" firstAttribute="top" secondItem="4ys-Ca-Cr2" secondAttribute="bottom" constant="8" id="AmJ-nB-56z"/>
+                                <constraint firstItem="tlj-6b-h2e" firstAttribute="leading" secondItem="7wH-gT-F9G" secondAttribute="leading" constant="8" id="L88-px-alj"/>
+                                <constraint firstItem="7EO-pX-Khf" firstAttribute="centerX" secondItem="7wH-gT-F9G" secondAttribute="centerX" id="MOb-dd-bfF"/>
+                                <constraint firstItem="4ys-Ca-Cr2" firstAttribute="centerX" secondItem="7wH-gT-F9G" secondAttribute="centerX" id="ahz-zQ-IzK"/>
+                                <constraint firstItem="tlj-6b-h2e" firstAttribute="top" secondItem="7wH-gT-F9G" secondAttribute="top" constant="38" id="d6Q-eh-nG0"/>
+                                <constraint firstItem="7yU-HC-XdP" firstAttribute="top" secondItem="7wH-gT-F9G" secondAttribute="top" constant="38" id="dHm-A0-hiB"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShotCycleTableViewCell" rowHeight="100" id="7QI-A2-4iI" customClass="ShotCycleTableViewCell" customModule="BarDown" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="667" height="100"/>
+                                <rect key="frame" x="0.0" y="100" width="667" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7QI-A2-4iI" id="oSc-lj-5po">
                                     <rect key="frame" x="0.0" y="0.0" width="667" height="99.5"/>
@@ -453,10 +500,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lifetimeShotPerc" destination="7yU-HC-XdP" id="qFw-bh-gBd"/>
+                        <outlet property="lifetimeShotsMade" destination="7EO-pX-Khf" id="gWS-ox-Ib7"/>
+                        <outlet property="lifetimeShotsTaken" destination="tlj-6b-h2e" id="oAg-2g-G1h"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbZ-SX-tBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342.39130434782612" y="571.01449275362324"/>
+            <point key="canvasLocation" x="341.37931034482762" y="570.39999999999998"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="waa-eu-sRw">
@@ -486,6 +538,6 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wut-HT-fcU"/>
+        <segue reference="SG8-Yj-bpP"/>
     </inferredMetricsTieBreakers>
 </document>
