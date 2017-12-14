@@ -8,8 +8,6 @@
 
 import UIKit
 
-//var shotCycles = [ShotCycle]()
-
 class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
@@ -64,7 +62,7 @@ class ShotCycleTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
+    // MARK: - TABLEVIEW
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -100,9 +98,10 @@ class ShotCycleTableViewController: UITableViewController {
         // remove the item at its indexpath
         shotCycles.remove(at: indexPath.row)
         
-        
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        // TODO:  add a recalc of the lifetime
+        // TODO: also do a full screen reset
         saveData()
         
     }
