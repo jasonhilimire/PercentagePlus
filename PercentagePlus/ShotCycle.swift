@@ -13,13 +13,11 @@ var incrementValue: Int = 0
 
 
 //  move all this to its own model??
-var currentDate = DateFormatter()
-var newShotCycle = ShotCycle(date: "", totalPercentCalc: 0, summedShots: 0, currentShotCyclePercent: 0, summedShotsMade: 0, currentShotsMade: 0, shotsTaken: 0)
-var totalPercentCalc = newShotCycle!.totalPercentCalc
-var summedShots = newShotCycle!.summedShots
-var currentShotCyclePercent = newShotCycle!.currentShotCyclePercent
-var summedShotsMade = newShotCycle!.currentShotsMade
-var shootingCycle = 1
+var totalPercentCalc = 0
+var summedShots = 0
+var currentShotCyclePercent = 0
+var summedShotsMade = 0
+var shootingCycle = 0
 var activeCycle = false
 
 

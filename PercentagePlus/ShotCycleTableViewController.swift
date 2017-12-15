@@ -99,7 +99,7 @@ class ShotCycleTableViewController: UITableViewController {
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
         lifetimeLabels()
-        // TODO: also do a full screen reset
+        // TODO: also do a full screen reset - may need to create a delegate?
         saveData()
         
     }

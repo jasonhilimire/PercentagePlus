@@ -238,6 +238,10 @@ class ViewController: UIViewController {
     // full reset of all data values excluding slider
     func fullScreenReset() {
         partialScreenReset()
+        resetValues()
+    }
+    
+    func resetValues() {
         totalShotsTaken.text = "Today's Shots Taken: 0"
         totalShootingPerc.text = "Today's Shooting Percentage: 0%"
         totalShotsMade.text = "Total Shots Made: 0"
