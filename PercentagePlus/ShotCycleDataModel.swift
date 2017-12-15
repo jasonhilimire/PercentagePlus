@@ -55,8 +55,8 @@ class ShotCycleDataModel {
     
 
     func sortData() {
-        // sorts array by date so earliest date shows first when loading in ShotCycleViewController
-        shotCycles.sort(by: {$0.date < $1.date})
+        // sorts array by date so newest date shows first when loading in ShotCycleViewController
+        shotCycles.sort(by: {$0.date > $1.date})
     }
 
 

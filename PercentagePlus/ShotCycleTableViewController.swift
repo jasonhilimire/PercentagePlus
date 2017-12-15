@@ -19,7 +19,8 @@ class ShotCycleTableViewController: UITableViewController {
     
 
 
-    @IBAction func deleteAllArray(_ sender: UIBarButtonItem) {
+    @IBAction func deleteAllBtn(_ sender: UIBarButtonItem) {
+        // deletes the array and the .plist file
         let alertController = UIAlertController(title: "Warning!", message: "This will DELETE all your Shot Cycles data!! This cannot be undone", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
@@ -50,10 +51,7 @@ class ShotCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        
-        lifetimeShotsTaken.text = "Shots Taken: \(lifetime.lifeTimeShotsTaken())"
-        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
-        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
+        lifetimeLabels()
         print("View Did load - ShotCycleTableView")
     }
     
@@ -100,7 +98,7 @@ class ShotCycleTableViewController: UITableViewController {
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-        // TODO:  add a recalc of the lifetime
+        lifetimeLabels()
         // TODO: also do a full screen reset
         saveData()
         
@@ -114,6 +112,12 @@ class ShotCycleTableViewController: UITableViewController {
     func saveData() {
         dataModel.saveShotCycleArray()
         print("ShotcyclesArray Saved")
+    }
+    
+    func lifetimeLabels() {
+        lifetimeShotsTaken.text = "Shots Taken: \(lifetime.lifeTimeShotsTaken())"
+        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
+        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
     }
     
 
