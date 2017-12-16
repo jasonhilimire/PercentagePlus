@@ -116,8 +116,8 @@ class ViewController: UIViewController {
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        saveShotCycle()
         calculateTotals()
+        saveShotCycle()
         partialScreenReset()
 
         print("save button pressed")
@@ -218,9 +218,10 @@ class ViewController: UIViewController {
         lowerLeftLabel.text = "0"
         lowerRightHitCount = 0
         lowerRightLabel.text = "0"
+        print("resetCornerLabels")
     }
+
     
-    // only resets the 4 corners and current data values- does not reset saved data values or slider
     func partialScreenReset(action: UIAlertAction! = nil) {
         enableButtons()
         calcPercentageLbl.text = "0%"
@@ -229,16 +230,17 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         incrementValue = 0
-        resetCornerLabels()
         currentShotCyclePercent = 0
-        
+        print("partialScreenReset")
     }
     
     
     // full reset of all data values excluding slider
     func fullScreenReset() {
         partialScreenReset()
+        resetCornerLabels()
         resetValues()
+        print("fullScreenReset")
     }
     
     func resetValues() {
@@ -262,17 +264,22 @@ class ViewController: UIViewController {
         
         lrTotal = 0
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
+        print("resetValues")
     }
     
     func keepTSMLabelsIntact() {
         // Keep the total shots made labels intact, for when returning from Shot Cycles View
+        // TODO: the shotsMadeLabels are not being updated when returning from the tableView as they are not saved anywhere
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
         urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
         llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
+        
+        
         totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
         totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
         totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+        print("keepTSMLabelsIntact()")
         
     }
     
@@ -322,6 +329,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         activeCycle = true
+        keepTSMLabelsIntact()
 
         print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
