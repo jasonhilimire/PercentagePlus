@@ -112,6 +112,7 @@ class ViewController: UIViewController {
     
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         partialScreenReset()
+        resetCornerLabels()
     }
    
     // saves current values - pressed after all shots/corners entered
@@ -119,6 +120,7 @@ class ViewController: UIViewController {
         calculateTotals()
         saveShotCycle()
         partialScreenReset()
+        resetCornerLabels()
 
         print("save button pressed")
         print("ShotCycles Array Count: \(shotCycles.count)")
