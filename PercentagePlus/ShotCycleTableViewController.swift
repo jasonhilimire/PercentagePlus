@@ -62,6 +62,8 @@ class ShotCycleTableViewController: UITableViewController {
     
     // MARK: - TABLEVIEW
     
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -104,6 +106,21 @@ class ShotCycleTableViewController: UITableViewController {
         
     }
     
+    //MARK:- HEADERVIEW
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let headerHeight: CGFloat = 100
+        return headerHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
+        
+        headerView.totalShotsMade.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
+        
+        return headerView
+    }
+    
+    //MARK:- METHODS
     func loadData() {
         dataModel.loadShotCycle()
         print("ShotcyclesArray Loaded")
