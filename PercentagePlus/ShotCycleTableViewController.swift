@@ -119,7 +119,7 @@ class ShotCycleTableViewController: UITableViewController {
     
     //MARK:- HEADERVIEW
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight: CGFloat = 115
+        let headerHeight: CGFloat = 103
         return headerHeight
     }
     
@@ -154,12 +154,9 @@ class ShotCycleTableViewController: UITableViewController {
         // border
         headerView.vw?.layer.borderWidth = 2
         headerView.vw?.layer.borderColor = UIColor.black.cgColor
-        // shadow- not getting this offset properly
+        // shadow- 
         headerView.vw.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
 
     }
     
-
-    
-
 }

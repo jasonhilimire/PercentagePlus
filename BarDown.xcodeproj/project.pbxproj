@@ -133,7 +133,6 @@
 				A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */,
 				A3BB1E1E1E746F75001E979F /* SplashVC.swift */,
 				A3423C761FE73551002E668E /* HeaderView.swift */,
-				A3423C771FE73551002E668E /* HeaderView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -172,6 +171,7 @@
 				A3C5067A1E42F10200E6B32D /* AppDelegate.swift */,
 				A3C5067E1E42F10200E6B32D /* Main.storyboard */,
 				A3A998351F7F5255003A20BD /* iphone.storyboard */,
+				A3423C771FE73551002E668E /* HeaderView.xib */,
 				A33D5EA81FE245BD000EE640 /* Launch Screen.storyboard */,
 				A3C506811E42F10200E6B32D /* Assets.xcassets */,
 				A38D3A011FBCD40F00616D76 /* Assets */,
