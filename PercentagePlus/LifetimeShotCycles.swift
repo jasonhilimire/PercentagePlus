@@ -9,6 +9,7 @@
 import Foundation
 
 class LifetimeShotCycle {
+    var shotCycles = [ShotCycle]()
     
     func lifeTimeShotsTaken() -> Int {
         let lifetimeShotsTaken = shotCycles.reduce(0, {$0 + ($1.shotsTaken )})
@@ -18,7 +19,7 @@ class LifetimeShotCycle {
     }
     
     func lifeTimeShotsMade() -> Int {
-        let lifetimeShotsMade = shotCycles.reduce(0, {$0 + ($1.currentShotsMade )})
+        let lifetimeShotsMade = shotCycles.reduce(0, {$0 + ($1.targetTotalHit() )})
         print("lifetime Shots Made: \(lifetimeShotsMade)")
         return lifetimeShotsMade
     }
@@ -27,7 +28,7 @@ class LifetimeShotCycle {
         if shotCycles.count == 0 {
             return 0
         } else {
-        let lifeTimeShootingPerc = (shotCycles.reduce(0, {$0 + ($1.currentShotCyclePercent )}) / shotCycles.count)
+        let lifeTimeShootingPerc = (shotCycles.reduce(0, {$0 + ($1.shootingPercentage() )}) / shotCycles.count)
         print("lifetime Shooting Percent: \(lifeTimeShootingPerc)")
             return lifeTimeShootingPerc
         }

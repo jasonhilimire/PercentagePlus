@@ -8,28 +8,23 @@
 
 import UIKit
 
+let date = FormattedDate.init(date: NSDate())
+let formattedDate = date?.formattedDate
 
 class ViewController: UIViewController {
+
     
     let dataModel = ShotCycleDataModel()
+    let currentShotCycle = ShotCycle(date: formattedDate!, shotsTaken: sliderValue)
+    
 
 
     //MARK:- Target Set up
-    var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var upperRightHitCount = upperRight!.targetHitCurrentCount
-    lazy var urTotal = upperRight!.targetHitTotalCount
-    
-    var upperLeft = Target(targetName: "Upper Left" , targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var upperLeftHitCount = upperLeft!.targetHitCurrentCount
-    lazy var ulTotal = upperLeft!.targetHitTotalCount
-    
-    var lowerLeft = Target(targetName: "Lower Left", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var lowerLeftHitCount = lowerLeft!.targetHitCurrentCount
-    lazy var lrTotal = lowerLeft!.targetHitTotalCount
-    
-    var lowerRight = Target(targetName: "Lower Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var lowerRightHitCount = lowerRight!.targetHitCurrentCount
-    lazy var llTotal = lowerRight!.targetHitTotalCount
+    var upperRight = ShotCycle.Target(hitCount: 0, description: "Top Right")
+    var bottomRight = ShotCycle.Target(hitCount: 0, description: "Bottom Right")
+    var upperLeft = ShotCycle.Target(hitCount: 0, description: "Top Left")
+    var bottomLeft = ShotCycle.Target(hitCount: 0, description: "Bottom Left")
+    var fiveHole = ShotCycle.Target(hitCount: 0, description: "5-hole")
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -68,10 +63,10 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        upperLeftHitCount += 1
-        upperLeftLabel.text = "\(upperLeftHitCount)"
+        upperLeft?.targetHit()
+        upperLeftLabel.text = "\(upperLeft?.hitCount)"
         
-        if upperLeftHitCount >= sliderValue {
+        if (upperLeft?.hitCount)! >= sliderValue {
             disableButtons()
         }
 }
@@ -79,10 +74,10 @@ class ViewController: UIViewController {
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
-        upperRightHitCount += 1
-        upperRightLabel.text = "\(upperRightHitCount)"
+        upperRight?.targetHit()
+        upperRightLabel.text = "\(upperRight?.hitCount)"
         
-        if upperRightHitCount >= sliderValue {
+        if (upperRight?.hitCount)! >= sliderValue {
             disableButtons()
         }
     }
@@ -90,10 +85,10 @@ class ViewController: UIViewController {
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
-        lowerLeftHitCount += 1
-        lowerLeftLabel.text = "\(lowerLeftHitCount)"
+        bottomLeft?.targetHit()
+        lowerLeftLabel.text = "\(bottomLeft?.hitCount)"
         
-        if lowerLeftHitCount >= sliderValue {
+        if (bottomLeft?.hitCount)! >= sliderValue {
             disableButtons()
         }
     }
@@ -101,10 +96,10 @@ class ViewController: UIViewController {
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        lowerRightHitCount += 1
-        lowerRightLabel.text = "\(lowerRightHitCount)"
+        bottomRight?.targetHit()
+        lowerRightLabel.text = "\(bottomRight?.hitCount)"
         
-        if lowerRightHitCount >= sliderValue {
+        if (bottomRight?.hitCount)! >= sliderValue {
             disableButtons()
         }
     }
@@ -117,7 +112,7 @@ class ViewController: UIViewController {
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        calculateTotals()
+        updateLabels()
         saveShotCycle()
         partialScreenReset()
         resetCornerLabels()
@@ -143,29 +138,22 @@ class ViewController: UIViewController {
 
     //MARK:- METHODS
     
-    func calculateTotals() {
-        ulTotal += upperLeftHitCount
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
-        
-        urTotal += upperRightHitCount
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
-        
-        llTotal += lowerLeftHitCount
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
-        
-        lrTotal += lowerRightHitCount
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
+    func updateLabels() {
+        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(upperLeft?.hitCount)"
+        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(upperRight?.hitCount)"
+        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(bottomLeft?.hitCount)"
+        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(bottomRight?.hitCount)"
     }
     
     func totalShootingPercentage() {
-        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
+        var totalPercentCalc = shotCycles.shootingPercentage()
         totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
     }
     
     func saveShotCycle() {
 
         shootingCycle += 1
-        summedShots += sliderValue
+        let summedShots = current
         summedShotsMade += incrementValue
         totalShotsTaken.text = "Today's Shots Taken: \(String(describing: summedShots))"
         sliderOutlet.isHidden = false
@@ -173,8 +161,8 @@ class ViewController: UIViewController {
         totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
         totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
 
-        let date = dateFormatter()
-        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
+//        let date = dateFormatter()
+//        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
 
         shotCycles.append(currentShotCycle!)
         saveData()
@@ -212,13 +200,13 @@ class ViewController: UIViewController {
     }
     
     func resetCornerLabels() {
-        upperLeftHitCount = 0
+        upperLeft?.hitCount = 0
         upperLeftLabel.text = "0"
-        upperRightHitCount = 0
+        upperRight?.hitCount = 0
         upperRightLabel.text = "0"
-        lowerLeftHitCount = 0
+        bottomLeft?.hitCount = 0
         lowerLeftLabel.text = "0"
-        lowerRightHitCount = 0
+        bottomRight?.hitCount = 0
         lowerRightLabel.text = "0"
         print("resetCornerLabels")
     }
@@ -302,9 +290,8 @@ class ViewController: UIViewController {
         let dateString = formatter.string(from: currentDate as Date)
         print("\(dateString)")
         return dateString
- 
+        
     }
-    
     //MARK:- VIEW
     
     // clear screen-reset when app is launched each time and set slider to default value of 15
@@ -320,6 +307,8 @@ class ViewController: UIViewController {
             keepTSMLabelsIntact()
              print("viewDidLoad View Controller")
         }
+        
+        
 
     }
     
@@ -333,7 +322,7 @@ class ViewController: UIViewController {
         activeCycle = true
         keepTSMLabelsIntact()
 
-        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
+//        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }
     
 

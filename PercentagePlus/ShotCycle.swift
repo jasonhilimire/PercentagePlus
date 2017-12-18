@@ -10,37 +10,60 @@ import Foundation
 
 var sliderValue: Int = 0
 var incrementValue: Int = 0
-
-
-//  move all this to its own model??
-var totalPercentCalc = 0
-var summedShots = 0
-var currentShotCyclePercent = 0
-var summedShotsMade = 0
-var shootingCycle = 0
 var activeCycle = false
+var shootingCycle = 0
+
 
 
 var shotCycles = [ShotCycle]()
+var targets = [ShotCycle.Target]()
 
 class ShotCycle: Codable {
     var date: String
-    var totalPercentCalc: Int
-    var summedShots: Int
-    var currentShotCyclePercent: Int
-    var summedShotsMade: Int
-    var currentShotsMade: Int
     var shotsTaken: Int
+
+    let shots = sliderValue
+    
+    
+    init?(date: String, shotsTaken: Int){
+        self.date = date
+        self.shotsTaken = shotsTaken
+    }
+    
+    func summedShots() -> Int {
+        shotsTaken += shots
+        print("Shots: \(shotsTaken)")
+        return shotsTaken
+    }
+    
+    func shootingPercentage() -> Int {
+        let percentCalc = (targetTotalHit() * 100) / summedShots()
+        print("Shooting%: \(percentCalc)%")
+        return percentCalc
+        
+    }
+    
+    class Target {
+        var hitCount = 0
+        var description: String
+        
+        init?(hitCount: Int, description: String) {
+            self.hitCount = hitCount
+            self.description = description
+        }
+        
+        func targetHit() -> Int {
+            hitCount += 1
+            print("Target Hit: \(hitCount)")
+            return hitCount
+        }
+        
+    }
     
 
-    init?(date: String, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int, shotsTaken: Int) {
-        self.date = date
-        self.totalPercentCalc = totalPercentCalc
-        self.summedShots = summedShots
-        self.currentShotCyclePercent = currentShotCyclePercent
-        self.summedShotsMade = summedShotsMade
-        self.currentShotsMade = currentShotsMade
-        self.shotsTaken = shotsTaken
+    func targetTotalHit() -> Int {
+        let totalHitCount = targets.reduce(0, {$0 + ($1.hitCount)})
+        return totalHitCount
     }
     
     func dateFormatter() -> String{
@@ -48,7 +71,7 @@ class ShotCycle: Codable {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.timeStyle = .short
+        formatter.timeStyle = .medium
         
         let dateString = formatter.string(from: currentDate as Date)
         print("\(dateString)")
@@ -56,21 +79,11 @@ class ShotCycle: Codable {
         
     }
     
-
-
-    
-    func printDescription() {
-        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
-    }
-    
-
-    
-    
-
-//    mutating func totalShootingPerc(){
-//        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
-//    }
     
 }
+    
+
+    
+
 
 
