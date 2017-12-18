@@ -27,6 +27,7 @@ class ShotCycleTableViewController: UITableViewController {
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
             self.dataModel.deleteDataFile()
             shotCycles.removeAll()
+            self.lifetimeLabels()
             print("Delete button pressed: Array deleted")
             self.tableView.reloadData()
         }
@@ -133,9 +134,11 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     func lifetimeLabels() {
-        headerView.totalShotsMade.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
+        headerView.totalShotsTaken.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
         headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
         headerView.totalShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())%"
+        headerView.totalShotCycles.text = "Lifetime Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
+
     }
     
 

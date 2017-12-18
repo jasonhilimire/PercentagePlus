@@ -17,7 +17,8 @@ class HeaderView: UITableViewCell {
     @IBOutlet var blMade: UILabel!
     @IBOutlet var brMade: UILabel!
     @IBOutlet var trMade: UILabel!
-
+    @IBOutlet var totalShotCycles: UILabel!
+    
     @IBOutlet var vw: UIView!
     
     

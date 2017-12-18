@@ -27,10 +27,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saA-Tx-lfw">
                         <rect key="frame" x="0.0" y="0.0" width="746" height="112"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yY-15-xH9">
-                                <rect key="frame" x="8" y="8" width="115.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lifetime Shooting Cycles: 0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yY-15-xH9">
+                                <rect key="frame" x="8" y="8" width="450" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ma7-d9-SZf">
@@ -86,7 +86,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="guN-yu-LES" firstAttribute="leading" secondItem="saA-Tx-lfw" secondAttribute="leading" constant="8" id="3YA-4B-6EO"/>
                             <constraint firstAttribute="trailing" secondItem="Ma7-d9-SZf" secondAttribute="trailing" constant="8" id="4hz-yc-exI"/>
@@ -111,6 +111,7 @@
                 <outlet property="blMade" destination="3hu-f8-GFb" id="aef-xE-c6w"/>
                 <outlet property="brMade" destination="Ql0-ut-t5h" id="HKi-8e-ajR"/>
                 <outlet property="tlMade" destination="lp9-Rv-odt" id="DRF-6i-xhk"/>
+                <outlet property="totalShotCycles" destination="1yY-15-xH9" id="G7I-4k-GKo"/>
                 <outlet property="totalShotPerc" destination="wdP-9g-r5p" id="jMn-rK-p7U"/>
                 <outlet property="totalShotsMade" destination="YyB-jm-BfW" id="M8e-lq-v3o"/>
                 <outlet property="totalShotsTaken" destination="beo-1e-AKH" id="7ti-Rg-1Ls"/>

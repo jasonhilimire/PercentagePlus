@@ -33,4 +33,8 @@ class LifetimeShotCycle {
         }
     }
     
+    func lifeTimeShotCycles() -> Int {
+        return shotCycles.count
+    }
+    
 }
