@@ -51,7 +51,7 @@ class ShotCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        lifetimeLabels()
+//        lifetimeLabels()
         print("View Did load - ShotCycleTableView")
     }
     
@@ -100,7 +100,7 @@ class ShotCycleTableViewController: UITableViewController {
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-        lifetimeLabels()
+//        lifetimeLabels()
         // TODO: also do a full screen reset - may need to create a delegate?
         saveData()
         
@@ -131,11 +131,11 @@ class ShotCycleTableViewController: UITableViewController {
         print("ShotcyclesArray Saved")
     }
     
-    func lifetimeLabels() {
-        lifetimeShotsTaken.text = "Shots Taken: \(lifetime.lifeTimeShotsTaken())"
-        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
-        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
-    }
+//    func lifetimeLabels() {
+//        lifetimeShotsTaken.text = "Shots Taken: \(lifetime.lifeTimeShotsTaken())"
+//        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
+//        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
+//    }
     
 
 }
