@@ -8,6 +8,22 @@
 
 import UIKit
 
+extension UIView {
+    
+    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
+        let layer = self.layer
+        layer.masksToBounds = false
+        layer.shadowOffset = offset
+        layer.shadowColor = color.cgColor
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        
+        let backgroundCGColor = self.backgroundColor?.cgColor
+        self.backgroundColor = nil
+        layer.backgroundColor =  backgroundCGColor
+    }
+}
+
 class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
@@ -103,21 +119,12 @@ class ShotCycleTableViewController: UITableViewController {
     
     //MARK:- HEADERVIEW
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight: CGFloat = 112
+        let headerHeight: CGFloat = 115
         return headerHeight
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        headerView.vw?.layer.cornerRadius = 10
-
-        // border
-        headerView.vw?.layer.borderWidth = 2
-        headerView.vw?.layer.borderColor = UIColor.black.cgColor
-        // shadow
-        headerView.vw?.layer.shadowColor = UIColor.black.cgColor
-        headerView.vw?.layer.shadowOffset = CGSize(width: 3, height: 3)
-        headerView.vw?.layer.shadowOpacity = 0.7
-        headerView.vw?.layer.shadowRadius = 4.0
+        headerViewSetup()
         
         return headerView
     }
@@ -140,6 +147,19 @@ class ShotCycleTableViewController: UITableViewController {
         headerView.totalShotCycles.text = "Lifetime Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
 
     }
+    
+    func headerViewSetup() {
+        headerView.vw?.layer.cornerRadius = 15
+
+        // border
+        headerView.vw?.layer.borderWidth = 2
+        headerView.vw?.layer.borderColor = UIColor.black.cgColor
+        // shadow- not getting this offset properly
+        headerView.vw.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
+
+    }
+    
+
     
 
 }
