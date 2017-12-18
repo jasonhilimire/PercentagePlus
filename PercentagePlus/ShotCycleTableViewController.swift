@@ -12,11 +12,7 @@ class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
     let lifetime = LifetimeShotCycle()
-
-    @IBOutlet weak var lifetimeShotsTaken: UILabel!
-    @IBOutlet weak var lifetimeShotsMade: UILabel!
-    @IBOutlet weak var lifetimeShotPerc: UILabel!
-    
+    let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
 
 
     @IBAction func deleteAllBtn(_ sender: UIBarButtonItem) {
@@ -43,7 +39,7 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
-
+        // ...
     }
     
     // MARK: - VIEW
@@ -51,7 +47,7 @@ class ShotCycleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-//        lifetimeLabels()
+        lifetimeLabels()
         print("View Did load - ShotCycleTableView")
     }
     
@@ -61,8 +57,6 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     // MARK: - TABLEVIEW
-    
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -100,7 +94,7 @@ class ShotCycleTableViewController: UITableViewController {
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-//        lifetimeLabels()
+        lifetimeLabels()
         // TODO: also do a full screen reset - may need to create a delegate?
         saveData()
         
@@ -113,9 +107,9 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
+
         
-        headerView.totalShotsMade.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
+        
         
         return headerView
     }
@@ -131,11 +125,11 @@ class ShotCycleTableViewController: UITableViewController {
         print("ShotcyclesArray Saved")
     }
     
-//    func lifetimeLabels() {
-//        lifetimeShotsTaken.text = "Shots Taken: \(lifetime.lifeTimeShotsTaken())"
+    func lifetimeLabels() {
+        headerView.totalShotsMade.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
 //        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
 //        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
-//    }
+    }
     
 
 }
