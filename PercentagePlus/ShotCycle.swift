@@ -1,4 +1,4 @@
-//to
+//
 //  ShotCycle.swift
 //  BarDown
 //
@@ -25,7 +25,7 @@ class ShotCycle: Codable {
     let shots = sliderValue
     
     
-    init?(date: String, shotsTaken: Int){
+    init(date: String, shotsTaken: Int){
         self.date = date
         self.shotsTaken = shotsTaken
     }
@@ -39,7 +39,12 @@ class ShotCycle: Codable {
     func shootingPercentage() -> Int {
         let percentCalc = (targetTotalHit() * 100) / summedShots()
         print("Shooting%: \(percentCalc)%")
-        return percentCalc
+        
+        if percentCalc == 0 {
+            return 0
+        } else {
+            return percentCalc
+        }
         
     }
     
@@ -47,7 +52,7 @@ class ShotCycle: Codable {
         var hitCount = 0
         var description: String
         
-        init?(hitCount: Int, description: String) {
+        init(hitCount: Int, description: String) {
             self.hitCount = hitCount
             self.description = description
         }

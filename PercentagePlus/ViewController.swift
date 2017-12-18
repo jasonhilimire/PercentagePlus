@@ -16,15 +16,21 @@ class ViewController: UIViewController {
     
     let dataModel = ShotCycleDataModel()
     let currentShotCycle = ShotCycle(date: formattedDate!, shotsTaken: sliderValue)
+
     
-
-
+    
     //MARK:- Target Set up
+    var targets = [ShotCycle.Target]()
     var upperRight = ShotCycle.Target(hitCount: 0, description: "Top Right")
     var bottomRight = ShotCycle.Target(hitCount: 0, description: "Bottom Right")
     var upperLeft = ShotCycle.Target(hitCount: 0, description: "Top Left")
     var bottomLeft = ShotCycle.Target(hitCount: 0, description: "Bottom Left")
     var fiveHole = ShotCycle.Target(hitCount: 0, description: "5-hole")
+
+
+
+
+    
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -63,10 +69,10 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        upperLeft?.targetHit()
-        upperLeftLabel.text = "\(upperLeft?.hitCount)"
+        upperLeft.targetHit()
+        upperLeftLabel.text = "\(String(describing: upperLeft.hitCount))"
         
-        if (upperLeft?.hitCount)! >= sliderValue {
+        if (upperLeft.hitCount) >= sliderValue {
             disableButtons()
         }
 }
@@ -74,10 +80,10 @@ class ViewController: UIViewController {
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
-        upperRight?.targetHit()
-        upperRightLabel.text = "\(upperRight?.hitCount)"
+        upperRight.targetHit()
+        upperRightLabel.text = "\(String(describing: upperRight.hitCount))"
         
-        if (upperRight?.hitCount)! >= sliderValue {
+        if (upperRight.hitCount) >= sliderValue {
             disableButtons()
         }
     }
@@ -85,10 +91,10 @@ class ViewController: UIViewController {
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
-        bottomLeft?.targetHit()
-        lowerLeftLabel.text = "\(bottomLeft?.hitCount)"
+        bottomLeft.targetHit()
+        lowerLeftLabel.text = "\(String(describing: bottomLeft.hitCount))"
         
-        if (bottomLeft?.hitCount)! >= sliderValue {
+        if (bottomLeft.hitCount) >= sliderValue {
             disableButtons()
         }
     }
@@ -96,10 +102,10 @@ class ViewController: UIViewController {
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        bottomRight?.targetHit()
-        lowerRightLabel.text = "\(bottomRight?.hitCount)"
+        bottomRight.targetHit()
+        lowerRightLabel.text = "\(String(describing: bottomRight.hitCount))"
         
-        if (bottomRight?.hitCount)! >= sliderValue {
+        if (bottomRight.hitCount) >= sliderValue {
             disableButtons()
         }
     }
@@ -139,32 +145,32 @@ class ViewController: UIViewController {
     //MARK:- METHODS
     
     func updateLabels() {
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(upperLeft?.hitCount)"
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(upperRight?.hitCount)"
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(bottomLeft?.hitCount)"
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(bottomRight?.hitCount)"
+        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(String(describing: upperLeft.hitCount))"
+        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(String(describing: upperRight.hitCount))"
+        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(String(describing: bottomLeft.hitCount))"
+        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(String(describing: bottomRight.hitCount))"
     }
     
-    func totalShootingPercentage() {
-        var totalPercentCalc = shotCycles.shootingPercentage()
-        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
-    }
+//    func totalShootingPercentage() {
+//        var totalPercentCalc = currentShotCycle?.shootingPercentage()
+//        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
+//    }
     
     func saveShotCycle() {
 
         shootingCycle += 1
-        let summedShots = current
-        summedShotsMade += incrementValue
+        let summedShots = currentShotCycle.shotsTaken += sliderValue
+//        summedShotsMade += incrementValue
         totalShotsTaken.text = "Today's Shots Taken: \(String(describing: summedShots))"
         sliderOutlet.isHidden = false
-        totalShootingPercentage()
-        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
-        totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
+//        totalShootingPercentage()
+//        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
+//        totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
 
 //        let date = dateFormatter()
 //        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
 
-        shotCycles.append(currentShotCycle!)
+        shotCycles.append(currentShotCycle)
         saveData()
         
                 print("Current Shot Cycle: \(String(describing: currentShotCycle))")
@@ -173,16 +179,20 @@ class ViewController: UIViewController {
     
     // increments values in buttons and updates percent calculations
     func buttonPressed() {
-        incrementValue += 1
-        sliderOutlet.isHidden = true
 
-        if incrementValue > sliderValue {
-            disableButtons()
-        } else {
-            currentShotCyclePercent = ((incrementValue * 100) / sliderValue)
-            self.calcPercentageLbl.text = "\(Int(currentShotCyclePercent))%"
-            self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
-        }
+        sliderOutlet.isHidden = true
+        
+        //TODO: FIX SO TOTAL SUM OF TARGETS DISABLES buttons
+        
+        //        incrementValue += 1
+//
+//        if incrementValue > sliderValue {
+//            disableButtons()
+//        } else {
+//            let currentShotCyclePercent = currentShotCycle?.shootingPercentage()
+//            self.calcPercentageLbl.text = "\(String(describing: currentShotCyclePercent))%"
+////            self.enteredAmtLbl.text = "Shots Made this Cycle: \(targets.)"
+//        }
     }
     
     func enableButtons() {
@@ -200,13 +210,13 @@ class ViewController: UIViewController {
     }
     
     func resetCornerLabels() {
-        upperLeft?.hitCount = 0
+        upperLeft.hitCount = 0
         upperLeftLabel.text = "0"
-        upperRight?.hitCount = 0
+        upperRight.hitCount = 0
         upperRightLabel.text = "0"
-        bottomLeft?.hitCount = 0
+        bottomLeft.hitCount = 0
         lowerLeftLabel.text = "0"
-        bottomRight?.hitCount = 0
+        bottomRight.hitCount = 0
         lowerRightLabel.text = "0"
         print("resetCornerLabels")
     }
@@ -220,7 +230,7 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         incrementValue = 0
-        currentShotCyclePercent = 0
+//        currentShotCyclePercent = 0
         print("partialScreenReset")
     }
     
@@ -239,39 +249,39 @@ class ViewController: UIViewController {
         totalShotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-        summedShots = 0
-        summedShotsMade = 0
-        currentShotCyclePercent = 0
+//        summedShots = 0
+//        summedShotsMade = 0
+//        currentShotCyclePercent = 0
         
-        ulTotal = 0
+        upperLeft.hitCount = 0
         ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
         
-        urTotal = 0
+        upperRight.hitCount = 0
         urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
         
-        llTotal = 0
+        bottomLeft.hitCount = 0
         llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
         
-        lrTotal = 0
+        bottomRight.hitCount = 0
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
         print("resetValues")
     }
     
-    func keepTSMLabelsIntact() {
-        // Keep the total shots made labels intact, for when returning from Shot Cycles View
-        // TODO: the shotsMadeLabels are not being updated when returning from the tableView as they are not saved anywhere
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
-        
-        
-        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
-        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
-        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
-        print("keepTSMLabelsIntact()")
-        
-    }
+//    func keepTSMLabelsIntact() {
+//        // Keep the total shots made labels intact, for when returning from Shot Cycles View
+//        // TODO: the shotsMadeLabels are not being updated when returning from the tableView as they are not saved anywhere
+//        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
+//        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
+//        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
+//        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
+//
+//
+//        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
+//        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
+//        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+//        print("keepTSMLabelsIntact()")
+//
+//    }
     
     func saveData() {
         dataModel.saveShotCycleArray()
@@ -304,7 +314,7 @@ class ViewController: UIViewController {
         print("viewDidLoad View Controller & .plist created ")
         } else {
             partialScreenReset()
-            keepTSMLabelsIntact()
+//            keepTSMLabelsIntact()
              print("viewDidLoad View Controller")
         }
         
@@ -320,7 +330,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         activeCycle = true
-        keepTSMLabelsIntact()
+//        keepTSMLabelsIntact()
 
 //        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
     }

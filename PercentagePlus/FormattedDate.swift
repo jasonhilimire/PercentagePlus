@@ -16,7 +16,7 @@ class FormattedDate {
         }
     }
     
-    let date = NSDate()
+    var date = NSDate()
     
     func dateFormatter() -> String{
         let currentDate = NSDate()
