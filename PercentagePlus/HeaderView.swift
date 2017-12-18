@@ -11,6 +11,16 @@ import UIKit
 class HeaderView: UITableViewCell {
 
     @IBOutlet var totalShotsMade: UILabel!
+    @IBOutlet var totalShotsTaken: UILabel!
+    @IBOutlet var totalShotPerc: UILabel!
+    @IBOutlet var tlMade: UILabel!
+    @IBOutlet var blMade: UILabel!
+    @IBOutlet var brMade: UILabel!
+    @IBOutlet var trMade: UILabel!
+
+    @IBOutlet var vw: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -102,14 +102,21 @@ class ShotCycleTableViewController: UITableViewController {
     
     //MARK:- HEADERVIEW
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight: CGFloat = 100
+        let headerHeight: CGFloat = 112
         return headerHeight
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        headerView.vw?.layer.cornerRadius = 10
 
-        
-        
+        // border
+        headerView.vw?.layer.borderWidth = 2
+        headerView.vw?.layer.borderColor = UIColor.black.cgColor
+        // shadow
+        headerView.vw?.layer.shadowColor = UIColor.black.cgColor
+        headerView.vw?.layer.shadowOffset = CGSize(width: 3, height: 3)
+        headerView.vw?.layer.shadowOpacity = 0.7
+        headerView.vw?.layer.shadowRadius = 4.0
         
         return headerView
     }
@@ -127,8 +134,8 @@ class ShotCycleTableViewController: UITableViewController {
     
     func lifetimeLabels() {
         headerView.totalShotsMade.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
-//        lifetimeShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
-//        lifetimeShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())"
+        headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
+        headerView.totalShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())%"
     }
     
 
