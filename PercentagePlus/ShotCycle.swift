@@ -20,10 +20,9 @@ var targets = [ShotCycle.Target]()
 
 class ShotCycle: Codable {
     var date: String
-    var shotsTaken: Int
+    var shotsTaken = sliderValue
 
-    let shots = sliderValue
-    
+
     
     init(date: String, shotsTaken: Int){
         self.date = date
@@ -31,9 +30,9 @@ class ShotCycle: Codable {
     }
     
     func summedShots() -> Int {
-        shotsTaken += shots
-        print("Shots: \(shotsTaken)")
-        return shotsTaken
+        let shots = shotsTaken
+        print("Shots: \(shots)")
+        return shots
     }
     
     func shootingPercentage() -> Int {

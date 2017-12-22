@@ -9,10 +9,9 @@
 import Foundation
 
 class LifetimeShotCycle {
-    var shotCycles = [ShotCycle]()
     
     func lifeTimeShotsTaken() -> Int {
-        let lifetimeShotsTaken = shotCycles.reduce(0, {$0 + ($1.shotsTaken )})
+        let lifetimeShotsTaken = shotCycles.reduce(0, {$0 + ($1.summedShots() )})
         print("lifetime Shots Taken: \(lifetimeShotsTaken)")
         return lifetimeShotsTaken
         
@@ -35,6 +34,7 @@ class LifetimeShotCycle {
     }
     
     func lifeTimeShotCycles() -> Int {
+        print("LifetimeShots Cycles: \(shotCycles.count)")
         return shotCycles.count
     }
     

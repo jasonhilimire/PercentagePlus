@@ -157,11 +157,12 @@ class ViewController: UIViewController {
 //    }
     
     func saveShotCycle() {
-
+        currentShotCycle.shootingPercentage()
+        currentShotCycle.targetTotalHit()
+        currentShotCycle.summedShots()
         shootingCycle += 1
-        let summedShots = currentShotCycle.shotsTaken += sliderValue
 //        summedShotsMade += incrementValue
-        totalShotsTaken.text = "Today's Shots Taken: \(String(describing: summedShots))"
+//        totalShotsTaken.text = "Today's Shots Taken: \(String(describing: ))"
         sliderOutlet.isHidden = false
 //        totalShootingPercentage()
 //        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
@@ -302,6 +303,17 @@ class ViewController: UIViewController {
         return dateString
         
     }
+    
+
+        func targetsArray() {
+            targets.append(upperRight)
+            targets.append(upperLeft)
+            targets.append(bottomRight)
+            targets.append(bottomLeft)
+            targets.append(fiveHole)
+            
+        }
+        
     //MARK:- VIEW
     
     // clear screen-reset when app is launched each time and set slider to default value of 15

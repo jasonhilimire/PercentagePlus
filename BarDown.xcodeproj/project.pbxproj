@@ -112,8 +112,8 @@
 		A3BB1E1B1E746F4C001E979F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3423C7A1FE76B51002E668E /* FormattedDate.swift */,
 				A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */,
+				A3423C7A1FE76B51002E668E /* FormattedDate.swift */,
 				A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */,
 				A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */,
 				A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */,
