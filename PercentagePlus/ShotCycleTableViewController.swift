@@ -26,7 +26,7 @@ extension UIView {
 
 class ShotCycleTableViewController: UITableViewController {
 
-    let dataModel = ShotCycleDataModel()
+
     let lifetime = LifetimeShotCycle()
     let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
 
@@ -41,7 +41,7 @@ class ShotCycleTableViewController: UITableViewController {
         alertController.addAction(cancelAction)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            self.dataModel.deleteDataFile()
+            
             shotCycles.removeAll()
             self.lifetimeLabels()
             print("Delete button pressed: Array deleted")
@@ -131,12 +131,12 @@ class ShotCycleTableViewController: UITableViewController {
     
     //MARK:- METHODS
     func loadData() {
-        dataModel.loadShotCycle()
+
         print("ShotcyclesArray Loaded")
     }
     
     func saveData() {
-        dataModel.saveShotCycleArray()
+
         print("ShotcyclesArray Saved")
     }
     

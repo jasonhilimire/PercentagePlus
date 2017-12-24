@@ -14,7 +14,7 @@ let formattedDate = date?.formattedDate
 class ViewController: UIViewController {
 
     
-    let dataModel = ShotCycleDataModel()
+
     let currentShotCycle = ShotCycle(date: formattedDate!, shotsTaken: sliderValue)
 
     
@@ -285,10 +285,9 @@ class ViewController: UIViewController {
 //    }
     
     func saveData() {
-        dataModel.saveShotCycleArray()
+
         print("ShotcyclesArray saved")
-        print("Documents folder is \(dataModel.documentsDirectory())")
-        print("Data file path is \(dataModel.dataFilePath())")
+
     }
     
     func dateFormatter() -> String{
