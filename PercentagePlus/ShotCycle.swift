@@ -13,63 +13,65 @@ var incrementValue: Int = 0
 var activeCycle = false
 var shootingCycle = 0
 
-
-
 var shotCycles = [ShotCycle]()
-var targets = [ShotCycle.Target]
 
-class ShotCycle:  {
+
+class ShotCycles {
     var date: String
-    var shotsTaken = sliderValue
-
-
+    var shotsTaken: Int
+    var shots = 0
     
-    init(date: String, shotsTaken: Int){
+    var targets = [Target]()
+    var upperleft = Target(hitCount: 0, description: "Top Left")
+    var bottomRight = Target(hitCount: 0, description: "Bottom Right")
+    var bottomLeft = Target(hitCount: 0, description: "Bottom Left")
+    var topRight = Target(hitCount: 0, description: "Top Right")
+    var fiveHole = Target(hitCount: 0, description: "5-Hole")
+    
+    init?(date: String, shotsTaken: Int){
         self.date = date
         self.shotsTaken = shotsTaken
     }
     
     func summedShots() -> Int {
-        let shots = shotsTaken
-        print("Shots: \(shots)")
-        return shots
+        shotsTaken = shots
+        print("Shots: \(shotsTaken)")
+        return shotsTaken
     }
     
     func shootingPercentage() -> Int {
-        let percentCalc = (targetTotalHit() * 100) / summedShots()
+        let percentCalc = (targetTotalHit() * 100) / shotsTaken
+        print("Shots: \(shotsTaken)")
         print("Shooting%: \(percentCalc)%")
-        
-        if percentCalc == 0 {
-            return 0
-        } else {
-            return percentCalc
-        }
+        return percentCalc
         
     }
     
     class Target {
-        var hitCount = 0
-        var name: String
         
-        init(hitCount: Int, name: String) {
+        var hitCount = 0
+        var description = ""
+        
+        init?(hitCount: Int, description: String) {
             self.hitCount = hitCount
-            self.name = name
+            self.description = description
         }
         
         func targetHit() -> Int {
             hitCount += 1
-            print("Target Hit: \(hitCount)")
+            print("Targets Hit: \(hitCount)")
             return hitCount
         }
         
     }
     
-
     func targetTotalHit() -> Int {
         let totalHitCount = targets.reduce(0, {$0 + ($1.hitCount)})
+        print("Total Hit count: \(totalHitCount)")
         return totalHitCount
     }
     
+
     func dateFormatter() -> String{
         let currentDate = NSDate()
         
@@ -83,8 +85,8 @@ class ShotCycle:  {
         
     }
     
-    
 }
+
     
 
     
