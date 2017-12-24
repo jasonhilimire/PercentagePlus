@@ -16,9 +16,9 @@ var shootingCycle = 0
 
 
 var shotCycles = [ShotCycle]()
-var targets = [ShotCycle.Target]()
+var targets = [ShotCycle.Target]
 
-class ShotCycle: Codable {
+class ShotCycle:  {
     var date: String
     var shotsTaken = sliderValue
 
@@ -49,11 +49,11 @@ class ShotCycle: Codable {
     
     class Target {
         var hitCount = 0
-        var description: String
+        var name: String
         
-        init(hitCount: Int, description: String) {
+        init(hitCount: Int, name: String) {
             self.hitCount = hitCount
-            self.description = description
+            self.name = name
         }
         
         func targetHit() -> Int {
