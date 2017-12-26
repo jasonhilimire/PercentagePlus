@@ -13,7 +13,7 @@ let formattedDate = date?.formattedDate
 
 class ViewController: UIViewController {
 
-    let currentShotCycle = ShotCycle(date: formattedDate!, shotsTaken: sliderValue)
+    
  
 
     
@@ -55,51 +55,33 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        currentShotCycle
-        upperLeftLabel.text = "\(String(describing: upperLeft.hitCount))"
-        
-        if (upperLeft.hitCount) >= sliderValue {
-            disableButtons()
-        }
+        // increase hitcount += 1, disable if > shot count
 }
 
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
-        upperRight.targetHit()
-        upperRightLabel.text = "\(String(describing: upperRight.hitCount))"
-        
-        if (upperRight.hitCount) >= sliderValue {
-            disableButtons()
-        }
+        // increase hitcount += 1, disable if > shot count
     }
     
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
-        bottomLeft.targetHit()
-        lowerLeftLabel.text = "\(String(describing: bottomLeft.hitCount))"
-        
-        if (bottomLeft.hitCount) >= sliderValue {
-            disableButtons()
-        }
+        // increase hitcount += 1, disable if > shot count
     }
    
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        bottomRight.targetHit()
-        lowerRightLabel.text = "\(String(describing: bottomRight.hitCount))"
+        // increase hitcount += 1, disable if > shot count
         
-        if (bottomRight.hitCount) >= sliderValue {
-            disableButtons()
-        }
     }
     
     
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         partialScreenReset()
         resetCornerLabels()
+        // this should only reset current on screen values to start over
     }
    
     // saves current values - pressed after all shots/corners entered
@@ -116,6 +98,7 @@ class ViewController: UIViewController {
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
         saveShotCycle()
          print("show Saved button pressed")
+        // this will take you to the ListView
     }
     
 
@@ -131,10 +114,10 @@ class ViewController: UIViewController {
     //MARK:- METHODS
     
     func updateLabels() {
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(String(describing: upperLeft.hitCount))"
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(String(describing: upperRight.hitCount))"
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(String(describing: bottomLeft.hitCount))"
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(String(describing: bottomRight.hitCount))"
+//        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(String(describing: upperLeft.hitCount))"
+//        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(String(describing: upperRight.hitCount))"
+//        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(String(describing: bottomLeft.hitCount))"
+//        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(String(describing: bottomRight.hitCount))"
     }
     
 //    func totalShootingPercentage() {
@@ -143,22 +126,20 @@ class ViewController: UIViewController {
 //    }
     
     func saveShotCycle() {
-        currentShotCycle.shootingPercentage()
-        currentShotCycle.targetTotalHit()
-        currentShotCycle.summedShots()
-        shootingCycle += 1
+//        currentShotCycle.shootingPercentage()
+//        currentShotCycle.targetTotalHit()
+//        currentShotCycle.summedShots()
+//        shootingCycle += 1
 //        summedShotsMade += incrementValue
 //        totalShotsTaken.text = "Today's Shots Taken: \(String(describing: ))"
-        sliderOutlet.isHidden = false
+//        sliderOutlet.isHidden = false
 //        totalShootingPercentage()
 //        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
 //        totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
-
-//        let date = dateFormatter()
-//        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
-
-        shotCycles.append(currentShotCycle)
-        saveData()
+//
+//
+//        shotCycles.append(currentShotCycle)
+//        saveData()
         
                 print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
@@ -197,14 +178,15 @@ class ViewController: UIViewController {
     }
     
     func resetCornerLabels() {
-        upperLeft.hitCount = 0
-        upperLeftLabel.text = "0"
-        upperRight.hitCount = 0
-        upperRightLabel.text = "0"
-        bottomLeft.hitCount = 0
-        lowerLeftLabel.text = "0"
-        bottomRight.hitCount = 0
-        lowerRightLabel.text = "0"
+        // reset all corner labels to zero
+//        upperLeft.hitCount = 0
+//        upperLeftLabel.text = "0"
+//        upperRight.hitCount = 0
+//        upperRightLabel.text = "0"
+//        bottomLeft.hitCount = 0
+//        lowerLeftLabel.text = "0"
+//        bottomRight.hitCount = 0
+//        lowerRightLabel.text = "0"
         print("resetCornerLabels")
     }
 
@@ -240,17 +222,17 @@ class ViewController: UIViewController {
 //        summedShotsMade = 0
 //        currentShotCyclePercent = 0
         
-        upperLeft.hitCount = 0
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
-        
-        upperRight.hitCount = 0
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
-        
-        bottomLeft.hitCount = 0
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
-        
-        bottomRight.hitCount = 0
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
+//        upperLeft.hitCount = 0
+//        ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+//        
+//        upperRight.hitCount = 0
+//        urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
+//        
+//        bottomLeft.hitCount = 0
+//        llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
+//        
+//        bottomRight.hitCount = 0
+//        lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
         print("resetValues")
     }
     
