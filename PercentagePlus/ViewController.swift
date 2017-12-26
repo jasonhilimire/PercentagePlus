@@ -13,25 +13,11 @@ let formattedDate = date?.formattedDate
 
 class ViewController: UIViewController {
 
-    
-
     let currentShotCycle = ShotCycle(date: formattedDate!, shotsTaken: sliderValue)
+ 
 
     
-    
-    //MARK:- Target Set up
-    var targets = [ShotCycle.Target]()
-    var upperRight = ShotCycle.Target(hitCount: 0, description: "Top Right")
-    var bottomRight = ShotCycle.Target(hitCount: 0, description: "Bottom Right")
-    var upperLeft = ShotCycle.Target(hitCount: 0, description: "Top Left")
-    var bottomLeft = ShotCycle.Target(hitCount: 0, description: "Bottom Left")
-    var fiveHole = ShotCycle.Target(hitCount: 0, description: "5-hole")
 
-
-
-
-    
-    
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
@@ -69,7 +55,7 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        upperLeft.targetHit()
+        currentShotCycle
         upperLeftLabel.text = "\(String(describing: upperLeft.hitCount))"
         
         if (upperLeft.hitCount) >= sliderValue {
@@ -305,11 +291,7 @@ class ViewController: UIViewController {
     
 
         func targetsArray() {
-            targets.append(upperRight)
-            targets.append(upperLeft)
-            targets.append(bottomRight)
-            targets.append(bottomLeft)
-            targets.append(fiveHole)
+  
             
         }
         
@@ -328,7 +310,7 @@ class ViewController: UIViewController {
 //            keepTSMLabelsIntact()
              print("viewDidLoad View Controller")
         }
-        
+
         
 
     }

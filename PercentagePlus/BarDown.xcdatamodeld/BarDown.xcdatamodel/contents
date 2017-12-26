@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ShotCycle" representedClassName="ShotCycle" syncable="YES">
+    <entity name="ShotCycle" representedClassName="ShotCycle" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="shots" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Target" inverseName="relationship" inverseEntity="Target" syncable="YES"/>
     </entity>
-    <entity name="Target" representedClassName="Target" parentEntity="ShotCycle" syncable="YES">
+    <entity name="Target" representedClassName="Target" parentEntity="ShotCycle" syncable="YES" codeGenerationType="class">
         <attribute name="hitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShotCycle" inverseName="relationship" inverseEntity="ShotCycle" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ShotCycle" positionX="-47" positionY="-18" width="137" height="75"/>
-        <element name="Target" positionX="135" positionY="-18" width="128" height="75"/>
+        <element name="ShotCycle" positionX="-47" positionY="-18" width="137" height="88"/>
+        <element name="Target" positionX="135" positionY="-18" width="128" height="88"/>
     </elements>
 </model>
