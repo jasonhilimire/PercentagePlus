@@ -11,11 +11,10 @@ import UIKit
 class ShotCycleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var totalShotsTakenLabel: UILabel!
-    @IBOutlet weak var totalShotsMadeLabel: UILabel!
-    @IBOutlet weak var cycleShotsMadeLabel: UILabel!
-    @IBOutlet weak var totalShotsPercLabel: UILabel!
-    @IBOutlet weak var cycleShotsPercLabel: UILabel!
+    @IBOutlet weak var shotsTakenLabel: UILabel!
+    @IBOutlet weak var shotsMadeLabel: UILabel!
+    @IBOutlet weak var shotsPercLabel: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

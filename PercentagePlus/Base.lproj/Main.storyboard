@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,7 +22,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Q4n-Z3-dCb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zjh-vl-lDp">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-Ix-LBO">
@@ -73,14 +69,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ice.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6sN-5u-dzl">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S9j-wa-B1P">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <rect key="frame" x="-212" y="-168" width="1024" height="724"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lf9-8h-VKM">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
@@ -97,7 +93,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
-                                <rect key="frame" x="229" y="243" width="100" height="100"/>
+                                <rect key="frame" x="17" y="75" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Dpm-me-B6V"/>
                                     <constraint firstAttribute="width" constant="100" id="vxk-4l-a53"/>
@@ -111,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
-                                <rect key="frame" x="727" y="243" width="100" height="100"/>
+                                <rect key="frame" x="515" y="75" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GNT-oh-5NE"/>
                                     <constraint firstAttribute="height" constant="100" id="yY6-IB-CyC"/>
@@ -122,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
-                                <rect key="frame" x="222" y="523" width="100" height="100"/>
+                                <rect key="frame" x="10" y="355" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="PfP-js-h8y"/>
                                     <constraint firstAttribute="height" constant="100" id="i5Q-LM-RRk"/>
@@ -133,7 +129,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Slider to Enter Shot Count" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
-                                <rect key="frame" x="229.5" y="625" width="156" height="55"/>
+                                <rect key="frame" x="17.5" y="457" width="156" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="y7m-HD-7in"/>
                                     <constraint firstAttribute="height" constant="55" id="yh3-tM-Ejf"/>
@@ -141,7 +137,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx">
-                                <rect key="frame" x="150.5" y="671" width="723.5" height="31"/>
+                                <rect key="frame" x="-61.5" y="503" width="723.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GQ6-rx-QKM"/>
                                     <constraint firstAttribute="width" constant="719" id="VeA-jB-7Po"/>
@@ -151,7 +147,7 @@
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
-                                <rect key="frame" x="727" y="523" width="100" height="100"/>
+                                <rect key="frame" x="515" y="355" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="s1W-5O-wpU"/>
                                     <constraint firstAttribute="height" constant="100" id="tuK-ez-TM0"/>
@@ -162,7 +158,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Shots: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSp-dj-IKW">
-                                <rect key="frame" x="387.5" y="642" width="250" height="21"/>
+                                <rect key="frame" x="175.5" y="474" width="250" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="NcZ-aZ-53H"/>
                                     <constraint firstAttribute="height" constant="21" id="hS8-bk-Wqj"/>
@@ -170,7 +166,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYH-dm-i82">
-                                <rect key="frame" x="247" y="265" width="65" height="56"/>
+                                <rect key="frame" x="35" y="97" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="3gu-fH-J0J"/>
                                     <constraint firstAttribute="height" constant="56" id="mfb-Z6-z0V"/>
@@ -179,7 +175,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veJ-ub-n8d" userLabel="Upper Right Label">
-                                <rect key="frame" x="745" y="265" width="65" height="56"/>
+                                <rect key="frame" x="533" y="97" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="97w-3w-LRm"/>
                                     <constraint firstAttribute="height" constant="56" id="WK4-sR-7qd"/>
@@ -188,7 +184,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-oU-PeC" userLabel="Lower Left Label">
-                                <rect key="frame" x="240" y="543" width="65" height="56"/>
+                                <rect key="frame" x="28" y="375" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="22f-Cl-cX7"/>
                                     <constraint firstAttribute="height" constant="56" id="kXl-Bo-OLY"/>
@@ -197,7 +193,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-QZ-LCw" userLabel="Lower Right Label">
-                                <rect key="frame" x="745" y="542" width="65" height="56"/>
+                                <rect key="frame" x="533" y="374" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="BIQ-3v-yKI"/>
                                     <constraint firstAttribute="width" constant="65" id="Sfn-cK-1k3"/>
@@ -206,7 +202,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Shooting Percentage : 100%" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhk-MP-92x">
-                                <rect key="frame" x="854" y="455" width="150" height="69"/>
+                                <rect key="frame" x="642" y="287" width="150" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="0wM-o8-bSH"/>
                                     <constraint firstAttribute="width" constant="150" id="pCH-ye-vQ6"/>
@@ -214,7 +210,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Taken: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqk-Xa-Lhf">
-                                <rect key="frame" x="854" y="521" width="150" height="68"/>
+                                <rect key="frame" x="642" y="353" width="150" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="1Dm-Zr-n5W"/>
                                     <constraint firstAttribute="width" constant="150" id="TcV-Pn-UJS"/>
@@ -222,7 +218,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEV-h8-IFc">
-                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nDK-xb-U4O"/>
                                 </constraints>
@@ -247,7 +243,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-rz-Zwh">
-                                <rect key="frame" x="34.5" y="359" width="156.5" height="50"/>
+                                <rect key="frame" x="-177.5" y="191" width="156.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="FIy-d7-pVl"/>
                                     <constraint firstAttribute="height" constant="50" id="gjJ-mW-zlk"/>
@@ -255,7 +251,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made Upper Left: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rv-Nq-uL7">
-                                <rect key="frame" x="34.5" y="425" width="156.5" height="50"/>
+                                <rect key="frame" x="-177.5" y="257" width="156.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="YRS-Fh-y1Q"/>
                                     <constraint firstAttribute="height" constant="50" id="ZXa-C4-CUm"/>
@@ -263,7 +259,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made Upper Right: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D5-Ac-x3T">
-                                <rect key="frame" x="34.5" y="474" width="156.5" height="50"/>
+                                <rect key="frame" x="-177.5" y="306" width="156.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MFm-Cn-MkH"/>
                                     <constraint firstAttribute="width" constant="156" id="Nzf-Pf-N1I"/>
@@ -271,7 +267,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made Lower Left: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgj-85-ifX">
-                                <rect key="frame" x="34.5" y="532" width="156.5" height="50"/>
+                                <rect key="frame" x="-177.5" y="364" width="156.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="9cg-DO-8bl"/>
                                     <constraint firstAttribute="height" constant="50" id="UOp-Dv-PmL"/>
@@ -279,7 +275,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made Lower Right: 100" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F39-H7-MEq">
-                                <rect key="frame" x="34.5" y="582" width="156.5" height="50"/>
+                                <rect key="frame" x="-177.5" y="414" width="156.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="SAn-au-2bX"/>
                                     <constraint firstAttribute="height" constant="50" id="dOe-9H-edN"/>
@@ -287,7 +283,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMw-RI-ndM">
-                                <rect key="frame" x="384.5" y="521" width="256" height="85"/>
+                                <rect key="frame" x="172.5" y="353" width="256" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="IPL-u7-iGT"/>
                                     <constraint firstAttribute="width" constant="256" id="oAT-1v-TPU"/>
@@ -357,10 +353,10 @@
                         <outlet property="lowerLeftLabel" destination="IBn-oU-PeC" id="cyo-JQ-yst"/>
                         <outlet property="lowerRightLabel" destination="eC7-QZ-LCw" id="y4p-tJ-UPx"/>
                         <outlet property="lrShotsMadeLabel" destination="F39-H7-MEq" id="YUA-dk-Q4G"/>
+                        <outlet property="shotsMade" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="sliderLbl" destination="MSp-dj-IKW" id="ulA-ec-rGz"/>
                         <outlet property="sliderOutlet" destination="1Ly-lE-7Zx" id="iXD-lF-pdg"/>
                         <outlet property="totalShootingPerc" destination="jhk-MP-92x" id="Xab-2t-K00"/>
-                        <outlet property="totalShotsMade" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="totalShotsTaken" destination="Tqk-Xa-Lhf" id="Zjg-Tq-XbA"/>
                         <outlet property="ulShotsMadeLabel" destination="5Rv-Nq-uL7" id="VQI-M0-cgX"/>
                         <outlet property="upperLeftLabel" destination="gYH-dm-i82" id="2dV-90-auB"/>

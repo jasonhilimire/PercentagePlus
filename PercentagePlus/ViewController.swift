@@ -46,14 +46,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerLeftLabel: UILabel!
     @IBOutlet weak var lowerRightLabel: UILabel!
 
-    @IBOutlet weak var totalShootingPerc: UILabel!
-    @IBOutlet weak var totalShotsTaken: UILabel!
-    @IBOutlet weak var totalShotsMade: UILabel!
+
+    @IBOutlet weak var shotsMade: UILabel!
     
-    @IBOutlet weak var ulShotsMadeLabel: UILabel!
-    @IBOutlet weak var urShotsMadeLabel: UILabel!
-    @IBOutlet weak var llShotsMadeLabel: UILabel!
-    @IBOutlet weak var lrShotsMadeLabel: UILabel!
 
     
     
@@ -171,7 +166,7 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
         totalShootingPercentage()
         totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
-        totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
+        shotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
 
         let date = dateFormatter()
         let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
@@ -248,7 +243,7 @@ class ViewController: UIViewController {
     func resetValues() {
         totalShotsTaken.text = "Today's Shots Taken: 0"
         totalShootingPerc.text = "Today's Shooting Percentage: 0%"
-        totalShotsMade.text = "Total Shots Made: 0"
+        shotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         summedShots = 0
@@ -280,7 +275,7 @@ class ViewController: UIViewController {
         
         totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
         totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
-        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
+        shotsMade.text = "Total Shots Made: \(summedShotsMade)"
         print("keepTSMLabelsIntact()")
         
     }

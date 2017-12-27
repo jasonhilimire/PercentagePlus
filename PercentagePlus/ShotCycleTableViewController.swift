@@ -8,21 +8,6 @@
 
 import UIKit
 
-extension UIView {
-    
-    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
-        let layer = self.layer
-        layer.masksToBounds = false
-        layer.shadowOffset = offset
-        layer.shadowColor = color.cgColor
-        layer.shadowRadius = radius
-        layer.shadowOpacity = opacity
-        
-        let backgroundCGColor = self.backgroundColor?.cgColor
-        self.backgroundColor = nil
-        layer.backgroundColor =  backgroundCGColor
-    }
-}
 
 class ShotCycleTableViewController: UITableViewController {
 
@@ -96,10 +81,10 @@ class ShotCycleTableViewController: UITableViewController {
         let shotCycle = shotCycles[indexPath.row]
         cell.dateLabel.text = "\(shotCycle.date)"
 
-        cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
-        cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
+        cell.shotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
+        cell.shotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
         cell.cycleShotsMadeLabel.text =  "Cycle Shots Made : \(shotCycle.currentShotsMade)"
-        cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
+        cell.shotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
         cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.cyclePercentage)%"
 
         return cell
@@ -159,4 +144,20 @@ class ShotCycleTableViewController: UITableViewController {
 
     }
     
+}
+
+extension UIView {
+    
+    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
+        let layer = self.layer
+        layer.masksToBounds = false
+        layer.shadowOffset = offset
+        layer.shadowColor = color.cgColor
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        
+        let backgroundCGColor = self.backgroundColor?.cgColor
+        self.backgroundColor = nil
+        layer.backgroundColor =  backgroundCGColor
+    }
 }

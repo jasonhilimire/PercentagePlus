@@ -266,9 +266,9 @@
                         <outlet property="incrementButtonUR" destination="PzP-dD-Gvh" id="EDj-4c-B8z"/>
                         <outlet property="lowerLeftLabel" destination="IBn-oU-PeC" id="cyo-JQ-yst"/>
                         <outlet property="lowerRightLabel" destination="eC7-QZ-LCw" id="y4p-tJ-UPx"/>
+                        <outlet property="shotsMade" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="sliderLbl" destination="MSp-dj-IKW" id="ulA-ec-rGz"/>
                         <outlet property="sliderOutlet" destination="1Ly-lE-7Zx" id="iXD-lF-pdg"/>
-                        <outlet property="totalShotsMade" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="upperLeftLabel" destination="gYH-dm-i82" id="2dV-90-auB"/>
                         <outlet property="upperRightLabel" destination="veJ-ub-n8d" id="SCM-TV-r27"/>
                     </connections>
@@ -365,9 +365,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="vL9-gO-12I" id="PP0-9l-b4F"/>
-                                    <outlet property="totalShotsMadeLabel" destination="kUb-pb-rAH" id="3Ox-38-ZEn"/>
-                                    <outlet property="totalShotsPercLabel" destination="VZz-qc-d53" id="bbS-ud-xuU"/>
-                                    <outlet property="totalShotsTakenLabel" destination="aM9-78-2WO" id="SNF-OJ-DRX"/>
+                                    <outlet property="shotsMadeLabel" destination="kUb-pb-rAH" id="3Ox-38-ZEn"/>
+                                    <outlet property="shotsPercLabel" destination="VZz-qc-d53" id="bbS-ud-xuU"/>
+                                    <outlet property="shotsTakenLabel" destination="aM9-78-2WO" id="SNF-OJ-DRX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
