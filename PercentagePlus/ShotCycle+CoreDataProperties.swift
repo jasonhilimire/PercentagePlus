@@ -25,5 +25,6 @@ extension ShotCycle {
     @NSManaged public var bottomRightHitCount: Int16
     @NSManaged public var bottomLeftHitCount: Int16
     @NSManaged public var fiveHoleHitCount: Int16
+    @NSManaged public var totalHitCount: Int16
 
 }

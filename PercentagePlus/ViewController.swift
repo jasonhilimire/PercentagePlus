@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         print("UL button pressed- hit count \(currentShotCycle.upperLeftHitCount)")
         
         totalHitCount()
+        shootingPercentage()
 }
 
     // Upper Right Corner button pressed
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
         print("UR button pressed- hit count \(currentShotCycle.upperRightHitCount)")
         
         totalHitCount()
+        shootingPercentage()
     }
     
     // lower left corner button pressed
@@ -80,6 +82,7 @@ class ViewController: UIViewController {
         print("LL button pressed- hit count \(currentShotCycle.bottomLeftHitCount)")
         
         totalHitCount()
+        shootingPercentage()
     }
    
     // lower right corner button pressed
@@ -90,6 +93,7 @@ class ViewController: UIViewController {
         print("LR button pressed- hit count \(currentShotCycle.bottomRightHitCount)")
         
         totalHitCount()
+        shootingPercentage()
         
     }
     
@@ -102,10 +106,7 @@ class ViewController: UIViewController {
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        var shotCycle: ShotCycle!
-
-        
-        
+   
         updateLabels()
         saveShotCycle()
         partialScreenReset()
@@ -144,7 +145,7 @@ class ViewController: UIViewController {
     
     func shootingPercentage() -> Int16 {
         let shootingPerc = (totalHitCount() * 100 ) / Int16(sliderValue)
-        calcPercentageLbl.text = "Today's Shooting Percentage: \(String(describing: shootingPerc))%"
+        calcPercentageLbl.text = "\(String(describing: shootingPerc))%"
         return shootingPerc
 
     }
@@ -153,6 +154,7 @@ class ViewController: UIViewController {
         currentShotCycle.shootingPercentage = shootingPercentage()
         currentShotCycle.date = NSDate()
         currentShotCycle.shots = Int16(sliderValue)
+        currentShotCycle.totalHitCount = totalHitCount()
 
 //        currentShotCycle.targetTotalHit()
 //        currentShotCycle.summedShots()
@@ -288,25 +290,6 @@ class ViewController: UIViewController {
 
     }
     
-    func dateFormatter() -> String{
-        let currentDate = NSDate()
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        
-        let dateString = formatter.string(from: currentDate as Date)
-        print("\(dateString)")
-        return dateString
-        
-    }
-    
-
-        func targetsArray() {
-  
-            
-        }
-        
     //MARK:- VIEW
     
     // clear screen-reset when app is launched each time and set slider to default value of 15

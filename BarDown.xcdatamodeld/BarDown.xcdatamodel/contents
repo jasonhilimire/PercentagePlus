@@ -7,6 +7,7 @@
         <attribute name="fiveHoleHitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="shootingPercentage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="shots" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalHitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="upperLeftHitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="upperRightHitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
@@ -15,7 +16,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ShotCycle" positionX="-47" positionY="-18" width="137" height="165"/>
+        <element name="ShotCycle" positionX="-47" positionY="-18" width="137" height="180"/>
         <element name="Target" positionX="135" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

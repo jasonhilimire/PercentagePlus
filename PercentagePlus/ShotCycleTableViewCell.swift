@@ -17,6 +17,16 @@ class ShotCycleTableViewCell: UITableViewCell {
     @IBOutlet weak var totalShotsPercLabel: UILabel!
     @IBOutlet weak var cycleShotsPercLabel: UILabel!
     
+    
+    func configureCell(shotCycle: ShotCycle) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateLabel.text = dateFormatter.string(from: shotCycle.date! as Date)
+        cycleShotsPercLabel.text = "Shoot %: \(shotCycle.shootingPercentage)%"
+        totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.totalHitCount)"
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

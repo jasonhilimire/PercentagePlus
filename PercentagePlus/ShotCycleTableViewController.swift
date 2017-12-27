@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 extension UIView {
+    
     
     func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
         let layer = self.layer
@@ -24,8 +26,11 @@ extension UIView {
     }
 }
 
-class ShotCycleTableViewController: UITableViewController {
-
+class ShotCycleTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    var controller: NSFetchedResultsController<ShotCycle>!
+    var managedContext: NSManagedObjectContext!
+    var shotCycle = ShotCycle()
 
     let lifetime = LifetimeShotCycle()
     let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
@@ -42,7 +47,7 @@ class ShotCycleTableViewController: UITableViewController {
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
             
-            shotCycles.removeAll()
+            self.deleteAllRecords()
             self.lifetimeLabels()
             print("Delete button pressed: Array deleted")
             self.tableView.reloadData()
@@ -63,8 +68,8 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-        lifetimeLabels()
+        
+        attemptFetch()
         print("View Did load - ShotCycleTableView")
     }
     
@@ -81,7 +86,7 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return shotCycles.count
+        return 50
     }
     
     
@@ -93,27 +98,23 @@ class ShotCycleTableViewController: UITableViewController {
             fatalError("The dequed cell is not an instance of ShotCycleTableViewCell.")
         }
         
-        let shotCycle = shotCycles[indexPath.row]
-        cell.dateLabel.text = "\(shotCycle.date)"
-
-//        cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.summedShotsMade)"
-//        cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
-//        cell.cycleShotsMadeLabel.text =  "Cycle Shots Made : \(shotCycle.currentShotsMade)"
-//        cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
-//        cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.currentShotCyclePercent)%"
+        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
 
         return cell
     }
     
+    func configureCell(cell: ShotCycleTableViewCell, indexPath: NSIndexPath) {
+        let shotCycle = controller.object(at: indexPath as IndexPath)
+        cell.configureCell(shotCycle: shotCycle)
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         // remove the item at its indexpath
-        shotCycles.remove(at: indexPath.row)
-        
-        let indexPaths = [indexPath]
-        tableView.deleteRows(at: indexPaths, with: .automatic)
+        context.delete(shotCycle)
+        ad.saveContext()
         lifetimeLabels()
+        tableView.reloadData()
         // TODO: also do a full screen reset - may need to create a delegate?
-        saveData()
         
     }
     
@@ -130,15 +131,7 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     //MARK:- METHODS
-    func loadData() {
-
-        print("ShotcyclesArray Loaded")
-    }
-    
-    func saveData() {
-
-        print("ShotcyclesArray Saved")
-    }
+   
     
     func lifetimeLabels() {
 //        headerView.totalShotsTaken.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
@@ -157,6 +150,76 @@ class ShotCycleTableViewController: UITableViewController {
         // shadow- 
         headerView.vw.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
 
+    }
+    
+    func attemptFetch() {
+        let fetchRequest: NSFetchRequest<ShotCycle> = ShotCycle.fetchRequest()
+        
+        let dateSort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
+        
+        self.controller = controller
+        
+        do {
+            
+            try controller.performFetch()
+            print("Fetch Performed")
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch(type) {
+        case.insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+            
+        case.delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+            
+        case.update:
+            if let indexPath = indexPath {
+                let cell = tableView.cellForRow(at: indexPath) as! ShotCycleTableViewCell
+                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+            }
+            break
+            
+        case.move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        }
+    
+    }
+    
+    func deleteAllRecords() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.persistentContainer.viewContext
+        
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ShotCycle")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
     }
     
 }
