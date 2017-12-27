@@ -142,13 +142,18 @@ class ViewController: UIViewController {
 //        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(String(describing: bottomRight.hitCount))"
     }
     
-//    func totalShootingPercentage() {
-//        var totalPercentCalc = currentShotCycle?.shootingPercentage()
-//        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
-//    }
+    func shootingPercentage() -> Int16 {
+        let shootingPerc = (totalHitCount() * 100 ) / Int16(sliderValue)
+        calcPercentageLbl.text = "Today's Shooting Percentage: \(String(describing: shootingPerc))%"
+        return shootingPerc
+
+    }
     
     func saveShotCycle() {
-//        currentShotCycle.shootingPercentage()
+        currentShotCycle.shootingPercentage = shootingPercentage()
+        currentShotCycle.date = NSDate()
+        currentShotCycle.shots = Int16(sliderValue)
+
 //        currentShotCycle.targetTotalHit()
 //        currentShotCycle.summedShots()
 //        shootingCycle += 1
@@ -160,8 +165,8 @@ class ViewController: UIViewController {
 //        totalShotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
 //
 //
-//        shotCycles.append(currentShotCycle)
-        
+        shotCycles.append(currentShotCycle)
+        ad.saveContext()
         
                 print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
