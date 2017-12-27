@@ -30,7 +30,7 @@ class ShotCycleTableViewController: UITableViewController, NSFetchedResultsContr
     
     var controller: NSFetchedResultsController<ShotCycle>!
     var managedContext: NSManagedObjectContext!
-    var shotCycle = ShotCycle()
+    var shotCycle = ShotCycle(context: context)
 
     let lifetime = LifetimeShotCycle()
     let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView

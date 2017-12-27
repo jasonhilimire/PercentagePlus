@@ -19,11 +19,9 @@ class ShotCycleTableViewCell: UITableViewCell {
     
     
     func configureCell(shotCycle: ShotCycle) {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        dateLabel.text = dateFormatter.string(from: shotCycle.date! as Date)
+
+        dateLabel.text = "\(dateFormatter())"
+
         cycleShotsPercLabel.text = "Shoot %: \(shotCycle.shootingPercentage)%"
         totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.totalHitCount)"
     }
@@ -36,6 +34,19 @@ class ShotCycleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func dateFormatter() -> String{
+        let currentDate = NSDate()
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        
+        let dateString = formatter.string(from: currentDate as Date)
+        print("\(dateString)")
+        return dateString
+        
     }
 
 }

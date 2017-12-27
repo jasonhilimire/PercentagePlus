@@ -439,7 +439,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Hho-3O-8rp">
                             <connections>
                                 <action selector="backBtn:" destination="Gk6-hK-d6G" id="SZQ-V4-3bN"/>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShotViewController" id="SG8-Yj-bpP"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="ShotViewController" id="1NA-Xi-iba"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mNj-x1-2WE">
@@ -480,6 +480,6 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SG8-Yj-bpP"/>
+        <segue reference="1NA-Xi-iba"/>
     </inferredMetricsTieBreakers>
 </document>
