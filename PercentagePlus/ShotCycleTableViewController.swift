@@ -141,10 +141,10 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     func lifetimeLabels() {
-        headerView.totalShotsTaken.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
-        headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
-        headerView.totalShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())%"
-        headerView.totalShotCycles.text = "Lifetime Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
+//        headerView.totalShotsTaken.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
+//        headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
+//        headerView.totalShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())%"
+//        headerView.totalShotCycles.text = "Lifetime Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
 
     }
     

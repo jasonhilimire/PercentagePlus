@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 let date = FormattedDate.init(date: NSDate())
 let formattedDate = date?.formattedDate
 
 class ViewController: UIViewController {
 
-    
- 
-
-    
 
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -41,10 +38,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var urShotsMadeLabel: UILabel!
     @IBOutlet weak var llShotsMadeLabel: UILabel!
     @IBOutlet weak var lrShotsMadeLabel: UILabel!
+    
 
-    
-    
-    //MARK:- BUTTONS
+    //MARK:- Properties
+    var managedContext: NSManagedObjectContext!
+
+    var currentShotCycle = ShotCycle(context: context)
+    var shotCycles = [ShotCycle]()
     
     // Slider Value
     @IBAction func slider(_ sender: UISlider) {
@@ -55,25 +55,41 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        // increase hitcount += 1, disable if > shot count
+        currentShotCycle.upperLeftHitCount += 1
+        upperLeftLabel.text = "\(currentShotCycle.upperLeftHitCount)"
+        print("UL button pressed- hit count \(currentShotCycle.upperLeftHitCount)")
+        
+        totalHitCount()
 }
 
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
-        // increase hitcount += 1, disable if > shot count
+        currentShotCycle.upperRightHitCount += 1
+        upperRightLabel.text = "\(currentShotCycle.upperRightHitCount)"
+        print("UR button pressed- hit count \(currentShotCycle.upperRightHitCount)")
+        
+        totalHitCount()
     }
     
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
-        // increase hitcount += 1, disable if > shot count
+        currentShotCycle.bottomLeftHitCount += 1
+        lowerLeftLabel.text = "\(currentShotCycle.bottomLeftHitCount)"
+        print("LL button pressed- hit count \(currentShotCycle.bottomLeftHitCount)")
+        
+        totalHitCount()
     }
    
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        // increase hitcount += 1, disable if > shot count
+        currentShotCycle.bottomRightHitCount += 1
+        lowerRightLabel.text = "\(currentShotCycle.bottomRightHitCount)"
+        print("LR button pressed- hit count \(currentShotCycle.bottomRightHitCount)")
+        
+        totalHitCount()
         
     }
     
@@ -86,10 +102,16 @@ class ViewController: UIViewController {
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        var shotCycle: ShotCycle!
+
+        
+        
         updateLabels()
         saveShotCycle()
         partialScreenReset()
         resetCornerLabels()
+        
+        ad.saveContext()
 
         print("save button pressed")
         print("ShotCycles Array Count: \(shotCycles.count)")
@@ -139,7 +161,7 @@ class ViewController: UIViewController {
 //
 //
 //        shotCycles.append(currentShotCycle)
-//        saveData()
+        
         
                 print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
@@ -152,15 +174,6 @@ class ViewController: UIViewController {
         
         //TODO: FIX SO TOTAL SUM OF TARGETS DISABLES buttons
         
-        //        incrementValue += 1
-//
-//        if incrementValue > sliderValue {
-//            disableButtons()
-//        } else {
-//            let currentShotCyclePercent = currentShotCycle?.shootingPercentage()
-//            self.calcPercentageLbl.text = "\(String(describing: currentShotCyclePercent))%"
-////            self.enteredAmtLbl.text = "Shots Made this Cycle: \(targets.)"
-//        }
     }
     
     func enableButtons() {
@@ -179,14 +192,14 @@ class ViewController: UIViewController {
     
     func resetCornerLabels() {
         // reset all corner labels to zero
-//        upperLeft.hitCount = 0
-//        upperLeftLabel.text = "0"
-//        upperRight.hitCount = 0
-//        upperRightLabel.text = "0"
-//        bottomLeft.hitCount = 0
-//        lowerLeftLabel.text = "0"
-//        bottomRight.hitCount = 0
-//        lowerRightLabel.text = "0"
+        currentShotCycle.upperLeftHitCount = 0
+        upperLeftLabel.text = "0"
+        currentShotCycle.upperRightHitCount = 0
+        upperRightLabel.text = "0"
+        currentShotCycle.bottomLeftHitCount = 0
+        lowerLeftLabel.text = "0"
+        currentShotCycle.bottomRightHitCount = 0
+        lowerRightLabel.text = "0"
         print("resetCornerLabels")
     }
 
@@ -222,17 +235,17 @@ class ViewController: UIViewController {
 //        summedShotsMade = 0
 //        currentShotCyclePercent = 0
         
-//        upperLeft.hitCount = 0
-//        ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
-//        
-//        upperRight.hitCount = 0
-//        urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
-//        
-//        bottomLeft.hitCount = 0
-//        llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
-//        
-//        bottomRight.hitCount = 0
-//        lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
+        currentShotCycle.upperLeftHitCount = 0
+        ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+
+        currentShotCycle.upperRightHitCount = 0
+        urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
+        
+        currentShotCycle.bottomLeftHitCount = 0
+        llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
+        
+        currentShotCycle.bottomRightHitCount = 0
+        lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
         print("resetValues")
     }
     
@@ -251,6 +264,18 @@ class ViewController: UIViewController {
 //        print("keepTSMLabelsIntact()")
 //
 //    }
+    
+    func totalHitCount() -> Int16 {
+        let totalHits = (currentShotCycle.upperRightHitCount + currentShotCycle.upperLeftHitCount + currentShotCycle.bottomRightHitCount + currentShotCycle.bottomLeftHitCount + currentShotCycle.fiveHoleHitCount)
+        print("Total Shots Made in Current Cycle: \(totalHits)")
+        
+        if totalHits == Int16(sliderValue) {
+            disableButtons()
+            return totalHits
+        } else {
+        return totalHits
+        }
+    }
     
     func saveData() {
 
