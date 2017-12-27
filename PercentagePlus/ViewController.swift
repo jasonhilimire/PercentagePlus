@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     
 
     //MARK:- Properties
-    var managedContext: NSManagedObjectContext!
+
 
     var currentShotCycle = ShotCycle(context: context)
     var shotCycles = [ShotCycle]()
@@ -255,22 +255,7 @@ class ViewController: UIViewController {
         lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
         print("resetValues")
     }
-    
-//    func keepTSMLabelsIntact() {
-//        // Keep the total shots made labels intact, for when returning from Shot Cycles View
-//        // TODO: the shotsMadeLabels are not being updated when returning from the tableView as they are not saved anywhere
-//        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
-//        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
-//        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
-//        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
-//
-//
-//        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
-//        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
-//        totalShotsMade.text = "Total Shots Made: \(summedShotsMade)"
-//        print("keepTSMLabelsIntact()")
-//
-//    }
+
     
     func totalHitCount() -> Int16 {
         let totalHits = (currentShotCycle.upperRightHitCount + currentShotCycle.upperLeftHitCount + currentShotCycle.bottomRightHitCount + currentShotCycle.bottomLeftHitCount + currentShotCycle.fiveHoleHitCount)
@@ -296,13 +281,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if activeCycle == false {
+        currentShotCycle.shootingPercentage = 0
+        currentShotCycle.totalHitCount = 0
+        currentShotCycle.bottomLeftHitCount = 0
+        currentShotCycle.bottomRightHitCount = 0
+        currentShotCycle.fiveHoleHitCount = 0
+        currentShotCycle.upperLeftHitCount = 0
+        currentShotCycle.upperRightHitCount = 0
+            currentShotCycle.shots = Int16(sliderValue)
         fullScreenReset()
         sliderLbl.text = "Number of Shots: 15"
         sliderValue = 15
-        print("viewDidLoad View Controller & .plist created ")
+        print("viewDidLoad View Controller" )
         } else {
             partialScreenReset()
-//            keepTSMLabelsIntact()
+
              print("viewDidLoad View Controller")
         }
 

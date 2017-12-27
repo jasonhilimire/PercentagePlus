@@ -29,7 +29,7 @@ extension UIView {
 class ShotCycleTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var controller: NSFetchedResultsController<ShotCycle>!
-    var managedContext: NSManagedObjectContext!
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     var shotCycle = ShotCycle(context: context)
 
     let lifetime = LifetimeShotCycle()
