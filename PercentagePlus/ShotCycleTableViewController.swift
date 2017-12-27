@@ -96,11 +96,11 @@ class ShotCycleTableViewController: UITableViewController {
         let shotCycle = shotCycles[indexPath.row]
         cell.dateLabel.text = "\(shotCycle.date)"
 
-        cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.summedShotsMade)"
+        cell.totalShotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
         cell.totalShotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
         cell.cycleShotsMadeLabel.text =  "Cycle Shots Made : \(shotCycle.currentShotsMade)"
         cell.totalShotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
-        cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.currentShotCyclePercent)%"
+        cell.cycleShotsPercLabel.text = "Cycle Shots Perc: \(shotCycle.cyclePercentage)%"
 
         return cell
     }
