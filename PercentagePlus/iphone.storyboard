@@ -160,8 +160,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6WV-E7-mwA">
-                                <rect key="frame" x="0.0" y="322" width="568" height="32"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WV-E7-mwA">
+                                <rect key="frame" x="0.0" y="322" width="812" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="MHN-VV-AO5"/>
                                 </constraints>
@@ -172,11 +172,6 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="77I-Mw-c5F"/>
-                                    <barButtonItem title="Reset Current Cycle" id="520-yF-lSn">
-                                        <connections>
-                                            <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="VnA-9L-GzA"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="2l9-lx-hPQ"/>
                                     <barButtonItem title="Save" id="41g-t3-3kH">
                                         <connections>
@@ -227,6 +222,7 @@
                             <constraint firstItem="3tb-Tg-d9G" firstAttribute="leading" secondItem="NNw-uQ-et1" secondAttribute="leading" id="J4C-HR-nMf"/>
                             <constraint firstItem="gYH-dm-i82" firstAttribute="trailing" secondItem="IBn-oU-PeC" secondAttribute="trailing" id="JdN-rp-fxX"/>
                             <constraint firstItem="IBn-oU-PeC" firstAttribute="centerY" secondItem="NNw-uQ-et1" secondAttribute="centerY" id="K2h-vs-gIx"/>
+                            <constraint firstItem="6WV-E7-mwA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TQp-dG-jZs"/>
                             <constraint firstItem="6WV-E7-mwA" firstAttribute="top" secondItem="1Ly-lE-7Zx" secondAttribute="bottom" constant="30" id="TfC-ZA-W43"/>
                             <constraint firstAttribute="trailing" secondItem="6WV-E7-mwA" secondAttribute="trailing" id="Tg3-g8-MU1"/>
                             <constraint firstItem="DHj-RS-pMx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYF-Ci-WOh"/>
@@ -249,6 +245,7 @@
                             <constraint firstItem="NNw-uQ-et1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="npn-wC-Zhv"/>
                             <constraint firstItem="1Ly-lE-7Zx" firstAttribute="top" secondItem="rvk-N3-mIE" secondAttribute="bottom" constant="10" id="oBE-OS-TVR"/>
                             <constraint firstItem="PzP-dD-Gvh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="r4j-JO-8Fw"/>
+                            <constraint firstAttribute="trailing" secondItem="6WV-E7-mwA" secondAttribute="trailing" id="sf7-bU-45d"/>
                             <constraint firstItem="veJ-ub-n8d" firstAttribute="centerY" secondItem="PzP-dD-Gvh" secondAttribute="centerY" id="wfz-jo-zsR"/>
                             <constraint firstItem="eC7-QZ-LCw" firstAttribute="trailing" secondItem="veJ-ub-n8d" secondAttribute="trailing" id="xIE-15-awv"/>
                             <constraint firstItem="cBi-EH-cgl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xRA-Pe-rYG"/>
@@ -258,7 +255,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calcPercentageLbl" destination="wMw-RI-ndM" id="8Ca-da-JNv"/>
                         <outlet property="enteredAmtLbl" destination="DHj-RS-pMx" id="ZgW-70-6nm"/>
                         <outlet property="incrementButtonBL" destination="NNw-uQ-et1" id="Sce-A0-i3T"/>
                         <outlet property="incrementButtonBR" destination="bFd-TT-Diw" id="2HH-i2-gNS"/>
@@ -266,6 +262,7 @@
                         <outlet property="incrementButtonUR" destination="PzP-dD-Gvh" id="EDj-4c-B8z"/>
                         <outlet property="lowerLeftLabel" destination="IBn-oU-PeC" id="cyo-JQ-yst"/>
                         <outlet property="lowerRightLabel" destination="eC7-QZ-LCw" id="y4p-tJ-UPx"/>
+                        <outlet property="percentageLbl" destination="wMw-RI-ndM" id="8Ca-da-JNv"/>
                         <outlet property="shotsMadeLbl" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="sliderLbl" destination="MSp-dj-IKW" id="ulA-ec-rGz"/>
                         <outlet property="sliderOutlet" destination="1Ly-lE-7Zx" id="iXD-lF-pdg"/>

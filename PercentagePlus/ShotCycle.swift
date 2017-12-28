@@ -48,8 +48,13 @@ class ShotCycle: Codable {
     }
     
     func getCyclePercent(shotsTaken: Int, shotsMade: Int) -> Int {
-        let cyclePerc = (shotsTaken * 100) / shotsMade
-        return cyclePerc
+        if shotsMade == 0 {
+            return 0
+        } else {
+            let cyclePerc = (shotsMade * 100) / shotsTaken
+            print("calculated %: \(cyclePerc)%")
+            return cyclePerc
+        }
     }
     
     

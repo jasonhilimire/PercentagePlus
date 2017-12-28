@@ -347,7 +347,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calcPercentageLbl" destination="wMw-RI-ndM" id="8Ca-da-JNv"/>
                         <outlet property="enteredAmtLbl" destination="DHj-RS-pMx" id="ZgW-70-6nm"/>
                         <outlet property="incrementButtonBL" destination="NNw-uQ-et1" id="Sce-A0-i3T"/>
                         <outlet property="incrementButtonBR" destination="bFd-TT-Diw" id="2HH-i2-gNS"/>
@@ -357,6 +356,7 @@
                         <outlet property="lowerLeftLabel" destination="IBn-oU-PeC" id="cyo-JQ-yst"/>
                         <outlet property="lowerRightLabel" destination="eC7-QZ-LCw" id="y4p-tJ-UPx"/>
                         <outlet property="lrShotsMadeLabel" destination="F39-H7-MEq" id="YUA-dk-Q4G"/>
+                        <outlet property="percentageLbl" destination="wMw-RI-ndM" id="8Ca-da-JNv"/>
                         <outlet property="shotsMadeLbl" destination="aGa-rz-Zwh" id="M6Z-wR-lFV"/>
                         <outlet property="sliderLbl" destination="MSp-dj-IKW" id="ulA-ec-rGz"/>
                         <outlet property="sliderOutlet" destination="1Ly-lE-7Zx" id="iXD-lF-pdg"/>
