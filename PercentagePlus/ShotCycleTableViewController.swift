@@ -82,8 +82,14 @@ class ShotCycleTableViewController: UITableViewController {
         cell.dateLabel.text = "\(shotCycle.date)"
 
         cell.shotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
-//        cell.shotsTakenLabel.text = "Total Shots Taken: \(shotCycle.summedShots)"
-//        cell.shotsPercLabel.text = "Total Shots Perc: \(shotCycle.totalPercentCalc)%"
+        cell.shotsTakenLabel.text = "Shots: \(shotCycle.shotsTaken)"
+        cell.shotsPercLabel.text = "Perc: \(shotCycle.cyclePercent)"
+        
+        cell.ulLabel.text = "TL: \(shotCycle.ulHitCount)"
+        cell.urLabel.text = "TR: \(shotCycle.urHitCount)"
+        cell.blLabel.text = "BL: \(shotCycle.blHitCount)"
+        cell.brLabel.text = "BR: \(shotCycle.brHitCount)"
+
 
 
 
@@ -96,8 +102,8 @@ class ShotCycleTableViewController: UITableViewController {
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        
         lifetimeLabels()
-        // TODO: also do a full screen reset - may need to create a delegate?
         saveData()
         
     }
@@ -130,6 +136,10 @@ class ShotCycleTableViewController: UITableViewController {
         headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
         headerView.totalShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())%"
         headerView.totalShotCycles.text = "Lifetime Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
+        headerView.ulMade.text = "Top Left: \(lifetime.lifeTimeUL())"
+        headerView.urMade.text = "Top Right: \(lifetime.lifeTimeUR())"
+        headerView.blMade.text = "Bott Left: \(lifetime.lifeTimeBL())"
+        headerView.brMade.text = "Bott Right: \(lifetime.lifeTimeBR())"
 
     }
     

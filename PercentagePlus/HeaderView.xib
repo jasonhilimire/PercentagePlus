@@ -114,12 +114,12 @@
             <connections>
                 <outlet property="blMade" destination="3hu-f8-GFb" id="aef-xE-c6w"/>
                 <outlet property="brMade" destination="Ql0-ut-t5h" id="HKi-8e-ajR"/>
-                <outlet property="tlMade" destination="lp9-Rv-odt" id="DRF-6i-xhk"/>
                 <outlet property="totalShotCycles" destination="1yY-15-xH9" id="G7I-4k-GKo"/>
                 <outlet property="totalShotPerc" destination="wdP-9g-r5p" id="jMn-rK-p7U"/>
                 <outlet property="totalShotsMade" destination="YyB-jm-BfW" id="M8e-lq-v3o"/>
                 <outlet property="totalShotsTaken" destination="beo-1e-AKH" id="7ti-Rg-1Ls"/>
-                <outlet property="trMade" destination="Ddd-r2-92q" id="6GI-BT-5k5"/>
+                <outlet property="ulMade" destination="lp9-Rv-odt" id="DRF-6i-xhk"/>
+                <outlet property="urMade" destination="Ddd-r2-92q" id="6GI-BT-5k5"/>
                 <outlet property="vw" destination="saA-Tx-lfw" id="abD-v9-2Nl"/>
             </connections>
             <point key="canvasLocation" x="48" y="90"/>

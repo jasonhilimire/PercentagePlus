@@ -37,4 +37,27 @@ class LifetimeShotCycle {
         return shotCycles.count
     }
     
+    func lifeTimeUR() -> Int {
+        let lifetimeURShotsMade = shotCycles.reduce(0, {$0 + ($1.urHitCount )})
+        print("lifetime UR Shots Made: \(lifetimeURShotsMade)")
+        return lifetimeURShotsMade
+    }
+    
+    func lifeTimeUL() -> Int {
+        let lifetimeULShotsMade = shotCycles.reduce(0, {$0 + ($1.ulHitCount )})
+        print("lifetime UL Shots Made: \(lifetimeULShotsMade)")
+        return lifetimeULShotsMade
+    }
+    func lifeTimeBR() -> Int {
+        let lifetimeBRShotsMade = shotCycles.reduce(0, {$0 + ($1.brHitCount )})
+        print("lifetime BR Shots Made: \(lifetimeBRShotsMade)")
+        return lifetimeBRShotsMade
+    }
+    
+    func lifeTimeBL() -> Int {
+        let lifetimeBLShotsMade = shotCycles.reduce(0, {$0 + ($1.blHitCount )})
+        print("lifetime BL Shots Made: \(lifetimeBLShotsMade)")
+        return lifetimeBLShotsMade
+    }
+    
 }

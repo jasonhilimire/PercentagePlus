@@ -82,8 +82,8 @@ class ViewController: UIViewController {
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        currentshotCycle?.blHitCount += 1
-        lowerRightLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
+        currentshotCycle?.brHitCount += 1
+        lowerRightLabel.text = "\(currentshotCycle?.brHitCount ?? 0)"
         updateShotsMade()
         updatePercent()
         
@@ -303,7 +303,7 @@ class ViewController: UIViewController {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
         
         let dateString = formatter.string(from: currentDate as Date)
         print("\(dateString)")

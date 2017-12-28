@@ -13,10 +13,10 @@ class HeaderView: UITableViewCell {
     @IBOutlet var totalShotsMade: UILabel!
     @IBOutlet var totalShotsTaken: UILabel!
     @IBOutlet var totalShotPerc: UILabel!
-    @IBOutlet var tlMade: UILabel!
+    @IBOutlet var ulMade: UILabel!
     @IBOutlet var blMade: UILabel!
     @IBOutlet var brMade: UILabel!
-    @IBOutlet var trMade: UILabel!
+    @IBOutlet var urMade: UILabel!
     @IBOutlet var totalShotCycles: UILabel!
     
     @IBOutlet var vw: UIView!

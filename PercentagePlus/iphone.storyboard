@@ -44,7 +44,7 @@
                                 </state>
                                 <connections>
                                     <action selector="imageBtn:" destination="i68-Vn-4NQ" eventType="touchUpInside" id="jek-nK-rt1"/>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="wut-HT-fcU"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="tfy-UQ-yMb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -254,6 +254,7 @@
                             <constraint firstItem="3tb-Tg-d9G" firstAttribute="centerX" secondItem="gYH-dm-i82" secondAttribute="centerX" id="zmK-QM-mfC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GC6-pf-EJd"/>
                     <connections>
                         <outlet property="enteredAmtLbl" destination="DHj-RS-pMx" id="ZgW-70-6nm"/>
                         <outlet property="incrementButtonBL" destination="NNw-uQ-et1" id="Sce-A0-i3T"/>
@@ -272,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538.38080959520244" y="575.20000000000005"/>
+            <point key="canvasLocation" x="-380.54187192118229" y="575.20000000000005"/>
         </scene>
         <!--Shot Cycles-->
         <scene sceneID="2E9-8Q-Ew6">
@@ -324,20 +325,20 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Qt5-cq-gmo">
                                             <rect key="frame" x="28" y="48.666666666666664" width="668" height="20.333333333333336"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UL: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-B9-W7u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="51.666666666666664" height="20.333333333333332"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TL: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-B9-W7u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UR: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-Rp-peL">
-                                                    <rect key="frame" x="205.66666666666669" y="0.0" width="53" height="20.333333333333332"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TR: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-Rp-peL">
+                                                    <rect key="frame" x="204.66666666666669" y="0.0" width="51.333333333333314" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BR: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDV-h0-NNc">
-                                                    <rect key="frame" x="412.33333333333331" y="0.0" width="51.666666666666686" height="20.333333333333332"/>
+                                                    <rect key="frame" x="411.33333333333331" y="0.0" width="51.666666666666686" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -361,10 +362,14 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="blLabel" destination="2UE-E7-c5K" id="igd-FO-yB2"/>
+                                    <outlet property="brLabel" destination="dDV-h0-NNc" id="uF3-tD-bea"/>
                                     <outlet property="dateLabel" destination="vL9-gO-12I" id="PP0-9l-b4F"/>
                                     <outlet property="shotsMadeLabel" destination="kUb-pb-rAH" id="3Ox-38-ZEn"/>
                                     <outlet property="shotsPercLabel" destination="VZz-qc-d53" id="bbS-ud-xuU"/>
                                     <outlet property="shotsTakenLabel" destination="aM9-78-2WO" id="SNF-OJ-DRX"/>
+                                    <outlet property="ulLabel" destination="gWY-B9-W7u" id="7v4-fa-4Q7"/>
+                                    <outlet property="urLabel" destination="hgi-Rp-peL" id="vjb-03-Faz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -377,7 +382,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Hho-3O-8rp">
                             <connections>
                                 <action selector="backBtn:" destination="Gk6-hK-d6G" id="SZQ-V4-3bN"/>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShotViewController" id="SG8-Yj-bpP"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="GpF-Du-X3L"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mNj-x1-2WE">
@@ -389,7 +394,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbZ-SX-tBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341.19718309859155" y="570"/>
+            <point key="canvasLocation" x="498.76847290640399" y="568.79999999999995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="waa-eu-sRw">
@@ -407,7 +412,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkM-El-Awa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="-362"/>
+            <point key="canvasLocation" x="499" y="-375"/>
         </scene>
     </scenes>
     <resources>
@@ -418,7 +423,6 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bKZ-pX-H0b"/>
-        <segue reference="SG8-Yj-bpP"/>
+        <segue reference="GpF-Du-X3L"/>
     </inferredMetricsTieBreakers>
 </document>
