@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     let dataModel = ShotCycleDataModel()
     var shootingCycle = 0
+    var currentshotCycle = ShotCycle(date: "", shotsTaken: 0, cyclePercent: 0, shotsMade: 0, ulHitCount: 0, urHitCount: 0, blHitCount: 0, brHitCount: 0)
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -48,31 +49,39 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
+        currentshotCycle?.ulHitCount += 1
+        upperLeftLabel.text = "\(currentshotCycle?.ulHitCount ?? 0)"
         
 }
 
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
+        currentshotCycle?.urHitCount += 1
+        upperRightLabel.text = "\(currentshotCycle?.urHitCount ?? 0)"
         
     }
     
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
+        currentshotCycle?.blHitCount += 1
+        lowerLeftLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
         
     }
    
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
+        currentshotCycle?.blHitCount += 1
+        lowerRightLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
         
     }
     
     
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         partialScreenReset()
-        resetCornerLabels()
+        resetCorners()
     }
    
     // saves current values - pressed after all shots/corners entered
@@ -80,7 +89,7 @@ class ViewController: UIViewController {
 
         saveShotCycle()
         partialScreenReset()
-        resetCornerLabels()
+        resetCorners()
 
         print("save button pressed")
         print("ShotCycles Array Count: \(shotCycles.count)")
@@ -153,10 +162,10 @@ class ViewController: UIViewController {
         let date = dateFormatter()
 
 
-        shotCycles.append(currentShotCycle!)
+        shotCycles.append(currentshotCycle!)
         saveData()
         
-                print("Current Shot Cycle: \(String(describing: currentShotCycle))")
+//                print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
     
     
@@ -181,14 +190,14 @@ class ViewController: UIViewController {
         incrementButtonUR.isEnabled = false
     }
     
-    func resetCornerLabels() {
-        upperLeftHitCount = 0
+    func resetCorners() {
+        currentshotCycle?.ulHitCount = 0
         upperLeftLabel.text = "0"
-        upperRightHitCount = 0
+        currentshotCycle?.urHitCount = 0
         upperRightLabel.text = "0"
-        lowerLeftHitCount = 0
+        currentshotCycle?.blHitCount = 0
         lowerLeftLabel.text = "0"
-        lowerRightHitCount = 0
+        currentshotCycle?.brHitCount = 0
         lowerRightLabel.text = "0"
         print("resetCornerLabels")
     }
@@ -202,7 +211,7 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
 
-        currentShotCyclePercent = 0
+//        currentShotCyclePercent = 0
         print("partialScreenReset")
     }
     
@@ -210,7 +219,7 @@ class ViewController: UIViewController {
     // full reset of all data values excluding slider
     func fullScreenReset() {
         partialScreenReset()
-        resetCornerLabels()
+        resetCorners()
         resetValues()
         print("fullScreenReset")
     }
@@ -220,14 +229,11 @@ class ViewController: UIViewController {
         shotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-        summedShots = 0
-        summedShotsMade = 0
-        currentShotCyclePercent = 0
+//        summedShots = 0
+//        summedShotsMade = 0
+//        currentShotCyclePercent = 0
         
-        ulTotal = 0
-        urTotal = 0
-        llTotal = 0
-        lrTotal = 0
+        resetCorners()
 
         print("resetValues")
     }
