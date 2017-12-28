@@ -18,12 +18,13 @@ class ViewController: UIViewController {
     let dataModel = ShotCycleDataModel()
     var shootingCycle = 0
     var currentshotCycle = ShotCycle(date: "", shotsTaken: 0, cyclePercent: 0, shotsMade: 0, ulHitCount: 0, urHitCount: 0, blHitCount: 0, brHitCount: 0)
+
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
     @IBOutlet weak var sliderLbl: UILabel!
-    @IBOutlet weak var shotsMade: UILabel!
+    @IBOutlet weak var shotsMadeLbl: UILabel!
     
     @IBOutlet weak var sliderOutlet: UISlider!
     
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.ulHitCount += 1
         upperLeftLabel.text = "\(currentshotCycle?.ulHitCount ?? 0)"
+        updateShotsMade()
         
 }
 
@@ -59,6 +61,7 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.urHitCount += 1
         upperRightLabel.text = "\(currentshotCycle?.urHitCount ?? 0)"
+        updateShotsMade()
         
     }
     
@@ -67,6 +70,7 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.blHitCount += 1
         lowerLeftLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
+        updateShotsMade()
         
     }
    
@@ -75,6 +79,7 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.blHitCount += 1
         lowerRightLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
+        updateShotsMade()
         
     }
     
@@ -157,7 +162,7 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
 
 
-        shotsMade.text = "Total Shots Made: )"
+        shotsMadeLbl.text = "Total Shots Made: )"
 
         let date = dateFormatter()
 
@@ -173,7 +178,19 @@ class ViewController: UIViewController {
     func buttonPressed() {
 
         sliderOutlet.isHidden = true
+        enteredAmtLbl.isHidden = true
 
+    }
+    
+    func updateShotsMade() {
+        var shotsMade = currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!)
+        if shotsMade! == sliderValue {
+            disableButtons()
+            shotsMadeLbl.text = "Total shots Made: \(sliderValue)"
+        } else {
+        shotsMadeLbl.text = "Total shots Made: \(shotsMade ?? 0)"
+        }
+        print("ShotsMade: \(String(describing: shotsMade))")
     }
     
     func enableButtons() {
@@ -226,7 +243,7 @@ class ViewController: UIViewController {
     
     func resetValues() {
 
-        shotsMade.text = "Total Shots Made: 0"
+        shotsMadeLbl.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
 //        summedShots = 0

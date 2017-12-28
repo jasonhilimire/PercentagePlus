@@ -44,7 +44,6 @@ class ShotCycle: Codable {
     
     func sumHitCounts(ulHitCount: Int, urHitCount: Int, blHitCount: Int, brHitCount: Int) -> Int {
         let totalShotsMade = (ulHitCount + urHitCount + blHitCount + brHitCount)
-        print("Total Shots Made: \(totalShotsMade)")
         return totalShotsMade
     }
     
