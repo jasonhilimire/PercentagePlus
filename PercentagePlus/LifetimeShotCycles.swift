@@ -27,7 +27,7 @@ class LifetimeShotCycle {
         if shotCycles.count == 0 {
             return 0
         } else {
-        let lifeTimeShootingPerc = (shotCycles.reduce(0, {$0 + ($1.cyclePercentage )}) / shotCycles.count)
+        let lifeTimeShootingPerc = (shotCycles.reduce(0, {$0 + ($1.cyclePercent )}) / shotCycles.count)
         print("lifetime Shooting Percent: \(lifeTimeShootingPerc)")
             return lifeTimeShootingPerc
         }

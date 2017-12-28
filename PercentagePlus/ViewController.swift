@@ -35,19 +35,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var calcPercentageLbl: UILabel!
     @IBOutlet weak var enteredAmtLbl: UILabel!
     @IBOutlet weak var sliderLbl: UILabel!
+    @IBOutlet weak var shotsMade: UILabel!
+    
+    @IBOutlet weak var sliderOutlet: UISlider!
+    
     @IBOutlet weak var incrementButtonUL: UIButton!
-
     @IBOutlet weak var incrementButtonUR: UIButton!
     @IBOutlet weak var incrementButtonBL: UIButton!
-    @IBOutlet weak var sliderOutlet: UISlider!
     @IBOutlet weak var incrementButtonBR: UIButton!
+    
     @IBOutlet weak var upperLeftLabel: UILabel!
     @IBOutlet weak var upperRightLabel: UILabel!
     @IBOutlet weak var lowerLeftLabel: UILabel!
     @IBOutlet weak var lowerRightLabel: UILabel!
 
 
-    @IBOutlet weak var shotsMade: UILabel!
+    
     
 
     
@@ -112,7 +115,7 @@ class ViewController: UIViewController {
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        calculateTotals()
+
         saveShotCycle()
         partialScreenReset()
         resetCornerLabels()
@@ -122,7 +125,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
-        saveShotCycle()
+
          print("show Saved button pressed")
     }
     
@@ -136,36 +139,52 @@ class ViewController: UIViewController {
         print("delete button pressed")
     }
 
+    //MARK:- VIEW
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+            // clear screen-reset when app is launched each time and set slider to default value of 15
+        if activeCycle == false {
+            fullScreenReset()
+            sliderLbl.text = "Number of Shots: 15"
+            sliderValue = 15
+            print("viewDidLoad View Controller & .plist created")
+        } else {
+            partialScreenReset()
+            
+            print("viewDidLoad View Controller")
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        activeCycle = true
+        print("viewWillDisappear View Controller")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        activeCycle = true
+        
+        
+        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
+    }
+    
+    
+    
     //MARK:- METHODS
     
-    func calculateTotals() {
-        ulTotal += upperLeftHitCount
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
-        
-        urTotal += upperRightHitCount
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
-        
-        llTotal += lowerLeftHitCount
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
-        
-        lrTotal += lowerRightHitCount
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
-    }
-    
-    func totalShootingPercentage() {
-        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
-        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
-    }
-    
+
+
     func saveShotCycle() {
 
         shootingCycle += 1
-        summedShots += sliderValue
-        summedShotsMade += incrementValue
-        totalShotsTaken.text = "Today's Shots Taken: \(String(describing: summedShots))"
+
         sliderOutlet.isHidden = false
-        totalShootingPercentage()
-        totalShootingPerc.text = "Today's Shooting Percentage: \(String(describing: totalPercentCalc))%"
+
+
         shotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
 
         let date = dateFormatter()
@@ -241,8 +260,7 @@ class ViewController: UIViewController {
     }
     
     func resetValues() {
-        totalShotsTaken.text = "Today's Shots Taken: 0"
-        totalShootingPerc.text = "Today's Shooting Percentage: 0%"
+
         shotsMade.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
@@ -251,34 +269,20 @@ class ViewController: UIViewController {
         currentShotCyclePercent = 0
         
         ulTotal = 0
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: 0"
+
         
         urTotal = 0
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: 0"
+
         
         llTotal = 0
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: 0"
+
         
         lrTotal = 0
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: 0"
+
         print("resetValues")
     }
     
-    func keepTSMLabelsIntact() {
-        // Keep the total shots made labels intact, for when returning from Shot Cycles View
-        // TODO: the shotsMadeLabels are not being updated when returning from the tableView as they are not saved anywhere
-        ulShotsMadeLabel.text = "Total Shots Made Upper Left: \(ulTotal)"
-        urShotsMadeLabel.text = "Total Shots Made Upper Right: \(urTotal)"
-        llShotsMadeLabel.text = "Total Shots Made Lower Left: \(llTotal)"
-        lrShotsMadeLabel.text = "Total Shots Made Lower Right: \(lrTotal)"
-        
-        
-        totalShootingPerc.text = "Today's Shooting Percentage: \(totalPercentCalc)%"
-        totalShotsTaken.text = "Today's Shots Taken: \(summedShots)"
-        shotsMade.text = "Total Shots Made: \(summedShotsMade)"
-        print("keepTSMLabelsIntact()")
-        
-    }
+
     
     func saveData() {
         dataModel.saveShotCycleArray()
@@ -300,36 +304,7 @@ class ViewController: UIViewController {
  
     }
     
-    //MARK:- VIEW
-    
-    // clear screen-reset when app is launched each time and set slider to default value of 15
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if activeCycle == false {
-        fullScreenReset()
-        sliderLbl.text = "Number of Shots: 15"
-        sliderValue = 15
-        print("viewDidLoad View Controller & .plist created ")
-        } else {
-            partialScreenReset()
-            keepTSMLabelsIntact()
-             print("viewDidLoad View Controller")
-        }
 
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        activeCycle = true
-        print("viewWillDisappear View Controller")
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        activeCycle = true
-        keepTSMLabelsIntact()
-
-        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
-    }
     
 
 }

@@ -27,7 +27,7 @@ class ShotCycle: Codable {
     var date: String
     var totalPercentCalc: Int
     var summedShots: Int
-    var cyclePercentage: Int
+    var cyclePercent: Int
     var shotsMade: Int
     var currentShotsMade: Int
     var shotsTaken: Int
@@ -37,7 +37,7 @@ class ShotCycle: Codable {
         self.date = date
         self.totalPercentCalc = totalPercentCalc
         self.summedShots = summedShots
-        self.cyclePercentage = currentShotCyclePercent
+        self.cyclePercent = currentShotCyclePercent
         self.shotsMade = summedShotsMade
         self.currentShotsMade = currentShotsMade
         self.shotsTaken = shotsTaken
@@ -60,16 +60,9 @@ class ShotCycle: Codable {
 
     
     func printDescription() {
-        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(shotsMade), Current Percent = \(cyclePercentage), TotalPercentCalc = \(totalPercentCalc) ")
+        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(shotsMade), Current Percent = \(cyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
     }
     
-
-    
-    
-
-//    mutating func totalShootingPerc(){
-//        totalPercentCalc = ((summedShotsMade * 100) / summedShots)
-//    }
     
 }
 
