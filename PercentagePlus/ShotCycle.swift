@@ -9,58 +9,48 @@
 import Foundation
 
 var sliderValue: Int = 0
-var incrementValue: Int = 0
+
 
 
 //  move all this to its own model??
-var totalPercentCalc = 0
-var summedShots = 0
-var currentShotCyclePercent = 0
-var summedShotsMade = 0
-var shootingCycle = 0
-var activeCycle = false
 
 
-var shotCycles = [ShotCycle]()
+
+
 
 class ShotCycle: Codable {
     var date: String
-    var totalPercentCalc: Int
-    var summedShots: Int
+    var shotsTaken: Int
     var cyclePercent: Int
     var shotsMade: Int
-    var currentShotsMade: Int
-    var shotsTaken: Int
+
+    var ulHitCount: Int
+    var urHitCount: Int
+    var blHitCount: Int
+    var brHitCount: Int
     
 
-    init?(date: String, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int, shotsTaken: Int) {
+    init?(date: String, shotsTaken: Int, cyclePercent: Int, shotsMade: Int, ulHitCount: Int, urHitCount: Int, blHitCount: Int, brHitCount: Int) {
         self.date = date
-        self.totalPercentCalc = totalPercentCalc
-        self.summedShots = summedShots
-        self.cyclePercent = currentShotCyclePercent
-        self.shotsMade = summedShotsMade
-        self.currentShotsMade = currentShotsMade
         self.shotsTaken = shotsTaken
-    }
-    
-    func dateFormatter() -> String{
-        let currentDate = NSDate()
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        
-        let dateString = formatter.string(from: currentDate as Date)
-        print("\(dateString)")
-        return dateString
+        self.cyclePercent = cyclePercent
+        self.shotsMade = shotsMade
+        self.ulHitCount = ulHitCount
+        self.urHitCount = urHitCount
+        self.blHitCount = blHitCount
+        self.brHitCount = brHitCount
         
     }
     
-
-
+    func sumHitCounts(ulHitCount: Int, urHitCount: Int, blHitCount: Int, brHitCount: Int) -> Int {
+        let totalShotsMade = (ulHitCount + urHitCount + blHitCount + brHitCount)
+        print("Total Shots Made: \(totalShotsMade)")
+        return totalShotsMade
+    }
     
-    func printDescription() {
-        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(shotsMade), Current Percent = \(cyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
+    func getCyclePercent(shotsTaken: Int, shotsMade: Int) -> Int {
+        let cyclePerc = (shotsTaken * 100) / shotsMade
+        return cyclePerc
     }
     
     

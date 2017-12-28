@@ -18,7 +18,7 @@ class LifetimeShotCycle {
     }
     
     func lifeTimeShotsMade() -> Int {
-        let lifetimeShotsMade = shotCycles.reduce(0, {$0 + ($1.currentShotsMade )})
+        let lifetimeShotsMade = shotCycles.reduce(0, {$0 + ($1.shotsMade )})
         print("lifetime Shots Made: \(lifetimeShotsMade)")
         return lifetimeShotsMade
     }

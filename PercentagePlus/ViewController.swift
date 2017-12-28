@@ -9,27 +9,14 @@
 import UIKit
 
 
+var activeCycle = false
+var shotCycles = [ShotCycle]()
+
+
 class ViewController: UIViewController {
     
     let dataModel = ShotCycleDataModel()
-
-
-    //MARK:- Target Set up
-    var upperRight = Target(targetName: "Upper Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var upperRightHitCount = upperRight!.targetHitCurrentCount
-    lazy var urTotal = upperRight!.targetHitTotalCount
-    
-    var upperLeft = Target(targetName: "Upper Left" , targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var upperLeftHitCount = upperLeft!.targetHitCurrentCount
-    lazy var ulTotal = upperLeft!.targetHitTotalCount
-    
-    var lowerLeft = Target(targetName: "Lower Left", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var lowerLeftHitCount = lowerLeft!.targetHitCurrentCount
-    lazy var lrTotal = lowerLeft!.targetHitTotalCount
-    
-    var lowerRight = Target(targetName: "Lower Right", targetHitCurrentCount: 0, targetHitTotalCount: 0)
-    lazy var lowerRightHitCount = lowerRight!.targetHitCurrentCount
-    lazy var llTotal = lowerRight!.targetHitTotalCount
+    var shootingCycle = 0
     
     //MARK:- SETUP
     @IBOutlet weak var calcPercentageLbl: UILabel!
@@ -50,11 +37,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerRightLabel: UILabel!
 
 
-    
-    
-
-    
-    
     //MARK:- BUTTONS
     
     // Slider Value
@@ -66,45 +48,25 @@ class ViewController: UIViewController {
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
         buttonPressed()
-        upperLeftHitCount += 1
-        upperLeftLabel.text = "\(upperLeftHitCount)"
         
-        if upperLeftHitCount >= sliderValue {
-            disableButtons()
-        }
 }
 
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
-        upperRightHitCount += 1
-        upperRightLabel.text = "\(upperRightHitCount)"
         
-        if upperRightHitCount >= sliderValue {
-            disableButtons()
-        }
     }
     
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
         buttonPressed()
-        lowerLeftHitCount += 1
-        lowerLeftLabel.text = "\(lowerLeftHitCount)"
         
-        if lowerLeftHitCount >= sliderValue {
-            disableButtons()
-        }
     }
    
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
         buttonPressed()
-        lowerRightHitCount += 1
-        lowerRightLabel.text = "\(lowerRightHitCount)"
         
-        if lowerRightHitCount >= sliderValue {
-            disableButtons()
-        }
     }
     
     
@@ -147,6 +109,7 @@ class ViewController: UIViewController {
         
             // clear screen-reset when app is launched each time and set slider to default value of 15
         if activeCycle == false {
+            var shootingCycle = 0
             fullScreenReset()
             sliderLbl.text = "Number of Shots: 15"
             sliderValue = 15
@@ -169,7 +132,7 @@ class ViewController: UIViewController {
         activeCycle = true
         
         
-        print("viewWillAppear: summedShots = \(summedShots), totalPercentCalc = \(totalPercentCalc), summedShotsMade = \(summedShotsMade), currentShotCyclePercent = \(currentShotCyclePercent)")
+       
     }
     
     
@@ -185,10 +148,10 @@ class ViewController: UIViewController {
         sliderOutlet.isHidden = false
 
 
-        shotsMade.text = "Total Shots Made: \(String(describing: summedShotsMade))"
+        shotsMade.text = "Total Shots Made: )"
 
         let date = dateFormatter()
-        let currentShotCycle = ShotCycle(date: date, totalPercentCalc: totalPercentCalc, summedShots: summedShots, currentShotCyclePercent: currentShotCyclePercent, summedShotsMade: summedShotsMade, currentShotsMade: incrementValue, shotsTaken: sliderValue)
+
 
         shotCycles.append(currentShotCycle!)
         saveData()
@@ -199,16 +162,9 @@ class ViewController: UIViewController {
     
     // increments values in buttons and updates percent calculations
     func buttonPressed() {
-        incrementValue += 1
+
         sliderOutlet.isHidden = true
 
-        if incrementValue > sliderValue {
-            disableButtons()
-        } else {
-            currentShotCyclePercent = ((incrementValue * 100) / sliderValue)
-            self.calcPercentageLbl.text = "\(Int(currentShotCyclePercent))%"
-            self.enteredAmtLbl.text = "Shots Made this Cycle: \(Int(incrementValue))"
-        }
     }
     
     func enableButtons() {
@@ -245,7 +201,7 @@ class ViewController: UIViewController {
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
         sliderOutlet.isHidden = false
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
-        incrementValue = 0
+
         currentShotCyclePercent = 0
         print("partialScreenReset")
     }
@@ -269,14 +225,8 @@ class ViewController: UIViewController {
         currentShotCyclePercent = 0
         
         ulTotal = 0
-
-        
         urTotal = 0
-
-        
         llTotal = 0
-
-        
         lrTotal = 0
 
         print("resetValues")
