@@ -90,7 +90,7 @@ class ShotCycleTableViewController: UITableViewController {
 
     }
     
-}
+
 
 extension UIView {
     
