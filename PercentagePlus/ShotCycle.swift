@@ -8,17 +8,29 @@
 
 import Foundation
 
+var sliderValue: Int = 0
+
+
+
+//  move all this to its own model??
+
+
+
+
 
 class ShotCycle: Codable {
     var date: String
-    var totalPercentCalc: Int
-    var summedShots: Int
-    var currentShotCyclePercent: Int
-    var summedShotsMade: Int
-    var currentShotsMade: Int
+    var shotsTaken: Int
+    var cyclePercent: Int
+    var shotsMade: Int
+
+    var ulHitCount: Int
+    var urHitCount: Int
+    var blHitCount: Int
+    var brHitCount: Int
     
 
-    init?(date: String, totalPercentCalc: Int, summedShots: Int, currentShotCyclePercent: Int, summedShotsMade: Int, currentShotsMade: Int) {
+    init?(date: String, shotsTaken: Int, cyclePercent: Int, shotsMade: Int, ulHitCount: Int, urHitCount: Int, blHitCount: Int, brHitCount: Int) {
         self.date = date
         self.totalPercentCalc = totalPercentCalc
         self.summedShots = summedShots
@@ -53,11 +65,21 @@ class ShotCycle: Codable {
         
     }
     
-
+    func sumHitCounts(ulHitCount: Int, urHitCount: Int, blHitCount: Int, brHitCount: Int) -> Int {
+        let totalShotsMade = (ulHitCount + urHitCount + blHitCount + brHitCount)
+        return totalShotsMade
+    }
     
-    func printDescription() {
-        print("Shot Cycle = Summed Shots = \(summedShots), Shots Made = \(summedShotsMade), Current Percent = \(currentShotCyclePercent), TotalPercentCalc = \(totalPercentCalc) ")
+    func getCyclePercent(shotsTaken: Int, shotsMade: Int) -> Int {
+        if shotsMade == 0 {
+            return 0
+        } else {
+            let cyclePerc = (shotsMade * 100) / shotsTaken
+            print("calculated %: \(cyclePerc)%")
+            return cyclePerc
+        }
     }
     
 }
+
 

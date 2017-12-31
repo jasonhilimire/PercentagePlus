@@ -9,8 +9,7 @@
 import Foundation
 
 class ShotCycleDataModel {
-    var shotCycle = [ShotCycle]()
-
+    let lifetime = LifetimeShotCycle()
     
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -26,6 +25,7 @@ class ShotCycleDataModel {
         do {
             let data = try encoder.encode(shotCycles)
             try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+
         } catch {
             print(" Error encoding shotCycles array")
         }
@@ -36,8 +36,8 @@ class ShotCycleDataModel {
         if let data = try? Data(contentsOf: path) {
             let decoder = PropertyListDecoder()
             do {
-                shotCycles = try decoder.decode([ShotCycle].self, from: data).reversed()
-
+                shotCycles = try decoder.decode([ShotCycle].self, from: data)
+                sortData()
             } catch {
                 print("Error shotCycles item array!")
             }
@@ -54,8 +54,12 @@ class ShotCycleDataModel {
     }
     
 
+    func sortData() {
+        // sorts array by date so newest date shows first when loading in ShotCycleViewController
+        shotCycles.sort(by: {$0.date > $1.date})
+    }
 
-    
+
     init () {
         loadShotCycle()
     }

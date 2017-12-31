@@ -8,18 +8,19 @@
 
 import UIKit
 
- var shotCycles = [ShotCycle]()
 
 class ShotCycleTableViewController: UITableViewController {
 
     let dataModel = ShotCycleDataModel()
+    let lifetime = LifetimeShotCycle()
+    let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
 
     @IBAction func deleteAllArray(_ sender: UIBarButtonItem) {
        
     }
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
-
+        // ...
     }
     
     // MARK: - VIEW
@@ -32,6 +33,7 @@ class ShotCycleTableViewController: UITableViewController {
         
 
         loadData()
+        lifetimeLabels()
         print("View Did load - ShotCycleTableView")
         
         
@@ -42,7 +44,7 @@ class ShotCycleTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
+    // MARK: - TABLEVIEW
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -86,4 +88,22 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
 
+    }
+    
+}
+
+extension UIView {
+    
+    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
+        let layer = self.layer
+        layer.masksToBounds = false
+        layer.shadowOffset = offset
+        layer.shadowColor = color.cgColor
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        
+        let backgroundCGColor = self.backgroundColor?.cgColor
+        self.backgroundColor = nil
+        layer.backgroundColor =  backgroundCGColor
+    }
 }
