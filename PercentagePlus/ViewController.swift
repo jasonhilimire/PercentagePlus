@@ -259,7 +259,7 @@ class ViewController: UIViewController {
         percentageLbl.text = "0%"
         enteredAmtLbl.text = "Use Slider to Enter Count"
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-        sliderOutlet.isHidden = false
+        sliderOutlet?.isHidden = false
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         shotsMadeLbl.text = "Total Shots Made: 0"
 
@@ -278,7 +278,7 @@ class ViewController: UIViewController {
     func resetValues() {
 
         shotsMadeLbl.text = "Total Shots Made: 0"
-        sliderOutlet.isHidden = false
+        sliderOutlet?.isHidden = false
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
 //        summedShots = 0
 //        summedShotsMade = 0
