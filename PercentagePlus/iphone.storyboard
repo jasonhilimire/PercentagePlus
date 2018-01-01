@@ -146,10 +146,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx">
-                                <rect key="frame" x="-92" y="476" width="504" height="31"/>
+                                <rect key="frame" x="14" y="476" width="292" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QHH-mb-bXg"/>
-                                    <constraint firstAttribute="width" constant="500" id="ckr-sW-xtB"/>
                                 </constraints>
                                 <connections>
                                     <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="vvE-6P-GuZ"/>
@@ -215,6 +214,7 @@
                             <constraint firstAttribute="bottom" secondItem="cBi-EH-cgl" secondAttribute="bottom" id="BiK-3Y-Beh"/>
                             <constraint firstItem="1Ly-lE-7Zx" firstAttribute="top" secondItem="bFd-TT-Diw" secondAttribute="bottom" constant="8" id="Dve-5l-Zrz"/>
                             <constraint firstItem="3tb-Tg-d9G" firstAttribute="leading" secondItem="NNw-uQ-et1" secondAttribute="leading" id="J4C-HR-nMf"/>
+                            <constraint firstItem="1Ly-lE-7Zx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JZ2-O4-blR"/>
                             <constraint firstItem="gYH-dm-i82" firstAttribute="trailing" secondItem="IBn-oU-PeC" secondAttribute="trailing" id="JdN-rp-fxX"/>
                             <constraint firstItem="IBn-oU-PeC" firstAttribute="centerY" secondItem="NNw-uQ-et1" secondAttribute="centerY" id="K2h-vs-gIx"/>
                             <constraint firstItem="6WV-E7-mwA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TQp-dG-jZs"/>
@@ -239,6 +239,7 @@
                             <constraint firstItem="veJ-ub-n8d" firstAttribute="centerX" secondItem="PzP-dD-Gvh" secondAttribute="centerX" id="nea-ED-hV3"/>
                             <constraint firstItem="NNw-uQ-et1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="npn-wC-Zhv"/>
                             <constraint firstItem="1Ly-lE-7Zx" firstAttribute="top" secondItem="rvk-N3-mIE" secondAttribute="bottom" constant="10" id="oBE-OS-TVR"/>
+                            <constraint firstItem="1Ly-lE-7Zx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="p7t-qk-wpn"/>
                             <constraint firstItem="PzP-dD-Gvh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="r4j-JO-8Fw"/>
                             <constraint firstAttribute="trailing" secondItem="6WV-E7-mwA" secondAttribute="trailing" id="sf7-bU-45d"/>
                             <constraint firstItem="veJ-ub-n8d" firstAttribute="centerY" secondItem="PzP-dD-Gvh" secondAttribute="centerY" id="wfz-jo-zsR"/>
