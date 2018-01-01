@@ -66,9 +66,13 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return shotCycles.count
+//        return shotCycles.count
+        return 10
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -78,17 +82,17 @@ class ShotCycleTableViewController: UITableViewController {
             fatalError("The dequed cell is not an instance of ShotCycleTableViewCell.")
         }
         
-        let shotCycle = shotCycles[indexPath.row]
-        cell.dateLabel.text = "\(shotCycle.date)"
-
-        cell.shotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
-        cell.shotsTakenLabel.text = "Shots: \(shotCycle.shotsTaken)"
-        cell.shotsPercLabel.text = "Perc: \(shotCycle.cyclePercent)"
-        
-        cell.ulLabel.text = "TL: \(shotCycle.ulHitCount)"
-        cell.urLabel.text = "TR: \(shotCycle.urHitCount)"
-        cell.blLabel.text = "BL: \(shotCycle.blHitCount)"
-        cell.brLabel.text = "BR: \(shotCycle.brHitCount)"
+//        let shotCycle = shotCycles[indexPath.row]
+//        cell.dateLabel.text = "\(shotCycle.date)"
+//
+//        cell.shotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
+//        cell.shotsTakenLabel.text = "Shots: \(shotCycle.shotsTaken)"
+//        cell.shotsPercLabel.text = "Perc: \(shotCycle.cyclePercent)"
+//
+//        cell.ulLabel.text = "TL: \(shotCycle.ulHitCount)"
+//        cell.urLabel.text = "TR: \(shotCycle.urHitCount)"
+//        cell.blLabel.text = "BL: \(shotCycle.blHitCount)"
+//        cell.brLabel.text = "BR: \(shotCycle.brHitCount)"
 
 
 
@@ -110,7 +114,7 @@ class ShotCycleTableViewController: UITableViewController {
     
     //MARK:- HEADERVIEW
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight: CGFloat = 183
+        let headerHeight: CGFloat = 160
         return headerHeight
     }
     
@@ -135,7 +139,7 @@ class ShotCycleTableViewController: UITableViewController {
         headerView.totalShotsTaken.text = ("Shots taken: \(lifetime.lifeTimeShotsTaken())")
         headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
         headerView.totalShotPerc.text = "Shot Percent: \(lifetime.lifeTimeShootingPerc())%"
-        headerView.totalShotCycles.text = "Total Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
+        headerView.totalShotCycles.text = "Total Shot Cycles: \(lifetime.lifeTimeShotCycles())"
         headerView.ulMade.text = "Top Left: \(lifetime.lifeTimeUL())"
         headerView.urMade.text = "Top Right: \(lifetime.lifeTimeUR())"
         headerView.blMade.text = "Bott Left: \(lifetime.lifeTimeBL())"

@@ -31,7 +31,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BZ6-gW-qRv">
                                 <rect key="frame" x="8" y="8" width="302.5" height="142"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shooting Cycles: 0000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yY-15-xH9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime Shooting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yY-15-xH9">
                                         <rect key="frame" x="0.0" y="0.0" width="302.5" height="26.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="323" id="IQU-8D-TUv"/>
@@ -40,15 +40,15 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="jpZ-rd-aKo">
                                         <rect key="frame" x="0.0" y="35" width="302.5" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots Made: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyB-jm-BfW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shot Cycles: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZS-RK-gg4">
                                                 <rect key="frame" x="0.0" y="0.0" width="132" height="20.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20.5" id="AwO-iJ-Xfl"/>
-                                                    <constraint firstAttribute="width" constant="132" id="qhr-a6-BtM"/>
+                                                    <constraint firstAttribute="height" constant="20.5" id="GOk-aq-eMM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -66,23 +66,29 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots Taken: 9999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beo-1e-AKH">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="HIu-xa-bla">
                                         <rect key="frame" x="0.0" y="64" width="302.5" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20.5" id="lNH-mW-Z7d"/>
-                                            <constraint firstAttribute="width" constant="144.5" id="n7V-xf-SDf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots Taken: 9999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beo-1e-AKH">
+                                                <rect key="frame" x="0.0" y="0.0" width="144.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots Made: 999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyB-jm-BfW">
+                                                <rect key="frame" x="170.5" y="0.0" width="132" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4KU-6t-Ke2">
                                         <rect key="frame" x="0.0" y="92.5" width="302.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Right: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddd-r2-92q">
                                                 <rect key="frame" x="0.0" y="0.0" width="113.5" height="20.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="113.5" id="FgI-5I-mil"/>
                                                     <constraint firstAttribute="height" constant="20.5" id="WMA-l3-KAD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -105,9 +111,8 @@
                                         <rect key="frame" x="0.0" y="121.5" width="302.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bott Right: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ql0-ut-t5h">
-                                                <rect key="frame" x="0.0" y="0.0" width="117" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="195.5" height="20.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="117" id="Dy0-UV-gz0"/>
                                                     <constraint firstAttribute="height" constant="20.5" id="leb-1W-G8c"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -115,7 +120,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bott Left: 999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hu-f8-GFb">
-                                                <rect key="frame" x="117" y="0.0" width="185.5" height="20.5"/>
+                                                <rect key="frame" x="195.5" y="0.0" width="107" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="107" id="NKt-ie-007"/>
                                                     <constraint firstAttribute="height" constant="20.5" id="T9d-lV-ke4"/>
@@ -149,7 +154,7 @@
             <connections>
                 <outlet property="blMade" destination="3hu-f8-GFb" id="aef-xE-c6w"/>
                 <outlet property="brMade" destination="Ql0-ut-t5h" id="HKi-8e-ajR"/>
-                <outlet property="totalShotCycles" destination="1yY-15-xH9" id="G7I-4k-GKo"/>
+                <outlet property="totalShotCycles" destination="iZS-RK-gg4" id="PVC-VU-ebq"/>
                 <outlet property="totalShotPerc" destination="wdP-9g-r5p" id="jMn-rK-p7U"/>
                 <outlet property="totalShotsMade" destination="YyB-jm-BfW" id="M8e-lq-v3o"/>
                 <outlet property="totalShotsTaken" destination="beo-1e-AKH" id="7ti-Rg-1Ls"/>
