@@ -13,6 +13,7 @@
 		A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */; };
 		A3423C781FE73551002E668E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3423C761FE73551002E668E /* HeaderView.swift */; };
 		A3423C791FE73551002E668E /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3423C771FE73551002E668E /* HeaderView.xib */; };
+		A39C6D991FFAB5D200131D15 /* bardownTextimg.png in Resources */ = {isa = PBXBuildFile; fileRef = A39C6D981FFAB5D200131D15 /* bardownTextimg.png */; };
 		A3A76C001FBD3E2E00629931 /* lowerLeft_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */; };
 		A3A76C011FBD3E2E00629931 /* upperLeft_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A3A76BF91FBD3E2B00629931 /* upperLeft_iPhone.png */; };
 		A3A76C021FBD3E2E00629931 /* upperRight_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A3A76BFA1FBD3E2C00629931 /* upperRight_iPhone.png */; };
@@ -47,6 +48,7 @@
 		A3423C761FE73551002E668E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A3423C771FE73551002E668E /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice-hockey-background.jpg"; sourceTree = "<group>"; };
+		A39C6D981FFAB5D200131D15 /* bardownTextimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bardownTextimg.png; sourceTree = "<group>"; };
 		A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lowerLeft_iPad.png; sourceTree = "<group>"; };
 		A3A76BF91FBD3E2B00629931 /* upperLeft_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperLeft_iPhone.png; sourceTree = "<group>"; };
 		A3A76BFA1FBD3E2C00629931 /* upperRight_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperRight_iPhone.png; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		A38D3A011FBCD40F00616D76 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A39C6D981FFAB5D200131D15 /* bardownTextimg.png */,
 				A3FF3B911FE07CA6001AAE6D /* hockey_ice_rink.png */,
 				A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */,
 				A3A76BFC1FBD3E2D00629931 /* lowerLeft_iPhone.png */,
@@ -238,6 +241,7 @@
 				A3A76C041FBD3E2E00629931 /* lowerLeft_iPhone.png in Resources */,
 				A3E505B51EA26DA8005C8E12 /* shooter500.jpeg in Resources */,
 				A3E505B71EA27B53005C8E12 /* shot.mp3 in Resources */,
+				A39C6D991FFAB5D200131D15 /* bardownTextimg.png in Resources */,
 				A3C506821E42F10200E6B32D /* Assets.xcassets in Resources */,
 				A3A76C051FBD3E2E00629931 /* lowerRight_iPad.png in Resources */,
 				A33D5EA91FE245BD000EE640 /* Launch Screen.storyboard in Resources */,

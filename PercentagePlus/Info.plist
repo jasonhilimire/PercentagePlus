@@ -27,9 +27,9 @@
 	<key>UILaunchStoryboardName</key>
 	<string>iphone</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>iphone</string>
 	<key>UIMainStoryboardFile~ipad</key>
-	<string>Main</string>
+	<string>iphone</string>
 	<key>UIMainStoryboardFile~iphone</key>
 	<string>iphone</string>
 	<key>UIRequiredDeviceCapabilities</key>
