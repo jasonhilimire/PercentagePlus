@@ -110,7 +110,7 @@ class ShotCycleTableViewController: UITableViewController {
     
     //MARK:- HEADERVIEW
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight: CGFloat = 103
+        let headerHeight: CGFloat = 183
         return headerHeight
     }
     
@@ -132,10 +132,10 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     func lifetimeLabels() {
-        headerView.totalShotsTaken.text = ("Total Shots taken: \(lifetime.lifeTimeShotsTaken())")
+        headerView.totalShotsTaken.text = ("Shots taken: \(lifetime.lifeTimeShotsTaken())")
         headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
-        headerView.totalShotPerc.text = "Shooting Percentage: \(lifetime.lifeTimeShootingPerc())%"
-        headerView.totalShotCycles.text = "Lifetime Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
+        headerView.totalShotPerc.text = "Shot Percent: \(lifetime.lifeTimeShootingPerc())%"
+        headerView.totalShotCycles.text = "Total Shooting Cycles: \(lifetime.lifeTimeShotCycles())"
         headerView.ulMade.text = "Top Left: \(lifetime.lifeTimeUL())"
         headerView.urMade.text = "Top Right: \(lifetime.lifeTimeUR())"
         headerView.blMade.text = "Bott Left: \(lifetime.lifeTimeBL())"
