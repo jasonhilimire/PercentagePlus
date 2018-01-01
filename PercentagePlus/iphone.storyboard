@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i68-Vn-4NQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ro9-ph-2C1">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,7 +44,6 @@
                                 </state>
                                 <connections>
                                     <action selector="imageBtn:" destination="i68-Vn-4NQ" eventType="touchUpInside" id="jek-nK-rt1"/>
-                                    <segue destination="ro9-ph-2C1" kind="show" id="tfy-UQ-yMb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -449,7 +448,6 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="odu-cU-0Uk"/>
-        <segue reference="GpF-Du-X3L"/>
+        <segue reference="aCz-5G-gop"/>
     </inferredMetricsTieBreakers>
 </document>
