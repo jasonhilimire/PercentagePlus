@@ -49,6 +49,9 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // listen for notification sent from savedButtonPressed
+        NotificationCenter.default.addObserver(self, selector: #selector(ShotCycleTableViewController.actOnNotification), name: NSNotification.Name(rawValue: notification), object: nil)
         loadData()
         lifetimeLabels()
         print("View Did load - ShotCycleTableView")
@@ -57,6 +60,12 @@ class ShotCycleTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+        // func to occur when notification is sent
+    @objc func actOnNotification() {
+        tableView.reloadData()
+        lifetimeLabels()
     }
     
     // MARK: - TABLEVIEW
@@ -68,7 +77,6 @@ class ShotCycleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return shotCycles.count
-
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

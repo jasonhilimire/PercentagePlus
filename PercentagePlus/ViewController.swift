@@ -11,7 +11,7 @@ import UIKit
 
 var activeCycle = false
 var shotCycles = [ShotCycle]()
-
+let notification = "notificationKey"
 
 class ViewController: UIViewController {
     
@@ -90,10 +90,6 @@ class ViewController: UIViewController {
     }
     
     
-//    @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
-//        partialScreenReset()
-//        resetCorners()
-//    }
    
     // saves current values - pressed after all shots/corners entered
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -104,6 +100,9 @@ class ViewController: UIViewController {
 
         print("save button pressed")
         print("ShotCycles Array Count: \(shotCycles.count)")
+        
+        // send a notification when pressed- observer will then update the table
+        NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
     }
     
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
@@ -183,6 +182,7 @@ class ViewController: UIViewController {
 
         shotCycles.append(shotCycle!)
         saveData()
+
         
 //                print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
@@ -299,6 +299,7 @@ class ViewController: UIViewController {
  
     }
     
+
 }
 
 
