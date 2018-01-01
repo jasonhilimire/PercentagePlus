@@ -169,7 +169,7 @@
                             <outlet property="delegate" destination="2P0-yL-9po" id="4GC-g4-qrj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BarDown!" id="eAK-aK-e1y">
+                    <navigationItem key="navigationItem" title="BarDown!" largeTitleDisplayMode="always" id="eAK-aK-e1y">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="oeG-bf-ZEN">
                             <connections>
                                 <segue destination="TbK-xM-daO" kind="showDetail" id="S4f-Lb-oJt"/>
@@ -189,6 +189,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qVp-MJ-LLB">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="kdd-Lk-Tvf" kind="relationship" relationship="rootViewController" id="SDh-Ue-hvV"/>
@@ -220,6 +223,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4MJ-jA-yyd">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="16"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="3" vertical="7"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -238,6 +247,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jNZ-mc-LHX">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
