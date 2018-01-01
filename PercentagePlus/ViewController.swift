@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     var currentshotCycle = ShotCycle(date: "", shotsTaken: 0, cyclePercent: 0, shotsMade: 0, ulHitCount: 0, urHitCount: 0, blHitCount: 0, brHitCount: 0)
     
-
+    
     
     //MARK:- SETUP
     @IBOutlet weak var percentageLbl: UILabel!
@@ -155,8 +155,6 @@ class ViewController: UIViewController {
             
             print("viewDidLoad View Controller")
         }
-
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

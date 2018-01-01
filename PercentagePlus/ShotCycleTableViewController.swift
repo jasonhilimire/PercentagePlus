@@ -66,8 +66,8 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        return shotCycles.count
-        return 10
+        return shotCycles.count
+
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -82,20 +82,17 @@ class ShotCycleTableViewController: UITableViewController {
             fatalError("The dequed cell is not an instance of ShotCycleTableViewCell.")
         }
         
-//        let shotCycle = shotCycles[indexPath.row]
-//        cell.dateLabel.text = "\(shotCycle.date)"
-//
-//        cell.shotsMadeLabel.text = "Total Shots Made: \(shotCycle.shotsMade)"
-//        cell.shotsTakenLabel.text = "Shots: \(shotCycle.shotsTaken)"
-//        cell.shotsPercLabel.text = "Perc: \(shotCycle.cyclePercent)"
-//
-//        cell.ulLabel.text = "TL: \(shotCycle.ulHitCount)"
-//        cell.urLabel.text = "TR: \(shotCycle.urHitCount)"
-//        cell.blLabel.text = "BL: \(shotCycle.blHitCount)"
-//        cell.brLabel.text = "BR: \(shotCycle.brHitCount)"
+        let shotCycle = shotCycles[indexPath.row]
+        cell.dateLabel.text = "\(shotCycle.date)"
 
+        cell.shotsMadeLabel.text = "Shots Made: \(shotCycle.shotsMade)"
+        cell.shotsTakenLabel.text = "Shots: \(shotCycle.shotsTaken)"
+        cell.shotsPercLabel?.text = "Perc: \(shotCycle.cyclePercent)%"
 
-
+        cell.ulLabel.text = "TL: \(shotCycle.ulHitCount)"
+        cell.urLabel.text = "TR: \(shotCycle.urHitCount)"
+        cell.blLabel.text = "BL: \(shotCycle.blHitCount)"
+        cell.brLabel.text = "BR: \(shotCycle.brHitCount)"
 
         return cell
     }
@@ -137,9 +134,9 @@ class ShotCycleTableViewController: UITableViewController {
     
     func lifetimeLabels() {
         headerView.totalShotsTaken.text = ("Shots taken: \(lifetime.lifeTimeShotsTaken())")
-        headerView.totalShotsMade.text = "Shots Made: \(lifetime.lifeTimeShotsMade())"
-        headerView.totalShotPerc.text = "Shot Percent: \(lifetime.lifeTimeShootingPerc())%"
-        headerView.totalShotCycles.text = "Total Shot Cycles: \(lifetime.lifeTimeShotCycles())"
+        headerView.totalShotsMade.text = "Made: \(lifetime.lifeTimeShotsMade())"
+        headerView.totalShotPerc.text = "Percent: \(lifetime.lifeTimeShootingPerc())%"
+        headerView.totalShotCycles.text = "Cycles: \(lifetime.lifeTimeShotCycles())"
         headerView.ulMade.text = "Top Left: \(lifetime.lifeTimeUL())"
         headerView.urMade.text = "Top Right: \(lifetime.lifeTimeUR())"
         headerView.blMade.text = "Bott Left: \(lifetime.lifeTimeBL())"
