@@ -175,14 +175,9 @@ class ViewController: UIViewController {
 
 
     func saveShotCycle() {
-
         shootingCycle += 1
-
         sliderOutlet.isHidden = false
-
-
-        shotsMadeLbl.text = "Total Shots Made: )"
-
+        shotsMadeLbl.text = "Total Shots Made: 0"
         let date = dateFormatter()
         let shotCycle = ShotCycle(date: date, shotsTaken: sliderValue, cyclePercent: updatePercent(), shotsMade: updateShotsMade(), ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!)
 
@@ -195,7 +190,6 @@ class ViewController: UIViewController {
     
     // increments values in buttons and updates percent calculations
     func buttonPressed() {
-
         sliderOutlet.isHidden = true
         enteredAmtLbl.isHidden = true
 
@@ -206,10 +200,10 @@ class ViewController: UIViewController {
         
         if shotsMade! == sliderValue {
             disableButtons()
-            shotsMadeLbl.text = "Total shots Made: \(sliderValue)"
+            shotsMadeLbl.text = "Total Shots Made: \(sliderValue)"
             
         } else {
-            shotsMadeLbl.text = "Total shots Made: \(shotsMade ?? 0)"
+            shotsMadeLbl.text = "Total Shots Made: \(shotsMade ?? 0)"
 
         }
         print("ShotsMade: \(String(describing: shotsMade!))")
@@ -277,11 +271,7 @@ class ViewController: UIViewController {
 
         shotsMadeLbl.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
-        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
-//        summedShots = 0
-//        summedShotsMade = 0
-//        currentShotCyclePercent = 0
-        
+        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"        
         resetCorners()
 
         print("resetValues")
@@ -309,10 +299,9 @@ class ViewController: UIViewController {
  
     }
     
-
-    
-
 }
+
+
 
 
 

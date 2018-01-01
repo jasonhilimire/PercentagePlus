@@ -9,8 +9,9 @@
 import UIKit
 
 
-class ShotCycleTableViewController: UITableViewController {
 
+class ShotCycleTableViewController: UITableViewController {
+    
     let dataModel = ShotCycleDataModel()
     let lifetime = LifetimeShotCycle()
     let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
@@ -122,6 +123,8 @@ class ShotCycleTableViewController: UITableViewController {
     }
     
     //MARK:- METHODS
+    
+
     func loadData() {
         dataModel.loadShotCycle()
         print("ShotcyclesArray Loaded")
@@ -172,3 +175,4 @@ extension UIView {
         layer.backgroundColor =  backgroundCGColor
     }
 }
+
