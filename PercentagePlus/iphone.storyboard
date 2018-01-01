@@ -448,6 +448,7 @@
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="odu-cU-0Uk"/>
         <segue reference="GpF-Du-X3L"/>
     </inferredMetricsTieBreakers>
 </document>
