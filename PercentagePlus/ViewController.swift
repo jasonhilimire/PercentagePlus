@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         upperLeftLabel.text = "\(currentshotCycle?.ulHitCount ?? 0)"
         updateShotsMade()
         updatePercent()
+        print("UL button pressed")
         
 }
 
@@ -66,6 +67,7 @@ class ViewController: UIViewController {
         upperRightLabel.text = "\(currentshotCycle?.urHitCount ?? 0)"
         updateShotsMade()
         updatePercent()
+        print("UR button pressed")
         
     }
     
@@ -116,14 +118,14 @@ class ViewController: UIViewController {
     // full delete of all Values
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
         
-        let alertController = UIAlertController(title: "Warning!", message: "This will RESET all Shooting info & it will not be saved", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Warning!", message: "This will UNDO all Shooting info & it will not be saved", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
             print("Cancel button pressed")
         }
         alertController.addAction(cancelAction)
         
-        let deleteAction = UIAlertAction(title: "Reset", style: .destructive) { action in
+        let deleteAction = UIAlertAction(title: "UNDO", style: .destructive) { action in
             self.fullScreenReset()
 //            self.sliderLbl.text = "Number of Shots: 15"
 //            sliderValue = 15
