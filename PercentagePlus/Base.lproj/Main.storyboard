@@ -240,15 +240,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShotCycleTableViewCell" rowHeight="120" id="QlY-98-y1a" customClass="ShotCycleTableViewCell" customModule="BarDown" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="768" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShotCycleTableViewCell" rowHeight="125" id="QlY-98-y1a" customClass="ShotCycleTableViewCell" customModule="BarDown" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QlY-98-y1a" id="BXV-ld-9to">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="124.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-S4-fXa">
-                                            <rect key="frame" x="20" y="11" width="728" height="98"/>
+                                            <rect key="frame" x="20" y="11" width="728" height="103"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-Q6-D9K">
                                                     <rect key="frame" x="0.0" y="0.0" width="728" height="18"/>
@@ -268,7 +268,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="t8D-j7-kuD">
-                                                    <rect key="frame" x="0.0" y="26.5" width="728" height="18"/>
+                                                    <rect key="frame" x="0.0" y="28.5" width="728" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shots Made: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24Z-9S-aq3">
                                                             <rect key="frame" x="0.0" y="0.0" width="118" height="18"/>
@@ -285,7 +285,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="cNu-d9-3Nd">
-                                                    <rect key="frame" x="0.0" y="53.5" width="728" height="18"/>
+                                                    <rect key="frame" x="0.0" y="56.5" width="728" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TL: 99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smz-9Z-CCT">
                                                             <rect key="frame" x="0.0" y="0.0" width="44.5" height="18"/>
@@ -302,7 +302,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="IJf-ru-N4U">
-                                                    <rect key="frame" x="0.0" y="80" width="728" height="18"/>
+                                                    <rect key="frame" x="0.0" y="85" width="728" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BL: 99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAk-2o-QA9">
                                                             <rect key="frame" x="0.0" y="0.0" width="45" height="18"/>
@@ -361,7 +361,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wb4-9S-K8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9" y="241"/>
+            <point key="canvasLocation" x="-9.375" y="240.82031249999997"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hgz-Jb-kXb">
@@ -450,7 +450,7 @@
         <image name="uppperLeft_iPad.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sss-su-3zI"/>
+        <segue reference="S4f-Lb-oJt"/>
         <segue reference="WPQ-ud-gPa"/>
     </inferredMetricsTieBreakers>
 </document>
