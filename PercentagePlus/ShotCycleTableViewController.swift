@@ -22,7 +22,7 @@ class ShotCycleTableViewController: UITableViewController {
         let alertController = UIAlertController(title: "Warning!", message: "This will DELETE all your Shot Cycles data!! This cannot be undone", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            print("Cancel button pressed")
+            // ...
         }
         alertController.addAction(cancelAction)
         
@@ -30,7 +30,6 @@ class ShotCycleTableViewController: UITableViewController {
             self.dataModel.deleteDataFile()
             shotCycles.removeAll()
             self.lifetimeLabels()
-            print("Delete button pressed: Array deleted")
             NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
             self.tableView.reloadData()
         }
@@ -55,7 +54,6 @@ class ShotCycleTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ShotCycleTableViewController.actOnNotification), name: NSNotification.Name(rawValue: notification), object: nil)
         loadData()
         lifetimeLabels()
-        print("View Did load - ShotCycleTableView")
     }
     
     override func didReceiveMemoryWarning() {
@@ -137,12 +135,10 @@ class ShotCycleTableViewController: UITableViewController {
 
     func loadData() {
         dataModel.loadShotCycle()
-        print("ShotcyclesArray Loaded")
     }
     
     func saveData() {
         dataModel.saveShotCycleArray()
-        print("ShotcyclesArray Saved")
     }
     
     func lifetimeLabels() {

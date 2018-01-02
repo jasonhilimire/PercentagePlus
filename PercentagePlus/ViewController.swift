@@ -98,16 +98,14 @@ class ViewController: UIViewController {
         partialScreenReset()
         resetCorners()
 
-        print("save button pressed")
-        print("ShotCycles Array Count: \(shotCycles.count)")
+
         
         // send a notification when pressed- observer will then update the table
         NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
     }
     
     @IBAction func showSavedCyclesBtn(_ sender: Any) {
-
-         print("show Saved button pressed")
+        // ...
     }
     
 
@@ -118,15 +116,13 @@ class ViewController: UIViewController {
         let alertController = UIAlertController(title: "Warning!", message: "This will RESET all Shooting info & it will not be saved", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            print("Cancel button pressed")
+            // ...
         }
         alertController.addAction(cancelAction)
         
         let deleteAction = UIAlertAction(title: "Reset", style: .destructive) { action in
             self.fullScreenReset()
-//            self.sliderLbl.text = "Number of Shots: 15"
-//            sliderValue = 15
-            print("delete button pressed")
+
         }
         alertController.addAction(deleteAction)
         
@@ -148,17 +144,16 @@ class ViewController: UIViewController {
             fullScreenReset()
             sliderLbl.text = "Number of Shots: 15"
             sliderValue = 15
-            print("viewDidLoad View Controller")
+
         } else {
             partialScreenReset()
-            
-            print("viewDidLoad View Controller")
+
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         activeCycle = true
-        print("viewWillDisappear View Controller")
+
         
     }
     
@@ -203,7 +198,6 @@ class ViewController: UIViewController {
             shotsMadeLbl.text = "Total Shots Made: \(shotsMade ?? 0)"
 
         }
-        print("ShotsMade: \(String(describing: shotsMade!))")
 
         return shotsMade!
     }
@@ -212,7 +206,6 @@ class ViewController: UIViewController {
         let shootingPerc = currentshotCycle?.getCyclePercent(shotsTaken: sliderValue, shotsMade: updateShotsMade())
 
             percentageLbl.text = "\(String(describing: shootingPerc!))%"
-            print("Shooting % = \(String(describing: shootingPerc!))%")
         return shootingPerc!
     }
     
@@ -239,7 +232,6 @@ class ViewController: UIViewController {
         lowerLeftLabel.text = "0"
         currentshotCycle?.brHitCount = 0
         lowerRightLabel.text = "0"
-        print("resetCornerLabels")
     }
 
     
@@ -252,7 +244,6 @@ class ViewController: UIViewController {
         enteredAmtLbl.text = "Use Slider to Enter Shot Count"
         shotsMadeLbl.text = "Total Shots Made: 0"
 
-        print("partialScreenReset")
     }
     
     
@@ -261,7 +252,7 @@ class ViewController: UIViewController {
         partialScreenReset()
         resetCorners()
         resetValues()
-        print("fullScreenReset")
+
     }
     
     func resetValues() {
@@ -271,16 +262,13 @@ class ViewController: UIViewController {
         sliderLbl.text = "Number of Shots: \(Int(sliderValue))"        
         resetCorners()
 
-        print("resetValues")
     }
     
 
     
     func saveData() {
         dataModel.saveShotCycleArray()
-        print("ShotcyclesArray saved")
-        print("Documents folder is \(dataModel.documentsDirectory())")
-        print("Data file path is \(dataModel.dataFilePath())")
+
     }
     
     func dateFormatter() -> String{
@@ -291,12 +279,9 @@ class ViewController: UIViewController {
         formatter.timeStyle = .short
         
         let dateString = formatter.string(from: currentDate as Date)
-        print("\(dateString)")
         return dateString
- 
     }
     
-
 }
 
 

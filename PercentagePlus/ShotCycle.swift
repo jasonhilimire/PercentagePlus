@@ -52,7 +52,6 @@ class ShotCycle: Codable {
             return 0
         } else {
             let cyclePerc = (shotsMade * 100) / shotsTaken
-            print("calculated %: \(cyclePerc)%")
             return cyclePerc
         }
     }
