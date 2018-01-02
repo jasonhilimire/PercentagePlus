@@ -379,7 +379,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="20"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -389,7 +389,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GY-tP-Gb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="-261"/>
+            <point key="canvasLocation" x="16" y="-516"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xyo-ug-KRk">
@@ -400,7 +400,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="20"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

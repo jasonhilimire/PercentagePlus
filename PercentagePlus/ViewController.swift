@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     var currentshotCycle = ShotCycle(date: "", shotsTaken: 0, cyclePercent: 0, shotsMade: 0, ulHitCount: 0, urHitCount: 0, blHitCount: 0, brHitCount: 0)
     
-    
+
     
     //MARK:- SETUP
     @IBOutlet weak var percentageLbl: UILabel!
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
             // clear screen-reset when app is launched each time and set slider to default value of 15
         if activeCycle == false {
             var shootingCycle = 0
@@ -149,6 +149,8 @@ class ViewController: UIViewController {
             partialScreenReset()
 
         }
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
