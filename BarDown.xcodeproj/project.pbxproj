@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A3000BD81FE06FA300BF1CB8 /* Alert-Misc stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */; };
+		A320751B1FFB25C100AE2F80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C506861E42F10200E6B32D /* Info.plist */; };
+		A320751C1FFB260A00AE2F80 /* JerseyLetters.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3D3F52F1FFB22F90057C8BB /* JerseyLetters.ttf */; };
 		A33D5EA51FE23FF3000EE640 /* LifetimeShotCycles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */; };
 		A33D5EA91FE245BD000EE640 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33D5EA81FE245BD000EE640 /* Launch Screen.storyboard */; };
 		A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */; };
@@ -234,10 +236,12 @@
 				A3A76C051FBD3E2E00629931 /* lowerRight_iPad.png in Resources */,
 				A33D5EA91FE245BD000EE640 /* Launch Screen.storyboard in Resources */,
 				A3A998361F7F5255003A20BD /* iphone.storyboard in Resources */,
+				A320751B1FFB25C100AE2F80 /* Info.plist in Resources */,
 				A3A76C021FBD3E2E00629931 /* upperRight_iPhone.png in Resources */,
 				A3FF3B921FE07CA6001AAE6D /* hockey_ice_rink.png in Resources */,
 				A3A76C031FBD3E2E00629931 /* upperRight_iPad.png in Resources */,
 				A3A76C001FBD3E2E00629931 /* lowerLeft_iPad.png in Resources */,
+				A320751C1FFB260A00AE2F80 /* JerseyLetters.ttf in Resources */,
 				A3C506801E42F10200E6B32D /* Main.storyboard in Resources */,
 				A3A76C011FBD3E2E00629931 /* upperLeft_iPhone.png in Resources */,
 				A3E7FB3F1F81575B00F13D15 /* ice.jpg in Resources */,
