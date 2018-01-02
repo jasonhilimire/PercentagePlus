@@ -31,6 +31,7 @@ class ShotCycleTableViewController: UITableViewController {
             shotCycles.removeAll()
             self.lifetimeLabels()
             print("Delete button pressed: Array deleted")
+            NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
             self.tableView.reloadData()
         }
         alertController.addAction(deleteAction)
@@ -113,6 +114,7 @@ class ShotCycleTableViewController: UITableViewController {
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
         
+        NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
         lifetimeLabels()
         saveData()
         

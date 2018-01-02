@@ -172,7 +172,6 @@ class ViewController: UIViewController {
     //MARK:- METHODS
     
 
-
     func saveShotCycle() {
         shootingCycle += 1
         sliderOutlet.isHidden = false
@@ -183,8 +182,6 @@ class ViewController: UIViewController {
         shotCycles.append(shotCycle!)
         saveData()
 
-        
-//                print("Current Shot Cycle: \(String(describing: currentShotCycle))")
     }
     
     
