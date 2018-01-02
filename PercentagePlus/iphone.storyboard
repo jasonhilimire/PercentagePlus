@@ -114,18 +114,18 @@
                                     <constraint firstAttribute="height" constant="32" id="MHN-VV-AO5"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Save" id="41g-t3-3kH">
+                                    <barButtonItem title="Show Saved Cycles" id="bai-D7-acz">
                                         <connections>
-                                            <action selector="saveButtonPressed:" destination="BYZ-38-t0r" id="eFf-4f-lKb"/>
+                                            <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="kVi-zP-adX"/>
+                                            <segue destination="Jg2-rY-bm9" kind="showDetail" action="showViewController:sender:" id="odu-cU-0Uk"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="77I-Mw-c5F"/>
                                     <barButtonItem systemItem="flexibleSpace" id="2l9-lx-hPQ"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ota-PY-f5P"/>
-                                    <barButtonItem title="Show Saved Cycles" id="bai-D7-acz">
+                                    <barButtonItem title="Save" id="41g-t3-3kH">
                                         <connections>
-                                            <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="kVi-zP-adX"/>
-                                            <segue destination="Jg2-rY-bm9" kind="showDetail" action="showViewController:sender:" id="odu-cU-0Uk"/>
+                                            <action selector="saveButtonPressed:" destination="BYZ-38-t0r" id="eFf-4f-lKb"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

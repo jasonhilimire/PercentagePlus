@@ -113,7 +113,7 @@ class ViewController: UIViewController {
     // full delete of all Values
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
         
-        let alertController = UIAlertController(title: "Warning!", message: "This will RESET all Shooting info & it will not be saved", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Warning!", message: "This will RESET all current shooting info & it will not be saved", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
             // ...
