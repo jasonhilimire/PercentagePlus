@@ -13,12 +13,18 @@ var activeCycle = false
 var shotCycles = [ShotCycle]()
 let notification = "notificationKey"
 
+
+
 class ViewController: UIViewController {
     
     let dataModel = ShotCycleDataModel()
     var shootingCycle = 0
 
     var currentshotCycle = ShotCycle(date: "", shotsTaken: 0, cyclePercent: 0, shotsMade: 0, ulHitCount: 0, urHitCount: 0, blHitCount: 0, brHitCount: 0)
+    
+    let impactHaptic = UIImpactFeedbackGenerator()
+    let selectionHaptic = UISelectionFeedbackGenerator()
+    let notificationHaptic = UINotificationFeedbackGenerator()
     
 
     
@@ -54,19 +60,13 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.ulHitCount += 1
         upperLeftLabel.text = "\(currentshotCycle?.ulHitCount ?? 0)"
-        updateShotsMade()
-        updatePercent()
-        
-}
+    }
 
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
         buttonPressed()
         currentshotCycle?.urHitCount += 1
         upperRightLabel.text = "\(currentshotCycle?.urHitCount ?? 0)"
-        updateShotsMade()
-        updatePercent()
-        
     }
     
     // lower left corner button pressed
@@ -74,9 +74,7 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.blHitCount += 1
         lowerLeftLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
-        updateShotsMade()
-        updatePercent()
-        
+
     }
    
     // lower right corner button pressed
@@ -84,9 +82,6 @@ class ViewController: UIViewController {
         buttonPressed()
         currentshotCycle?.brHitCount += 1
         lowerRightLabel.text = "\(currentshotCycle?.brHitCount ?? 0)"
-        updateShotsMade()
-        updatePercent()
-        
     }
     
     
@@ -97,7 +92,7 @@ class ViewController: UIViewController {
         saveShotCycle()
         partialScreenReset()
         resetCorners()
-
+        selectionHaptic.selectionChanged()
 
         
         // send a notification when pressed- observer will then update the table
@@ -112,17 +107,19 @@ class ViewController: UIViewController {
     
     // full delete of all Values
     @IBAction func deleteAllValues(_ sender: UIBarButtonItem) {
+        notificationHaptic.notificationOccurred(.error)
         
         let alertController = UIAlertController(title: "Warning!", message: "This will RESET all current shooting info & it will not be saved", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            // ...
+            self.impactHaptic.impactOccurred()
         }
         alertController.addAction(cancelAction)
         
         let deleteAction = UIAlertAction(title: "Reset", style: .destructive) { action in
+            self.impactHaptic.impactOccurred()
             self.fullScreenReset()
-
+ 
         }
         alertController.addAction(deleteAction)
         
@@ -140,7 +137,7 @@ class ViewController: UIViewController {
 
             // clear screen-reset when app is launched each time and set slider to default value of 15
         if activeCycle == false {
-            var shootingCycle = 0
+//            var shootingCycle = 0
             fullScreenReset()
             sliderLbl.text = "Number of Shots: 15"
             sliderValue = 15
@@ -186,6 +183,9 @@ class ViewController: UIViewController {
     func buttonPressed() {
         sliderOutlet.isHidden = true
         enteredAmtLbl.isHidden = true
+        updateShotsMade()
+        updatePercent()
+        impactHaptic.impactOccurred()
 
     }
     

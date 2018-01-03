@@ -10,28 +10,38 @@ import UIKit
 
 
 
+
+
 class ShotCycleTableViewController: UITableViewController {
     
     let dataModel = ShotCycleDataModel()
     let lifetime = LifetimeShotCycle()
     let headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
+    
+    let impactHaptic = UIImpactFeedbackGenerator()
+    let selectionHaptic = UISelectionFeedbackGenerator()
+    let notificationHaptic = UINotificationFeedbackGenerator()
 
 
     @IBAction func deleteAllBtn(_ sender: UIBarButtonItem) {
+        
+        notificationHaptic.notificationOccurred(.error)
         // deletes the array and the .plist file
         let alertController = UIAlertController(title: "Warning!", message: "This will DELETE all your Shot Cycles data!! This cannot be undone", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            // ...
+            self.impactHaptic.impactOccurred()
         }
         alertController.addAction(cancelAction)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.impactHaptic.impactOccurred()
             self.dataModel.deleteDataFile()
             shotCycles.removeAll()
             self.lifetimeLabels()
             NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
             self.tableView.reloadData()
+            
         }
         alertController.addAction(deleteAction)
         
@@ -107,6 +117,7 @@ class ShotCycleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         // remove the item at its indexpath
+        impactHaptic.impactOccurred()
         shotCycles.remove(at: indexPath.row)
         
         let indexPaths = [indexPath]
