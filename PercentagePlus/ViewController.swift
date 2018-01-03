@@ -61,30 +61,31 @@ class ViewController: UIViewController {
 
     //Upper Left Corner button pressed
     @IBAction func incrementBtnPressedUL(_ sender: UIButton) {
-        buttonPressed()
         currentshotCycle?.ulHitCount += 1
+        buttonPressed()
         upperLeftLabel.text = "\(currentshotCycle?.ulHitCount ?? 0)"
+
     }
 
     // Upper Right Corner button pressed
     @IBAction func incrementButtonPressedUR(_ sender: UIButton) {
-        buttonPressed()
         currentshotCycle?.urHitCount += 1
+        buttonPressed()
         upperRightLabel.text = "\(currentshotCycle?.urHitCount ?? 0)"
     }
     
     // lower left corner button pressed
     @IBAction func incrementButtonPressedBL(_ sender: UIButton) {
-        buttonPressed()
         currentshotCycle?.blHitCount += 1
+        buttonPressed()
         lowerLeftLabel.text = "\(currentshotCycle?.blHitCount ?? 0)"
 
     }
    
     // lower right corner button pressed
     @IBAction func incrementButtonPressedBR(_ sender: UIButton) {
-        buttonPressed()
         currentshotCycle?.brHitCount += 1
+        buttonPressed()
         lowerRightLabel.text = "\(currentshotCycle?.brHitCount ?? 0)"
     }
     
@@ -203,7 +204,9 @@ class ViewController: UIViewController {
     }
     
     func updateShotsMade() -> Int {
-        let shotsMade = (currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!))! + 1
+        let shotsMade = (currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!))! 
+        
+        
         print("ShotsMade: \(String(describing: shotsMade))")
         if shotsMade == sliderValue {
             disableButtons()
