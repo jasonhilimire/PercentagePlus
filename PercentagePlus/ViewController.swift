@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 var activeCycle = false
@@ -25,6 +26,9 @@ class ViewController: UIViewController {
     let impactHaptic = UIImpactFeedbackGenerator()
     let selectionHaptic = UISelectionFeedbackGenerator()
     let notificationHaptic = UINotificationFeedbackGenerator()
+    
+    
+    var audioPlayer = AVAudioPlayer()
     
 
     
@@ -134,7 +138,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
             // clear screen-reset when app is launched each time and set slider to default value of 15
         if activeCycle == false {
 //            var shootingCycle = 0
@@ -186,6 +189,16 @@ class ViewController: UIViewController {
         updateShotsMade()
         updatePercent()
         impactHaptic.impactOccurred()
+        
+        let buttonClick = NSURL(fileURLWithPath: Bundle.main.path(forResource: "button_press", ofType: "mp3")!)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: buttonClick as URL)
+            audioPlayer.prepareToPlay()
+        } catch {
+            print("No file found")
+        }
+        audioPlayer.play()
+        
 
     }
     
