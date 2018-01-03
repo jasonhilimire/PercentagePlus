@@ -119,13 +119,14 @@ class ViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
             self.impactHaptic.impactOccurred()
         }
+        
         alertController.addAction(cancelAction)
         
         let deleteAction = UIAlertAction(title: "Reset", style: .destructive) { action in
             self.impactHaptic.impactOccurred()
             self.fullScreenReset()
- 
         }
+        
         alertController.addAction(deleteAction)
         
         self.present(alertController, animated: true) {
@@ -141,7 +142,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
             // clear screen-reset when app is launched each time and set slider to default value of 15
         if activeCycle == false {
-//            var shootingCycle = 0
             fullScreenReset()
             sliderLbl.text = "Number of Shots: 15"
             sliderValue = 15
@@ -150,19 +150,14 @@ class ViewController: UIViewController {
             partialScreenReset()
 
         }
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         activeCycle = true
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         activeCycle = true
- 
     }
     
     
@@ -171,7 +166,6 @@ class ViewController: UIViewController {
     
 
     func saveShotCycle() {
-        shootingCycle += 1
         sliderOutlet.isHidden = false
         shotsMadeLbl.text = "Total Shots Made: 0"
         let date = dateFormatter()
@@ -205,9 +199,7 @@ class ViewController: UIViewController {
     
     func updateShotsMade() -> Int {
         let shotsMade = (currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!))! 
-        
-        
-        print("ShotsMade: \(String(describing: shotsMade))")
+
         if shotsMade == sliderValue {
             disableButtons()
             shotsMadeLbl.text = "Total Shots Made: \(sliderValue)"
@@ -221,8 +213,8 @@ class ViewController: UIViewController {
     
     func updatePercent() -> Int{
         let shootingPerc = currentshotCycle?.getCyclePercent(shotsTaken: sliderValue, shotsMade: updateShotsMade())
-
-            percentageLbl.text = "\(String(describing: shootingPerc!))%"
+        
+        percentageLbl.text = "\(String(describing: shootingPerc!))%"
         return shootingPerc!
     }
     
@@ -273,11 +265,9 @@ class ViewController: UIViewController {
     }
     
     func resetValues() {
-
         shotsMadeLbl.text = "Total Shots Made: 0"
         sliderOutlet.isHidden = false
-        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"        
-        resetCorners()
+        sliderLbl.text = "Number of Shots: \(Int(sliderValue))"
 
     }
     
@@ -285,7 +275,6 @@ class ViewController: UIViewController {
     
     func saveData() {
         dataModel.saveShotCycleArray()
-
     }
     
     func dateFormatter() -> String{

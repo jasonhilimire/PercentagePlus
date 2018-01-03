@@ -11,13 +11,6 @@ import Foundation
 var sliderValue: Int = 0
 
 
-
-//  move all this to its own model??
-
-
-
-
-
 class ShotCycle: Codable {
     var date: String
     var shotsTaken: Int
