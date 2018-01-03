@@ -203,18 +203,17 @@ class ViewController: UIViewController {
     }
     
     func updateShotsMade() -> Int {
-        let shotsMade = currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!)
-        
-        if shotsMade! == sliderValue {
+        let shotsMade = (currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!))! + 1
+        print("ShotsMade: \(String(describing: shotsMade))")
+        if shotsMade == sliderValue {
             disableButtons()
             shotsMadeLbl.text = "Total Shots Made: \(sliderValue)"
             
         } else {
-            shotsMadeLbl.text = "Total Shots Made: \(shotsMade ?? 0)"
-
+            shotsMadeLbl.text = "Total Shots Made: \(shotsMade)"
         }
-
-        return shotsMade!
+        
+        return shotsMade
     }
     
     func updatePercent() -> Int{
