@@ -12,7 +12,7 @@ var sliderValue: Int = 0
 
 
 class ShotCycle: Codable {
-    var date: String
+    var date: String // date is set as a string as NSDATE does not work with Codable type
     var shotsTaken: Int
     var cyclePercent: Int
     var shotsMade: Int

@@ -281,8 +281,9 @@ class ViewController: UIViewController {
         let currentDate = NSDate()
         
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+//        formatter.dateStyle = .short
         formatter.timeStyle = .short
+        formatter.dateFormat = "MM/dd/YY" // removed .short dateStyle and fixed - should add zero to day format & allow for proper sorting
         
         let dateString = formatter.string(from: currentDate as Date)
         return dateString

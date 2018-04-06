@@ -13,6 +13,8 @@ class ShotCycleDataModel {
     
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        let showDocumentsDirectory = paths[0]
+//        print(showDocumentsDirectory)  // this will show documents directory on local machine
         return paths[0]
     }
     
