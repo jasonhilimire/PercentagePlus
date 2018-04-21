@@ -197,7 +197,7 @@ class ViewController: UIViewController {
 
     }
     
-    func updateShotsMade() -> Int {
+    @discardableResult func updateShotsMade() -> Int {
         let shotsMade = (currentshotCycle?.sumHitCounts(ulHitCount: (currentshotCycle?.ulHitCount)!, urHitCount: (currentshotCycle?.urHitCount)!, blHitCount: (currentshotCycle?.blHitCount)!, brHitCount: (currentshotCycle?.brHitCount)!))! 
 
         if shotsMade == sliderValue {
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
         return shotsMade
     }
     
-    func updatePercent() -> Int{
+    @discardableResult func updatePercent() -> Int{
         let shootingPerc = currentshotCycle?.getCyclePercent(shotsTaken: sliderValue, shotsMade: updateShotsMade())
         
         percentageLbl.text = "\(String(describing: shootingPerc!))%"
