@@ -184,17 +184,12 @@ class ViewController: UIViewController {
         updateShotsMade()
         updatePercent()
         impactHaptic.impactOccurred()
-        
-        let buttonClick = NSURL(fileURLWithPath: Bundle.main.path(forResource: "button_press", ofType: "mp3")!)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: buttonClick as URL)
-            audioPlayer.prepareToPlay()
-        } catch {
-            print("No file found")
-        }
-        audioPlayer.play()
-        
-
+        playSystemSound()
+    }
+    
+    func playSystemSound() {
+        let systemSound: SystemSoundID = 1104
+        AudioServicesPlaySystemSound(systemSound)
     }
     
     @discardableResult func updateShotsMade() -> Int {
