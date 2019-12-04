@@ -116,24 +116,31 @@
                                 <rect key="frame" x="408" y="58" width="175" height="874"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made: 100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-rz-Zwh">
-                                        <rect key="frame" x="9" y="0.0" width="157" height="267"/>
+                                        <rect key="frame" x="9" y="0.0" width="157" height="245"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beN-cZ-yeO">
-                                        <rect key="frame" x="21.5" y="267" width="132" height="228.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
-                                        <color key="textColor" red="0.24969518184661865" green="0.88683366775512695" blue="0.057291306555271149" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beN-cZ-yeO">
+                                        <rect key="frame" x="10" y="245" width="154.5" height="282"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="100%">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.056903384625911713" green="0.081842012703418732" blue="0.024958748370409012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="64" name="JerseyLetters"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Shots: X" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSp-dj-IKW">
-                                        <rect key="frame" x="23.5" y="495.5" width="128" height="221"/>
+                                        <rect key="frame" x="23.5" y="527" width="128" height="202.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide to Enter Shot Taken" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
-                                        <rect key="frame" x="32" y="716.5" width="111" height="157.5"/>
+                                        <rect key="frame" x="32" y="729.5" width="111" height="144.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
@@ -197,7 +204,7 @@
                             <constraint firstItem="IBn-oU-PeC" firstAttribute="centerX" secondItem="NNw-uQ-et1" secondAttribute="centerX" id="yw8-Qu-xea"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BarDown!" id="sg7-GZ-sKn">
+                    <navigationItem key="navigationItem" title="BarDown!" largeTitleDisplayMode="always" id="sg7-GZ-sKn">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="h4P-vE-HRp">
                             <connections>
                                 <action selector="deleteAllValues:" destination="Vsu-gE-Bb5" id="8NA-Cn-xQc"/>
