@@ -10,7 +10,7 @@
         <!--BarDown!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarDown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="BarDown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -77,7 +77,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Slider to Enter Shot Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide to Enter Shots Taken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
                                 <rect key="frame" x="51" y="506" width="218" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="218" id="G4v-zf-50k"/>
@@ -86,11 +86,17 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" maximumValueImage="goallight" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx" customClass="CustomSlider" customModule="BarDown" customModuleProvider="target">
                                 <rect key="frame" x="14" y="476" width="292" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QHH-mb-bXg"/>
                                 </constraints>
+                                <color key="minimumTrackTintColor" red="0.98747462029999999" green="0.14074665310000001" blue="0.082132481039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="puck"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightImage" value="puck"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="vvE-6P-GuZ"/>
                                 </connections>
@@ -109,7 +115,7 @@
                                     <barButtonItem title="Show History" id="bai-D7-acz">
                                         <connections>
                                             <action selector="showSavedCyclesBtn:" destination="BYZ-38-t0r" id="kVi-zP-adX"/>
-                                            <segue destination="Jg2-rY-bm9" kind="showDetail" id="odu-cU-0Uk"/>
+                                            <segue destination="Jg2-rY-bm9" kind="show" identifier="DetailViewcontroller" id="odu-cU-0Uk"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="77I-Mw-c5F"/>
@@ -223,7 +229,7 @@
         <!--BarDown!-->
         <scene sceneID="2E9-8Q-Ew6">
             <objects>
-                <tableViewController id="Gk6-hK-d6G" customClass="ShotCycleTableViewController" customModule="BarDown" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Gk6-hK-d6G" customClass="ShotCycleTableViewController" customModule="BarDown" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lnf-bn-xna">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,7 +356,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="m4f-Tf-6yB"/>
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Hho-3O-8rp">
                             <connections>
-                                <segue destination="ro9-ph-2C1" kind="show" id="GpF-Du-X3L"/>
+                                <segue destination="ro9-ph-2C1" kind="show" identifier="MainViewController" id="GpF-Du-X3L"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mNj-x1-2WE">
@@ -367,8 +373,9 @@
         <!--Navigation Controller-->
         <scene sceneID="3wj-KR-1Sa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ro9-ph-2C1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="ro9-ph-2C1" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="k45-gV-DhX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KRm-9c-yBQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -388,8 +395,9 @@
         <!--Navigation Controller-->
         <scene sceneID="xyo-ug-KRk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jg2-rY-bm9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="Jg2-rY-bm9" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Lmk-AJ-apS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZgY-lQ-3Pm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -408,9 +416,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="goallight" width="65" height="32"/>
         <image name="ice-hockey-background.jpg" width="1920" height="1006"/>
         <image name="lowerLeft_iPhone.png" width="75" height="75"/>
         <image name="lowerRight_iPhone.png" width="75" height="75"/>
+        <image name="puck" width="30" height="18"/>
         <image name="upperLeft_iPhone.png" width="75" height="75"/>
         <image name="upperRight_iPhone.png" width="75" height="75"/>
     </resources>

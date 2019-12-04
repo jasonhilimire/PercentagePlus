@@ -16,6 +16,7 @@ let notification = "notificationKey"
 
 
 
+
 class ViewController: UIViewController {
     
     let dataModel = ShotCycleDataModel()
@@ -140,7 +141,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-            // clear screen-reset when app is launched each time and set slider to default value of 15
+            
+        let customSlider = UISlider()
+        let image = UIImage(named: "puck")
+        customSlider.setThumbImage((image), for: .normal)
+        
+        // clear screen-reset when app is launched each time and set slider to default value of 15
         if activeCycle == false {
             fullScreenReset()
             sliderLbl.text = "Number of Shots: 15"

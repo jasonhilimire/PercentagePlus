@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A3000BD81FE06FA300BF1CB8 /* Alert-Misc stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */; };
 		A320751C1FFB260A00AE2F80 /* JerseyLetters.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3D3F52F1FFB22F90057C8BB /* JerseyLetters.ttf */; };
-		A334F3B81FFD618300F4A7DC /* button_press.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A334F3B71FFD618300F4A7DC /* button_press.mp3 */; };
 		A33D5EA51FE23FF3000EE640 /* LifetimeShotCycles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */; };
 		A33D5EA91FE245BD000EE640 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33D5EA81FE245BD000EE640 /* Launch Screen.storyboard */; };
 		A33F8C371FDDA6BF00BD116C /* ShotCycleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */; };
@@ -32,15 +31,13 @@
 		A3C53CD71FA55AB1007A0830 /* ShotCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */; };
 		A3C53CDD1FA56623007A0830 /* ShotCycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */; };
 		A3C53CDF1FA567C7007A0830 /* ShotCycleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */; };
+		A3CB59F3239768B0009C33E4 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB59F2239768B0009C33E4 /* CustomSlider.swift */; };
 		A3E505B71EA27B53005C8E12 /* shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A3E505B61EA27B53005C8E12 /* shot.mp3 */; };
-		A3E7FB3F1F81575B00F13D15 /* ice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3B2D11D1EB9799000DE0AB1 /* ice.jpg */; };
 		A3E7FB401F81575E00F13D15 /* ice-hockey-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */; };
-		A3FF3B921FE07CA6001AAE6D /* hockey_ice_rink.png in Resources */ = {isa = PBXBuildFile; fileRef = A3FF3B911FE07CA6001AAE6D /* hockey_ice_rink.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A3000BD71FE06FA300BF1CB8 /* Alert-Misc stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert-Misc stuff.swift"; sourceTree = "<group>"; };
-		A334F3B71FFD618300F4A7DC /* button_press.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_press.mp3; sourceTree = "<group>"; };
 		A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifetimeShotCycles.swift; sourceTree = "<group>"; };
 		A33D5EA81FE245BD000EE640 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleDataModel.swift; sourceTree = "<group>"; };
@@ -57,7 +54,6 @@
 		A3A76BFE1FBD3E2E00629931 /* lowerRight_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lowerRight_iPhone.png; sourceTree = "<group>"; };
 		A3A76BFF1FBD3E2E00629931 /* uppperLeft_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uppperLeft_iPad.png; sourceTree = "<group>"; };
 		A3A998351F7F5255003A20BD /* iphone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iphone.storyboard; sourceTree = "<group>"; };
-		A3B2D11D1EB9799000DE0AB1 /* ice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ice.jpg; sourceTree = "<group>"; };
 		A3C506771E42F10200E6B32D /* BarDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5067A1E42F10200E6B32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C5067C1E42F10200E6B32D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,9 +63,9 @@
 		A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycle.swift; sourceTree = "<group>"; };
 		A3C53CDC1FA56623007A0830 /* ShotCycleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleTableViewCell.swift; sourceTree = "<group>"; };
 		A3C53CDE1FA567C7007A0830 /* ShotCycleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotCycleTableViewController.swift; sourceTree = "<group>"; };
+		A3CB59F2239768B0009C33E4 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		A3D3F52F1FFB22F90057C8BB /* JerseyLetters.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JerseyLetters.ttf; sourceTree = "<group>"; };
 		A3E505B61EA27B53005C8E12 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
-		A3FF3B911FE07CA6001AAE6D /* hockey_ice_rink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockey_ice_rink.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +82,8 @@
 		A38D3A011FBCD40F00616D76 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				A334F3B71FFD618300F4A7DC /* button_press.mp3 */,
 				A3D3F52F1FFB22F90057C8BB /* JerseyLetters.ttf */,
 				A39C6D981FFAB5D200131D15 /* bardownTextimg.png */,
-				A3FF3B911FE07CA6001AAE6D /* hockey_ice_rink.png */,
 				A3A76BF81FBD3E2B00629931 /* lowerLeft_iPad.png */,
 				A3A76BFC1FBD3E2D00629931 /* lowerLeft_iPhone.png */,
 				A3A76BFD1FBD3E2D00629931 /* lowerRight_iPad.png */,
@@ -98,7 +92,6 @@
 				A3A76BFB1FBD3E2D00629931 /* upperRight_iPad.png */,
 				A3A76BFA1FBD3E2C00629931 /* upperRight_iPhone.png */,
 				A3A76BFF1FBD3E2E00629931 /* uppperLeft_iPad.png */,
-				A3B2D11D1EB9799000DE0AB1 /* ice.jpg */,
 				A3843DCC1F80851B00A49035 /* ice-hockey-background.jpg */,
 				A3E505B61EA27B53005C8E12 /* shot.mp3 */,
 			);
@@ -108,6 +101,7 @@
 		A3BB1E1B1E746F4C001E979F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3CB59F2239768B0009C33E4 /* CustomSlider.swift */,
 				A3C53CD61FA55AB1007A0830 /* ShotCycle.swift */,
 				A33D5EA41FE23FF3000EE640 /* LifetimeShotCycles.swift */,
 				A33F8C361FDDA6BF00BD116C /* ShotCycleDataModel.swift */,
@@ -235,18 +229,15 @@
 				A3E505B71EA27B53005C8E12 /* shot.mp3 in Resources */,
 				A39C6D991FFAB5D200131D15 /* bardownTextimg.png in Resources */,
 				A3C506821E42F10200E6B32D /* Assets.xcassets in Resources */,
-				A334F3B81FFD618300F4A7DC /* button_press.mp3 in Resources */,
 				A3A76C051FBD3E2E00629931 /* lowerRight_iPad.png in Resources */,
 				A33D5EA91FE245BD000EE640 /* Launch Screen.storyboard in Resources */,
 				A3A998361F7F5255003A20BD /* iphone.storyboard in Resources */,
 				A3A76C021FBD3E2E00629931 /* upperRight_iPhone.png in Resources */,
-				A3FF3B921FE07CA6001AAE6D /* hockey_ice_rink.png in Resources */,
 				A3A76C031FBD3E2E00629931 /* upperRight_iPad.png in Resources */,
 				A3A76C001FBD3E2E00629931 /* lowerLeft_iPad.png in Resources */,
 				A320751C1FFB260A00AE2F80 /* JerseyLetters.ttf in Resources */,
 				A3C506801E42F10200E6B32D /* Main.storyboard in Resources */,
 				A3A76C011FBD3E2E00629931 /* upperLeft_iPhone.png in Resources */,
-				A3E7FB3F1F81575B00F13D15 /* ice.jpg in Resources */,
 				A3E7FB401F81575E00F13D15 /* ice-hockey-background.jpg in Resources */,
 				A3423C791FE73551002E668E /* HeaderView.xib in Resources */,
 			);
@@ -260,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3000BD81FE06FA300BF1CB8 /* Alert-Misc stuff.swift in Sources */,
+				A3CB59F3239768B0009C33E4 /* CustomSlider.swift in Sources */,
 				A3423C781FE73551002E668E /* HeaderView.swift in Sources */,
 				A3C53CDF1FA567C7007A0830 /* ShotCycleTableViewController.swift in Sources */,
 				A3C53CD71FA55AB1007A0830 /* ShotCycle.swift in Sources */,
@@ -334,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -387,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -405,8 +397,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PercentagePlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peanutapps.BarDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -426,8 +419,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PercentagePlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peanutapps.BarDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

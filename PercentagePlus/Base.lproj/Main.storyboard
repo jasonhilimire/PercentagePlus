@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iqe-aO-Mfr">
-    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="dark"/>
+    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hpE-U8-kbg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="j8k-F4-g3y">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="990.5" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ice-hockey-background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-Mp-35g">
-                                <rect key="frame" x="0.0" y="50" width="1024" height="1272"/>
+                                <rect key="frame" x="0.0" y="50" width="990.5" height="930"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-Tg-d9G">
                                 <rect key="frame" x="20" y="70" width="100" height="100"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-uQ-et1">
-                                <rect key="frame" x="20" y="1174" width="100" height="100"/>
+                                <rect key="frame" x="20" y="832" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Dgf-Fq-9cO"/>
                                     <constraint firstAttribute="height" constant="100" id="Oqs-P9-e0n"/>
@@ -47,17 +47,21 @@
                                     <action selector="incrementButtonPressedBL:" destination="Vsu-gE-Bb5" eventType="touchUpInside" id="eYy-P8-W1a"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx">
-                                <rect key="frame" x="18" y="1282" width="988" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="50" maximumValueImage="goallight" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-lE-7Zx" customClass="CustomSlider" customModule="BarDown" customModuleProvider="target">
+                                <rect key="frame" x="18" y="940" width="954.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Qe9-Y9-IFx"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="puck"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightImage" value="puck"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="slider:" destination="Vsu-gE-Bb5" eventType="valueChanged" id="lxL-wx-DjO"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-TT-Diw">
-                                <rect key="frame" x="904" y="1174" width="100" height="100"/>
+                                <rect key="frame" x="870.5" y="832" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="9jo-dg-rd4"/>
                                     <constraint firstAttribute="width" constant="100" id="S6L-xa-fdt"/>
@@ -77,7 +81,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-oU-PeC" userLabel="Lower Left Label">
-                                <rect key="frame" x="37.5" y="1196" width="65" height="56"/>
+                                <rect key="frame" x="37.5" y="854" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="aR9-Pw-hfw"/>
                                     <constraint firstAttribute="width" constant="65" id="wAI-oN-8sF"/>
@@ -86,7 +90,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-QZ-LCw" userLabel="Lower Right Label">
-                                <rect key="frame" x="921.5" y="1196" width="65" height="56"/>
+                                <rect key="frame" x="888" y="854" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="87W-Fb-UmD"/>
                                     <constraint firstAttribute="height" constant="56" id="Dv5-ai-tgv"/>
@@ -95,7 +99,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEV-h8-IFc">
-                                <rect key="frame" x="0.0" y="1322" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="980" width="990.5" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="unK-AO-812"/>
                                 </constraints>
@@ -109,27 +113,27 @@
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X2X-Va-qRo">
-                                <rect key="frame" x="424.5" y="58" width="175" height="1216"/>
+                                <rect key="frame" x="408" y="58" width="175" height="874"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Shots Made: 100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-rz-Zwh">
-                                        <rect key="frame" x="9" y="0.0" width="157" height="371.5"/>
+                                        <rect key="frame" x="9" y="0.0" width="157" height="267"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beN-cZ-yeO">
-                                        <rect key="frame" x="21.5" y="371.5" width="132" height="318"/>
+                                        <rect key="frame" x="21.5" y="267" width="132" height="228.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <color key="textColor" red="0.24969518184661865" green="0.88683366775512695" blue="0.057291306555271149" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Shots: X" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSp-dj-IKW">
-                                        <rect key="frame" x="23.5" y="689.5" width="128" height="307.5"/>
+                                        <rect key="frame" x="23.5" y="495.5" width="128" height="221"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Slider to Enter Shot Count" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
-                                        <rect key="frame" x="11" y="997" width="153" height="219"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide to Enter Shot Taken" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHj-RS-pMx">
+                                        <rect key="frame" x="32" y="716.5" width="111" height="157.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
@@ -139,7 +143,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-dD-Gvh">
-                                <rect key="frame" x="904" y="70" width="100" height="100"/>
+                                <rect key="frame" x="870.5" y="70" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6aH-Iy-KRx"/>
                                     <constraint firstAttribute="height" constant="100" id="p82-5Z-4cC"/>
@@ -150,7 +154,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veJ-ub-n8d" userLabel="Upper Right Label">
-                                <rect key="frame" x="921.5" y="92" width="65" height="56"/>
+                                <rect key="frame" x="888" y="92" width="65" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="5QF-dI-clg"/>
                                     <constraint firstAttribute="height" constant="56" id="6SS-um-R4f"/>
@@ -225,7 +229,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="2P0-yL-9po" customClass="ShotCycleTableViewController" customModule="BarDown" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDN-jP-m9z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -415,7 +419,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TbK-xM-daO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jNZ-mc-LHX">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="990.5" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="JerseyLetters" family="JerseyLetters" pointSize="17"/>
@@ -432,9 +436,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="goallight" width="65" height="32"/>
         <image name="ice-hockey-background.jpg" width="1920" height="1006"/>
         <image name="lowerLeft_iPad.png" width="100" height="100"/>
         <image name="lowerRight_iPad.png" width="100" height="100"/>
+        <image name="puck" width="30" height="18"/>
         <image name="upperRight_iPad.png" width="100" height="100"/>
         <image name="uppperLeft_iPad.png" width="100" height="100"/>
     </resources>
