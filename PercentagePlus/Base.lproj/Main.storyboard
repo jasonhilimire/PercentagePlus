@@ -346,12 +346,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="BarDown!" largeTitleDisplayMode="always" id="eAK-aK-e1y">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="oeG-bf-ZEN">
-                            <connections>
-                                <action selector="backBtn:" destination="2P0-yL-9po" id="3VP-nk-o0v"/>
-                                <segue destination="TbK-xM-daO" kind="showDetail" id="S4f-Lb-oJt"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" id="oeG-bf-ZEN"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="VkC-6w-7Oy">
                             <connections>
                                 <action selector="deleteAllBtn:" destination="2P0-yL-9po" id="BqO-EI-qQX"/>
@@ -451,7 +446,4 @@
         <image name="upperRight_iPad.png" width="100" height="100"/>
         <image name="uppperLeft_iPad.png" width="100" height="100"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="S4f-Lb-oJt"/>
-    </inferredMetricsTieBreakers>
 </document>
