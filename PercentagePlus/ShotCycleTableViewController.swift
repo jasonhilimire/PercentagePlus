@@ -124,8 +124,11 @@ class ShotCycleTableViewController: UITableViewController {
         tableView.deleteRows(at: indexPaths, with: .automatic)
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: notification), object: self)
-        lifetimeLabels()
+        
+        //TODO: Lifetime Labels is disappearing when you delete multiple shot cycles - possible put saveData ahead of update lifetime labels?
         saveData()
+        lifetimeLabels()
+        
         
     }
     
